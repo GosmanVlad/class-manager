@@ -8,11 +8,27 @@ require_once('./api/student.php'); ?>
 
         <form class="container">
 
-            <h2>Welcome to ClaMa</h2>
-            <img src="<?php echo '' . URL . '' ?>assets/stud.svg" width="50" height="50" alt="Graduation Logo">
+            <h2>Register Form</h2>
+            <img src="register.svg" width="50" height="50" alt="Register Logo">
+
             <div class="user">
                 <label for="uname"><b>Username</b></label>
                 <input type="text" class="button" placeholder="Enter Username" id="uname" required>
+            </div>
+
+            <div class="first-name">
+                <label for="uname"><b>First Name</b></label>
+                <input type="text" class="button" placeholder="Enter First Name" id="uname" required>
+            </div>
+
+            <div class="last-name">
+                <label for="uname"><b>Last Name</b></label>
+                <input type="text" class="button" placeholder="Enter Last Name" id="uname" required>
+            </div>
+
+            <div class="email">
+                <label for="email"><b>E-mail</b></label>
+                <input type="text" class="button" placeholder="Enter E-mail" id="email" required>
             </div>
 
             <div class="pass">
@@ -27,9 +43,7 @@ require_once('./api/student.php'); ?>
             <input type="radio" id="teacher">
             <label for="teacher">Teacher</label>
 
-            <button type="submit">Login</button>
-
-            <p id="login">Ups, you forgot your password? <a href="">Recover it</a></p>
+            <button type="submit">Register</button>
 
         </form>
 

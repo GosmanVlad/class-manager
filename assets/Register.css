@@ -1,14 +1,17 @@
 html {
-    cursor: url('pencil.svg'), pointer;
+    cursor: url('pencil.svg') 0 24, pointer;
 }
 
-body, html {
+body,
+html {
     height: 100%;
     margin: 0;
     text-align: center;
 }
 
-h2, label, a {
+h2,
+label,
+a {
     font-family: 'Open Sans', sans-serif;
     padding: 0;
 }
@@ -23,7 +26,7 @@ form {
 
 .background-photo {
     background-image: url("school.jpg");
-    height: 100%;
+    height: auto;
     margin: 0;
     background-position: center;
     background-repeat: no-repeat;
@@ -34,21 +37,32 @@ form {
 .container {
     border: 5px inset #834702;
     right: 0;
-    margin: 120px;
+    margin: 90px;
     max-width: 300px;
+    max-height: 900px;
     padding: 16px;
     border-radius: 8px;
     background-color: white;
 }
 
-input[type=text], input[type=password] {
+input[type=text],
+input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 6px;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    cursor: url('pencil.svg'), pointer;
+    cursor: url('pencil.svg') 0 24, pointer;
+}
+
+a,
+label,
+#recover,
+#login,
+#student,
+#teacher{
+    cursor: url('pencil.svg') 0 24, move;
 }
 
 button {
@@ -61,13 +75,21 @@ button {
     width: 100%;
 }
 
-.user, .pass {
+.first-name,
+.last-name,
+.email,
+.user,
+.pass {
     margin: 20px;
 }
 
+#selection{
+    font-size: 15px;
+    font-weight: 600;
+}
 button:hover {
     opacity: 0.7;
     background-color: red;
     color: black;
-    cursor: url('pencil.svg'), pointer;
+    cursor: url('pencil.svg') 0 24, pointer;
 }
