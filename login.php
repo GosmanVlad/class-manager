@@ -1,30 +1,25 @@
 <!DOCTYPE html>
 <html lang="ro">
-<?php include('./components/header.php');
-require_once('./api/student.php'); ?>
+<?php 
+include('./components/header.php');
+if(isset($_SESSION['auth']))
+    header("Location: index.php");
+?>
 
-<body class="background-photo">
-
-        <form class="form-container">
+    <body class="background-photo">
+        <form method="POST" action="app/api/auth/login_back.php" class="form-container">
 
             <h2>Welcome to ClaMa</h2>
             <img src="<?php echo '' . URL . '' ?>assets/images/stud.svg" width="50" height="50" alt="Graduation Logo">
             <div class="margin-20">
-                <label for="uname"><b>Username</b></label>
-                <input class="input-field" type="text" class="button" placeholder="Enter Username" id="uname" required>
+                <label for="uname"><b>Email</b></label>
+                <input class="input-field" name="email" type="text" class="button" placeholder="Enter Username" required>
             </div>
 
             <div class="margin-20">
                 <label for="psw"><b>Password</b></label>
-                <input class="input-field" type="password" class="button" placeholder="Enter Password" id="psw" required>
+                <input class="input-field" name="password" type="password" class="button" placeholder="Enter Password" required>
             </div>
-
-            <p>I'm a : </p>
-            <input type="radio" id="student">
-            <label for="student">Student</label>
-
-            <input  type="radio" id="teacher">
-            <label for="teacher">Teacher</label>
 
             <button class="button-submit" type="submit">Login</button>
 

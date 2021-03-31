@@ -1,12 +1,11 @@
 <?php
-include "AccountController.php";
-class Student extends Account {
+class Teacher extends Account {
 
-    public function getStudentByID($id)
+    public function getTeacherByID($id)
     {
         $dbHandle = new Database();
 
-        $result = Database::dbQuery("SELECT * FROM students WHERE id = '$id'", $dbHandle);
+        $result = Database::dbQuery("SELECT * FROM teachers WHERE id = '$id'", $dbHandle);
         $result->execute();
         $query = $result->fetch();
     
