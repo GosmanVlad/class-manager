@@ -7,9 +7,10 @@
             include "app/Controllers/StudentController.php";
             $test = new Student(); 
         ?>
-        <?php $test->getStudentByID(1); 
-        $test2=json_decode($test->getStudentByID(1), true); 
-        echo $test2["data"][0]["first_name"]; ?>
+
+        <?php $ttt = [];
+        $ttt = $test->getStudentByID(1) ;
+        echo $ttt['last_name'] ?>
     </body>
 </html>
 

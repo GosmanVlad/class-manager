@@ -20,5 +20,9 @@ class Database extends PDO{
         $statement->fetchAll();
         return $statement;
     }
+
+    public static function dbInsert($sqlStatement, $dbHandle) { 
+        $dbHandle->exec($sqlStatement);
+    }
 }
 ?>
