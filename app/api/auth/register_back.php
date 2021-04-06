@@ -15,9 +15,9 @@ else
 
 
     $new_account = new Student();
-    $new_account->registerAccount($username, $first_name, $last_name, $email, $password, $account_type);
+    $execute = $new_account->registerAccount($username, $first_name, $last_name, $email, $password, $account_type);
 
-    if($new_account)
+    if($execute!=0)
         header( "Location: ../../../login.php" );
 }
 ?>
