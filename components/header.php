@@ -4,6 +4,7 @@ require_once('./includes/functions.php');
 <head>
     <title>Class Manager</title>
     <link rel="stylesheet" href="<?php echo ''.URL.''?>assets/login-register.css">
+    <link rel="stylesheet" href="<?php echo ''.URL.''?>assets/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png">
