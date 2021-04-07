@@ -1,5 +1,5 @@
 <?php 
-require_once('./includes/functions.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/class/includes/functions.php');
 ?>
 <head>
     <title>Class Manager</title>

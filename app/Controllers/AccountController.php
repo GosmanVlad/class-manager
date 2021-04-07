@@ -25,7 +25,10 @@ class Account
             }
             return 1;
         }
-        else echo 'This e-mail has been already used!Please try again..';
+        else {
+            echo 'This e-mail has been already used! <br /> Please try again..  <hr />';
+            echo "<a href='".URL."register.php'>Back to register</a>";
+        }
         return 0;
     }
 
@@ -61,7 +64,6 @@ class Account
                 $_SESSION['userid'] = $query['id'];
                 $_SESSION['last_name'] = $query['last_name'];
                 $_SESSION['first_name'] = $query['first_name'];
-                echo 'logat';
                 return 1;
             }
         } else if ($dbQuery->rowCount() == 0) {
@@ -78,7 +80,6 @@ class Account
                     $_SESSION['userid'] = $query['id'];
                     $_SESSION['last_name'] = $query['last_name'];
                     $_SESSION['first_name'] = $query['first_name'];
-                    echo 'logat';
                     return 1;
                 }
             }

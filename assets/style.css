@@ -49,17 +49,6 @@ body {
     cursor: url('images/pencil.svg'), pointer;
 }
 
-.form-container {
-    display:inline-block;
-    border: 5px inset #834702;
-    right: 0;
-    margin: 120px;
-    max-width: 300px;
-    padding: 16px;
-    border-radius: 8px;
-    background-color: white;
-}
-
 h2, label, a {
     font-family: 'Open Sans', sans-serif;
     padding: 0;
