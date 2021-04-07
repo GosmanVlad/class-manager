@@ -5,17 +5,31 @@ class Account
 
     protected static $dbHandle;
 
-    public static function registerAccount($username, $first_name, $last_name, $email, $password, $account_type)
+    public static function registerAccount($username, $first_name, $last_name, $email, $password, $account_type, $year = '', $group_letter = '')
     {
         $dbHandle = new Database();
-        $problem = 0;
+        $checkProblem = self::checkEmailAddress($email, $dbHandle);
 
-        if ($account_type == 'student')
-            $table = 'students';
-        else if ($account_type == 'teacher')
-            $table = 'teachers';
-        else return 0;
+        if ($checkProblem == 0) {
+            try {
+                if($account_type == 'student') {
+                    $insert = Database::dbInsert("INSERT INTO students (id, username, first_name, last_name, password, email, year, group_letter) VALUES 
+                                                 (NULL, '$username', '$first_name', '$last_name', '$password', '$email', '$year', '$group_letter')", $dbHandle);
+                }
+                else if($account_type == 'teacher') {
+                    $insert = Database::dbInsert("INSERT INTO teachers (id, username, first_name, last_name, password, email) VALUES 
+                                                 (NULL, '$username', '$first_name', '$last_name', '$password', '$email')", $dbHandle);
+                }
+            }catch(\Exception $exception) {
+                echo $exception;
+            }
+            return 1;
+        }
+        else echo 'This e-mail has been already used!Please try again..';
+        return 0;
+    }
 
+    public static function checkEmailAddress($email, $dbHandle) {
         $dbQuery = Database::dbQuery("SELECT * FROM students WHERE `email` = '$email'", $dbHandle);
         $dbQuery->execute();
 
@@ -25,20 +39,10 @@ class Account
             $dbQuery_t->execute();
 
             if ($dbQuery_t->rowCount() > 0) {
-                $problem = 1;
-            }
-        } else $problem = 1;
-
-        if ($problem == 0) {
-            $insert = Database::dbInsert("INSERT INTO $table (id, username, first_name, last_name, password, email) VALUES 
-            (NULL, '$username', '$first_name', '$last_name', '$password', '$email')", $dbHandle);
-
-            if ($insert)
                 return 1;
-            return 0;
-        }
-        else echo 'This e-mail has been already used!Please try again..';
-
+            }
+        } 
+        else return 1;
         return 0;
     }
 

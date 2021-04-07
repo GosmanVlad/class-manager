@@ -23,7 +23,4 @@
 
 <!-- Particular style only for this page  -->
 <style>
-    html {
-        cursor: url('assets/images/pencil.svg') 0 24, pointer;
-    }
 </style>

@@ -10,12 +10,19 @@ else
     $email = $_POST['email'];
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
-    echo $_POST['account-type'];
     $account_type = $_POST['account-type'];
 
+    if(isset($_POST['year'])) {
+        $year = $_POST['year'];
+        $group_letter = $_POST['group_letter'];
+    }
 
-    $new_account = new Student();
-    $execute = $new_account->registerAccount($username, $first_name, $last_name, $email, $password, $account_type);
+    $new_account = new Account();
+
+    if(isset($_POST['year']))
+        $execute = $new_account->registerAccount($username, $first_name, $last_name, $email, $password, $account_type, $year, $group_letter);
+    else
+        $execute = $new_account->registerAccount($username, $first_name, $last_name, $email, $password, $account_type);
 
     if($execute!=0)
         header( "Location: ../../../login.php" );

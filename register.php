@@ -35,20 +35,31 @@ if (isset($_SESSION['auth']))
             <input class="input-field" name="password" type="password" class="button" placeholder="Enter Password" required>
         </div>
 
-        <label for="years">Choose the year you are in :</label>
-
-        <select name="years" id="years">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select>
-
         <p>I'm a : </p>
-        <input type="radio" name="account-type" value="student">
+        <input type="radio" name="account-type" value="student" onclick="showPanel();" />
         <label for="student">Student</label>
 
-        <input type="radio" name="account-type" value="teacher">
+        <input type="radio" name="account-type" value="teacher" onclick="hidePanel();" />
         <label for="teacher">Teacher</label>
+
+        <div id="student-panel" class="hide margin-20">
+            <hr />
+            <label for="years">Choose the year you are in :</label> <br />
+
+            <select name="year">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+
+            <select name="group_letter">
+                <?php 
+                    foreach (range('A', 'Z') as $letter){
+                        echo "<option value=$letter>$letter</option>";
+                    }
+                ?>
+            </select>
+        </div>
 
         <button class="button-submit" type="submit">Register</button>
     </form>
@@ -59,7 +70,19 @@ if (isset($_SESSION['auth']))
 
 <!-- Particular style only for this page  -->
 <style>
-    html {
-        cursor: url('assets/images/pencil.svg') 0 24, pointer;
-    }
+.hide {
+  display: none;
+}
 </style>
+
+<script>
+function showPanel() {
+    var x = document.getElementById("student-panel");
+    x.style.display = "block";
+}
+
+function hidePanel() {
+    var x = document.getElementById("student-panel");
+    x.style.display = "none";
+}
+</script>
