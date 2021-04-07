@@ -24,7 +24,96 @@
     <section typeof="sa:Introduction" id="introduction" role="doc-introduction">
       <h2>Introducere</h2>
       <p>
-        Class Manager permite autentificarea profesorilor pe interfata web cu o adresa de email si o parola unica, stocata in baza de date. <br />
+        Aplicatia permite gestionarea cu usurinta a activitatii didactice intr-o relatie de tip profesor-student. 
+        Interfata interactiva permite oricarui student sa-si creeze un cont pe platforma, sa isi aleaga materiile in functie de anul in care se afla si grupa la care sa participe la cursuri si seminarii. De asemenea, acesta isi poate monitoriza intreaga activitate, aflandu-si numarul de prezente si notele direct din platforma, intr-un mod  individual cu posibilitatea de a face contestatie, in functie de materia la care face parte.
+
+        De asemenea, orice profesor isi poate creea un cont pe aceasta platforma si acesta isi poate administra cursurile si laboratoarele, avand o evidenta clara a elevilor sai (procentul de prezenta, notele individuale si media notelor). Un cont de profesor are acces si la generarea cataloagelor, importarea unor studenti direct din platforma, acceptarea sau respingerea unor studenti pentru cursurile/laboratoarele predate de el. <br />
+      </p>
+    </section>
+
+    <section typeof="sa:Technologies" id="technologies" role="doc-technologies">
+      <h2>Tehnologii utilizate</h2>
+      <p>
+        <ul>
+          <li>PHP pentru preluarea datelor din baza de date si trimiterea lor catre front-end</li>
+          <li>MariaDB pentru stocarea datelor intr-un mod eficient</li>
+          <li>HTML, CSS si JavaScript pentru front-end, modul in care afisam informatiile userilor </li>
+        </ul>
+      </p>
+    </section>
+
+    <section id="implementation">
+      <h2>Sisteme implementate</h2>
+      <section id="register">
+        <h3>Sistemul de inregistrare</h3>
+        <p>
+          Platforma necesita un cont valid pentru a putea folosi intr-un mod eficient intregul sistem. Astfel, pentru crearea unui astfel de cont,
+        punem la dispozitie o pagina web cu mai multe field-uri in care userul isi poate adauga datele personale, date valide, cu care se poate autentifica ulterior pe platforma.
+        La finalul completarii, acesta isi poate selecta tipul contului (cont de student sau cont de profesor). In cazul bifarii checkbox-ului "profesor", acesta va necesita o aprobare
+        din partea unui administrator (un cont special, prestabilit in faza de dezvoltare, acesta avand acces la intreaga platforma). Dupa un astfel de proces, indiferent de alegerea facuta
+        de administrator (a acceptat/resping contul), userului ii va fi trimis un email in care va fi informat de decizia administratorului.
+        </p>
+      </section>
+
+      <section id="login">
+        <h3>Sistemul de autentificare</h3>
+        <p>
+          Similar, pentru sistemul de autentificare, se completeaza campurile cu date valide din baza de date (in caz contrar, va esua autentificarea) si userului ii va fi permis
+        accesul pe platforma, avand permisiunile in functie de tipul contului. 
+        </p>
+      </section>
+
+      <section id="mainpage">
+        <h3>Pagina principala</h3>
+        <p>
+          Accesul pe pagina principala se face doar cu un cont valid, autentificat.
+        </p>
+
+        <section id="student-mainpage">
+          <h4>Cont de student</h4>
+          <p>
+              Dupa prima autentificare cu un cont de student, acestuia ii va aparea pe pagina principala materiile din anul respectiv (an selectat odata cu inregistrarea
+            contului). Acesta va avea posibilitatea sa vada, pentru fiecare materie, profesorul care preda materia selectata, alaturi de grupa unde o preda (in cazul in care acesta nu doreste
+            sa faca cursurile si seminariile la grupa in care se afla initial). Acesta poate selecta un anumit profesor, care preda la o anumita grupa. Cererea va fi trimisa direct catre profesorul selectat
+            acesta avand posibilitatea de a accepta/respinge cererea facuta de student, alaturi de un mesaj (in cazul respingerii) in care va fi mentionat motivul respinegrii.
+          </p>
+        </section>
+
+        <section id="teacher-mainpage">
+          <h4>Cont de profesor</h4>
+          <p>
+              Profesorul va fi repartizat la o anumita grupa (specificata de administratorul platformei odata cu aprobarea contului), astfel acesta isi va putea administra
+            propriile cursuri/laboratoare de pe pagina principala, cu referinte catre alte pagini interne (vom dezvolta mai mult aceasta sectiune atunci cand vom stabili arhitectura pentru pagina 
+            principala, in cazul autentificarii cu un cont de profesor).
+          </p>
+        </section>
+      </section>
+    </section>
+
+    <section id="development-environment">
+      <h2>Mediu de dezvoltare</h2>
+      <p>
+          Initial s-a creat sistemul care conecteaza platforma cu baza de date MariaDB, folosind MySQL PDO (PHP Data Objects). Motivatia alegerii unei astfel de tehnologii a fost
+        rapiditatea de care da dovada si maleabilitatea, in cazul actualizarii MySQL. In aceasta etapa, s-a dezvoltat si controllere care permite autentificarea si inregistrarea unui cont,
+        acesta stabilind ulterior tipul contului in functie de datele introduse. In acest sprint s-a inclus doar crearea a doua tabele in baza de date, care sa ne permita testarea functionalitatilor,
+        urmand ca pe viitor sa stabilim arhitectura bazei de date generala a proiectului si optimizarea ei.
+      </p>
+      <p>
+          Am stabilit cu echipa un layout care sa respecte principiul KISS, astfel facand navigarea mai usoara si mai interactiva pe platforma. Tot aici am stabilit si paginile comune
+        (layout comun pentru anumite pagini, iar alt layout pentru alte pagini precum pagina de autentificare, inregistrare, recuperare parola) si am inceput prototipizarea generala website-ului. 
+      </p>
+    </section>
+
+    <section id="working-environment">
+      <h2>Mediu de lucru</h2>
+      <p>
+        S-a folosit git pentru versionare, respectiv pentru dezvoltarea proiectului intr-un mod curat si sigur.
+      </p>
+      <p>
+          Se vor folosi eventuale spreadsheet-uri google, unde vor fi trecute sprinturi care vor contine task-uri cu un anumit deadline, pentru fiecare componenta a platformei, in functie de prioritatea sistemelor.
+      </p>
+      <p>
+        Discord pentru meet-uri, stabilirea urmatoarelor taskuri, statusuri si blocaje pe proiect.
       </p>
     </section>
     
