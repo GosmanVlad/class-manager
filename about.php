@@ -148,7 +148,8 @@
                     </li>
                 </ul>
             </div>
-            <footer>
+        </main>
+        <footer>
                 <img id="logo-footer" src="Favicon\android-chrome-512x512.png" alt="Logo ClaMa" width="50" height="50">
                 <p id="footer">Developers: Gosman Vladut Andrei & Luca Andrei Iulian</p>
                 <p id="footer">Do you have any suggestions and/or feedback?Don't hesitate to contact us at:</p>
@@ -158,7 +159,6 @@
                     <li>luca_andrei_iulian@yahoo.com</li>
                 </p>
             </footer>
-        </main>
     </div>
 </body>
 

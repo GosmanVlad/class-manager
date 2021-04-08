@@ -137,7 +137,7 @@ footer {
     padding: 1px;
     margin-left: -20px;
     background-color: #23232e;
-    position: fixed;
+    position: relative;
     width: 100%;
     bottom: 0;
 }
@@ -156,15 +156,6 @@ footer {
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;
-}
-
-#photo1 {
-    margin-top: 10px;
-    margin-left: 310px;
-}
-
-#photo2 {
-    margin-left: 150px;
 }
 
 #photo-table {
@@ -200,6 +191,8 @@ footer {
 }
 
 .people{
+    gap: 5px;
+    justify-content: center;
     display: flex;
     flex-direction: row;
     flex-wrap:nowrap;
