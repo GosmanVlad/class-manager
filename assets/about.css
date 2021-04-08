@@ -3,14 +3,14 @@
     font-family: 'Open Sans';
     --text-primary: #b6b6b6;
     --text-secondary: #ececec;
-    --bg-primary: #23232e;
+    --bg-primary: #23232f;
     --bg-secondary: #141418;
     --transition-speed: 600ms;
 }
 
 body {
     color: black;
-    background: #FFFDE7;
+    background-color: white;
     margin: 0;
     padding: 0;
 }
@@ -27,8 +27,9 @@ body::-webkit-scrollbar-thumb {
     background: #071d3700;
 }
 
-.content {
-    height: auto;
+.background-color {
+    background: #FFFDE7;
+    height: 100%;
     margin: 0;
     background-position: center;
     background-repeat: no-repeat;
@@ -126,11 +127,82 @@ svg {
     transform: rotate(-180deg);
 }
 
-.topright{
-    position:absolute;
-    top:0px;
-    right:12px;
-    font-size: 18px;
+#title {
+    text-align: center;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 1px;
+    margin-left: -20px;
+    background-color: #23232e;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+#footer {
+    color: white;
+}
+
+#logo-footer {
+    margin-top: 10px;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+
+#photo1 {
+    margin-top: 10px;
+    margin-left: 310px;
+}
+
+#photo2 {
+    margin-left: 150px;
+}
+
+#photo-table {
+    display: inline-block;
+}
+
+#github, #facebook {
+    fill: black;
+}
+
+@keyframes bounce {
+    0%, 100%, 20%, 50%, 80% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+    60% {
+        -webkit-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+}
+
+#logo-footer:hover {
+    cursor: pointer;
+    animation-name: bounce;
+    -moz-animation-name: bounce;
+}
+
+.people{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
 }
 
 /*small screens*/
@@ -152,6 +224,9 @@ svg {
     }
     main {
         margin: 0;
+    }
+    footer {
+        visibility: hidden;
     }
 }
 
