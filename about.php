@@ -152,11 +152,12 @@
         <footer>
                 <img id="logo-footer" src="Favicon\android-chrome-512x512.png" alt="Logo ClaMa" width="50" height="50">
                 <p id="footer">Developers: Gosman Vladut Andrei & Luca Andrei Iulian</p>
-                <p id="footer">Do you have any suggestions and/or feedback?Don't hesitate to contact us at:</p>
+                <p id="footer">Do you have any suggestions and/or feedback?</p>
+                <p id="footer">Don't hesitate to contact us at:</p>
                 <p id="footer">
-                    <li>gosmanvlad@gmail.com</li>
+                    <li><a href="mailto:gosman.vlad95@yahoo.com" style="color: white"><u>gosman.vlad95@yahoo.com</u></a></li>
                 <p id="footer">
-                    <li>luca_andrei_iulian@yahoo.com</li>
+                    <li><a href="mailto:luca_andrei_iulian@yahoo.com" style="color: white"><u>luca_andrei_iulian@yahoo.com</u></a></li>
                 </p>
             </footer>
     </div>

@@ -190,12 +190,12 @@ footer {
     -moz-animation-name: bounce;
 }
 
-.people{
+.people {
     gap: 5px;
     justify-content: center;
     display: flex;
     flex-direction: row;
-    flex-wrap:nowrap;
+    flex-wrap: nowrap;
 }
 
 /*small screens*/
@@ -219,7 +219,20 @@ footer {
         margin: 0;
     }
     footer {
-        visibility: hidden;
+        visibility: visible;
+        width: auto;
+        font-size: small;
+        text-align: center;
+    }
+    #footer {
+        text-align: center;
+    }
+    .people {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        
     }
 }
 
@@ -239,5 +252,8 @@ footer {
     }
     .navbar:hover .logo-text {
         left: 0px;
+    }
+    footer {
+        width: 100%;
     }
 }
