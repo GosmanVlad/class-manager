@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "Database.php";
 class Account
 {
