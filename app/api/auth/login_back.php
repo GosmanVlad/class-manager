@@ -1,8 +1,7 @@
 <html lang="ro">
 <?php
-$server_root = $_SERVER['DOCUMENT_ROOT'];
-include $server_root . "/class/app/Controllers/AccountController.php";
-include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php"; ?>
+include $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/AccountController.php"; 
+include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php";?>
 
 <body class="background-photo">
 <div class="form-container">

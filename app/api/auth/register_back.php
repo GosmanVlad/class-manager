@@ -1,6 +1,6 @@
 <html lang="ro">
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentController.php"; 
+include $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/AccountController.php"; 
 include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php";?>
 <body class="background-photo">
 <div class="form-container">
@@ -11,6 +11,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php";?>
     {
         $username = $_POST['username'];
         $password = md5($_POST['password']);
+        $repeat_password = md5($_POST['repeat-password']);
         $email = $_POST['email'];
         $first_name = $_POST['first_name'];
         $last_name = $_POST['last_name'];
@@ -21,15 +22,19 @@ include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php";?>
             $group_letter = $_POST['group_letter'];
         }
 
-        $new_account = new Account();
+        if($password == $repeat_password) {
+            $new_account = new Account();
 
-        if(isset($_POST['year']))
-            $execute = $new_account->registerAccount($username, $first_name, $last_name, $email, $password, $account_type, $year, $group_letter);
-        else
-            $execute = $new_account->registerAccount($username, $first_name, $last_name, $email, $password, $account_type);
+            if(isset($_POST['year']))
+                $execute = $new_account->registerAccount($username, $first_name, $last_name, $email, $password, $account_type, $year, $group_letter);
+            else
+                $execute = $new_account->registerAccount($username, $first_name, $last_name, $email, $password, $account_type);
 
-        if($execute!=0)
-            header( "Location: ../../../login.php" );
+            if($execute!=0)
+                header( "Location: ../../../login.php" );
+        } else {
+            echo 'The passwords don not match!';
+        }
     }
 ?>
 </div>

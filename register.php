@@ -35,6 +35,11 @@ if (isset($_SESSION['auth']))
             <input class="input-field" name="password" type="password" class="button" placeholder="Enter Password" required>
         </div>
 
+        <div class="margin-20">
+            <label for="psw"><b>Confirm password</b></label>
+            <input class="input-field" name="repeat-password" type="password" class="button" placeholder="Enter password again" required>
+        </div>
+
         <p>I'm a : </p>
         <input type="radio" name="account-type" value="student" onclick="showPanel();" />
         <label for="student">Student</label>
