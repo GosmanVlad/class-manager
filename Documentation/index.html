@@ -25,16 +25,15 @@
   <section typeof="sa:Introduction" id="introduction" role="doc-introduction">
     <h2>Introducere</h2>
     <p>
-      Aplicatia permite gestionarea cu usurinta a activitatii didactice intr-o relatie de tip profesor-student.
-      Interfata interactiva permite oricarui student sa-si creeze un cont pe platforma, sa isi aleaga materiile in
-      functie de anul in care se afla si grupa la care sa participe la cursuri si seminarii. De asemenea, acesta isi
-      poate monitoriza intreaga activitate, aflandu-si numarul de prezente si notele direct din platforma, intr-un mod
-      individual cu posibilitatea de a face contestatie, in functie de materia la care face parte.
-
-      De asemenea, orice profesor isi poate creea un cont pe aceasta platforma si acesta isi poate administra cursurile
-      si laboratoarele, avand o evidenta clara a elevilor sai (procentul de prezenta, notele individuale si media
-      notelor). Un cont de profesor are acces si la generarea cataloagelor, importarea unor studenti direct din
-      platforma, acceptarea sau respingerea unor studenti pentru cursurile/laboratoarele predate de el. <br />
+      Aplicația permite gestionarea cu ușurință a activității didactice într-o relație de tip profesor-student.
+      Interfața interactivă permite oricărui student să-și creeze un cont pe platforma, să își aleagă materiile în
+      funcție de anul în care se află și grupa la care să participe la cursuri și seminarii. De asemenea, acesta își
+      poate monitoriza întreaga activitate, aflându-și numărul de prezențe și notele direct din platforma, într-un mod
+      individual cu posibilitatea de a face contestație, în funcție de materia la care face parte. De asemenea, orice
+      profesor își poate creea un cont pe această platforma și acesta își poate administra cursurile și laboratoarele,
+      având o evidență clară a elevilor săi (procentul de prezența, notele individuale și media notelor). Un cont de
+      profesor are acces și la generarea cataloagelor, importarea unor studenți direct din platforma, acceptarea sau
+      respingerea unor studenți pentru cursurile/laboratoarele predate de el. <br />
     </p>
   </section>
 
@@ -42,9 +41,9 @@
     <h2>Tehnologii utilizate</h2>
     <p>
     <ul>
-      <li>PHP pentru preluarea datelor din baza de date si trimiterea lor catre front-end</li>
-      <li>MariaDB pentru stocarea datelor intr-un mod eficient</li>
-      <li>HTML, CSS si JavaScript pentru front-end, modul in care afisam informatiile userilor </li>
+      <li>PHP pentru preluarea datelor din baza de date și trimiterea lor către front-end</li>
+      <li>MariaDB pentru stocarea datelor într-un mod eficient</li>
+      <li>HTML, CSS si JavaScript pentru front-end, modul în care afisăm informațiile user-ilor </li>
     </ul>
     </p>
   </section>
@@ -54,15 +53,15 @@
     <section id="register">
       <h3>Sistemul de inregistrare</h3>
       <p>
-        Platforma necesita un cont valid pentru a putea folosi intr-un mod eficient intregul sistem. Astfel, pentru
+        Platforma necesită un cont valid pentru a putea folosi într-un mod eficient întregul sistem. Astfel, pentru
         crearea unui astfel de cont,
-        punem la dispozitie o pagina web cu mai multe field-uri in care userul isi poate adauga datele personale, date
-        valide, cu care se poate autentifica ulterior pe platforma.
-        La finalul completarii, acesta isi poate selecta tipul contului (cont de student sau cont de profesor). In cazul
-        bifarii checkbox-ului "profesor", acesta va necesita o aprobare
-        din partea unui administrator (un cont special, prestabilit in faza de dezvoltare, acesta avand acces la
-        intreaga platforma). Dupa un astfel de proces, indiferent de alegerea facuta
-        de administrator (a acceptat/resping contul), userului ii va fi trimis un email in care va fi informat de
+        punem la dispoziție o pagină web cu mai multe field-uri în care userul își poate adăuga datele personale, date
+        valide, cu care se poate autentifica ulterior pe platformă.
+        La finalul completării, acesta își poate selecta tipul contului (cont de student sau cont de profesor). În cazul
+        bifarii checkbox-ului "profesor", acesta va necesită o aprobare
+        din partea unui administrator (un cont special, prestabilit în faza de dezvoltare, acesta având acces la
+        întreagă platforma). După un astfel de proces, indiferent de alegerea făcută
+        de administrator (a acceptat/resping contul), userului îi va fi trimis un email în care va fi informat de
         decizia administratorului.
       </p>
     </section>
@@ -70,9 +69,9 @@
     <section id="login">
       <h3>Sistemul de autentificare</h3>
       <p>
-        Similar, pentru sistemul de autentificare, se completeaza campurile cu date valide din baza de date (in caz
-        contrar, va esua autentificarea) si userului ii va fi permis
-        accesul pe platforma, avand permisiunile in functie de tipul contului.
+        Similar, pentru sistemul de autentificare, se completează câmpurile cu date valide din baza de date (în caz
+        contrar, va eșua autentificarea) și userului îi va fi permis
+        accesul pe platforma, având permisiunile în funcție de tipul contului.
       </p>
     </section>
 
@@ -85,25 +84,25 @@
       <section id="student-mainpage">
         <h4>Cont de student</h4>
         <p>
-          Dupa prima autentificare cu un cont de student, acestuia ii va aparea pe pagina principala materiile din anul
-          respectiv (an selectat odata cu inregistrarea
-          contului). Acesta va avea posibilitatea sa vada, pentru fiecare materie, profesorul care preda materia
-          selectata, alaturi de grupa unde o preda (in cazul in care acesta nu doreste
-          sa faca cursurile si seminariile la grupa in care se afla initial). Acesta poate selecta un anumit profesor,
-          care preda la o anumita grupa. Cererea va fi trimisa direct catre profesorul selectat
-          acesta avand posibilitatea de a accepta/respinge cererea facuta de student, alaturi de un mesaj (in cazul
-          respingerii) in care va fi mentionat motivul respinegrii.
+          După prima autentificare cu un cont de student, acestuia îi va apărea pe pagina principală materiile din anul
+          respectiv (an selectat odată cu înregistrarea
+          contului). Acesta va avea posibilitatea să vadă, pentru fiecare materie, profesorul care predă materia
+          selectată, alături de grupa unde o preda (în cazul în care acesta nu dorește
+          să facă cursurile și seminariile la grupa în care se află inițial). Acesta poate selecta un anumit profesor,
+          care predă la o anumită grupă. Cererea va fi trimisă direct către profesorul selectat
+          acesta având posibilitatea de a accepta/respinge cererea făcută de student, alături de un mesaj (în cazul
+          respingerii) în care va fi menționat motivul respingerii.
         </p>
       </section>
 
       <section id="teacher-mainpage">
         <h4>Cont de profesor</h4>
         <p>
-          Profesorul va fi repartizat la o anumita grupa (specificata de administratorul platformei odata cu aprobarea
-          contului), astfel acesta isi va putea administra
-          propriile cursuri/laboratoare de pe pagina principala, cu referinte catre alte pagini interne (vom dezvolta
-          mai mult aceasta sectiune atunci cand vom stabili arhitectura pentru pagina
-          principala, in cazul autentificarii cu un cont de profesor).
+          Profesorul va fi repartizat la o anumită grupa (specificată de administratorul platformei odată cu aprobarea
+          contului), astfel acesta își va putea administra
+          propriile cursuri/laboratoare de pe pagina principala, cu referințe către alte pagini interne (vom dezvoltă
+          mai mult această secțiune atunci când vom stabili arhitectura pentru pagină
+          principală, în cazul autentificării cu un cont de profesor).
         </p>
       </section>
     </section>
@@ -112,33 +111,33 @@
   <section id="development-environment">
     <h2>Mediu de dezvoltare</h2>
     <p>
-      Initial s-a creat sistemul care conecteaza platforma cu baza de date MariaDB, folosind MySQL PDO (PHP Data
-      Objects). Motivatia alegerii unei astfel de tehnologii a fost
-      rapiditatea de care da dovada si maleabilitatea, in cazul actualizarii MySQL. In aceasta etapa, s-a dezvoltat si
-      controllere care permite autentificarea si inregistrarea unui cont,
-      acesta stabilind ulterior tipul contului in functie de datele introduse. In acest sprint s-a inclus doar crearea a
-      doua tabele in baza de date, care sa ne permita testarea functionalitatilor,
-      urmand ca pe viitor sa stabilim arhitectura bazei de date generala a proiectului si optimizarea ei.
+      Inițial s-a creat sistemul care conectează platforma cu baza de date MariaDB, folosind MySQL PDO (PHP Data
+      Objects). Motivația alegerii unei astfel de tehnologii a fost
+      rapiditatea de care dă dovadă și maleabilitatea, în cazul actualizării MySQL. În această etapă, s-au dezvoltat și
+      controllere care permit autentificarea și înregistrarea unui cont,
+      acesta stabilind ulterior tipul contului în funcție de datele introduse. În acest sprint s-a inclus doar crearea a
+      două tabele în baza de date, care să ne permită testarea functionalitatilor,
+      urmând că pe viitor să stabilim arhitectura bazei de date generală a proiectului și optimizarea ei.
     </p>
     <p>
-      Am stabilit cu echipa un layout care sa respecte principiul KISS, astfel facand navigarea mai usoara si mai
-      interactiva pe platforma. Tot aici am stabilit si paginile comune
+      Am stabilit cu echipa un layout care să respecte principiul KISS, astfel făcând navigarea mai ușoară și mai
+      interactivă pe platformă.Tot aici am stabilit și paginile comune
       (layout comun pentru anumite pagini, iar alt layout pentru alte pagini precum pagina de autentificare,
-      inregistrare, recuperare parola) si am inceput prototipizarea generala website-ului.
+      înregistrare, recuperare parolă) și am început prototipizarea generală a website-ului.
     </p>
   </section>
 
   <section id="working-environment">
     <h2>Mediu de lucru</h2>
     <p>
-      S-a folosit git pentru versionare, respectiv pentru dezvoltarea proiectului intr-un mod curat si sigur.
+      S-a folosit git pentru versionare, respectiv pentru dezvoltarea proiectului într-un mod curat si sigur.
     </p>
     <p>
-      Se vor folosi eventuale spreadsheet-uri google, unde vor fi trecute sprinturi care vor contine task-uri cu un
+      Se vor folosi eventuale spreadsheet-uri google, unde vor fi trecute sprinturi care vor conîine task-uri cu un
       anumit deadline, pentru fiecare componenta a platformei, in functie de prioritatea sistemelor.
     </p>
     <p>
-      Discord pentru meet-uri, stabilirea urmatoarelor taskuri, statusuri si blocaje pe proiect.
+      Discord pentru meet-uri, stabilirea urmatoarelor taskuri, statusuri si blocaje de proiect.
     </p>
   </section>
 
@@ -158,26 +157,42 @@
 
     <section id="main-frame">
       <h3>Design-ul pentru paginile principale ale proiectului</h3>
-      <p>Pentru paginile principale ale aplicatiei noastre WEB (Home, Class, Assesment Grades, Calculator, About) am folosit  un navbar vertical responsive pentru intuitivitatea ce ne ofera de culoare dark grayish navy
- .Am ales aceasta culoare pentru vizibilitatea ce ne ofera pe orice fundal insa totodata nu este o culoare foarte dura si/sau stridenta.</p>
- <p>Aceasta bara de navigare este una usor de folosit, devenind extended cand dam hover deasupra ei, moment in care regasim logo-uri svg alaturi de titlurile fiecarei pagini pentru a fi cat mai usor de folosit, de asemenea culoarea fiecarui buton se ilumineaza in momentul trecerii cursorului peste el iar ca element grafic regasim o sageata ce semnifica tranzitia din modul compressed si cea extended a barii de navigare.</p>
- <p>Pentru fundalul paginilor am folosit culoarea crem.Pe langa compatibilitatea cu nuanta de gri aleasa pentru navbar, culoarea crem este una ce ofera comfort si ajuta dezvoltarea noilor idei, o componenta importanta pentru utilizatorii aplicatiei noastre.</p>
+      <p>Pentru paginile principale ale aplicației noastre WEB (Home, Class, Assesment Grades, Calculator, About) am
+        folosit un navbar vertical responsive pentru intuitivitatea ce ne oferă de culoare dark grayish navy
+        .Am ales această culoare pentru vizibilitatea ce ne oferă pe orice fundal însă totodată nu este o culoare foarte
+        dură și/sau stridentă.</p>
+      <p>Această bară de navigare este una ușor de folosit, devenind extended când dăm hover deasupra ei, moment în care
+        regăsim logo-uri svg alături de titlurile fiecărei pagini pentru a fi cât mai ușor de folosit, de asemenea
+        culoarea fiecărui buton se iluminează în momentul trecerii cursorului peste el iar ca element grafic regăsim o
+        săgeata ce semnifică tranziția din modul compressed și cea extended a barii de navigare.</p>
+      <p>Pentru fundalul paginilor am folosit culoarea crem.Pe lângă compatibilitatea cu nuanță de gri aleasă pentru
+        navbar, culoarea crem este una ce oferă comfort și ajută dezvoltarea noilor idei, o componentă importantă pentru
+        utilizatorii aplicației noastre.</p>
     </section>
 
   </section>
 
   <section id="prototype-images">
     <h2>Imagini ale prototipului:</h2>
-    <h3>Pagina principala de log-in</h3>
-    <img src="images/login.png" width="800" height="450" alt="log-in">
 
-    <h3>Pagina de recuperare a parolei</h3>
-    <img src="images/recover.png" width="800" height="450" alt="recover password">
-
-    <h3>Pagina de inregistrare a profesorilor/studentilor - alternativa pe langa inregistrarea lor cu ajutorul
-      fisierelor XML</h3>
-    <img src="images/recover.png" width="800" height="450" alt="recover password">
+    <section id="login">
+      <h3>Pagina principala de log-in</h3>
+      <img src="images/login.png" width="800" height="450" alt="log-in">
+    </section>
+    
+    <section id="recover">
+      <h3>Pagina de recuperare a parolei</h3>
+      <img src="images/recover.png" width="800" height="450" alt="recover password">
+    </section>
+    
+    <section id="register">
+      <h3>Pagina de inregistrare a profesorilor/studentilor - alternativa pe langa inregistrarea lor cu ajutorul
+        fisierelor XML</h3>
+      <img src="images/recover.png" width="800" height="450" alt="recover password">
+    
+    </section>
   </section>
+
 </body>
 
 </html>
