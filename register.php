@@ -2,7 +2,7 @@
 <html lang="ro">
 <?php
 include('./components/header.php');
-if (isset($_SESSION['auth']))
+if(isLogged())
     header("Location: index.php"); ?>
 
 <body class="background-photo cursor">
@@ -66,7 +66,7 @@ if (isset($_SESSION['auth']))
             </select>
         </div>
 
-        <button class="button-submit cursor" type="submit">Register</button>
+        <button class="button-style btn-pencil btn-green btn-full btn-medium cursor" type="submit">Register</button>
     </form>
 
 </body>

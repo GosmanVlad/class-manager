@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="ro">
-<?php include('./components/header.php');?>
+<?php
+include('./components/header.php');
+if(isLogged())
+    header("Location: index.php"); ?>
 
 <body class="background-photo cursor">
 
@@ -10,10 +13,10 @@
         <img src="<?php echo '' . URL . '' ?>assets/images/recover.svg" width="50" height="50" alt="Recover Logo">
         <div class="margin-20">
             <label for="uname"><b>E-mail</b></label>
-            <input class="input-field" type="text" class="button" placeholder="Enter E-mail" id="uname" required>
+            <input class="input-login-register" type="text" class="button" placeholder="Enter E-mail" id="uname" required>
         </div>
 
-        <button class="button-submit" type="submit">Recover</button>
+        <button class="button-style btn-pencil btn-cyan btn-full btn-medium cursor" type="submit">Recover</button>
 
     </form>
 
