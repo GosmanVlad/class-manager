@@ -22,14 +22,14 @@
             <p><b>Thank you</b> for trusting our services.</p>
 
             <p>About developers:</p>
-            <p>The two young developers that made this project come alive are students at FII Iasi and are based in
+            <p>The two young developers that made this project come alive are students at FII Iasi.They are both based in
                 Iasi, Romania and this idea came
                 from their personal school experience.</p>
             <p>They get along very well and thought it would be a great idea to
                 make their own Class Manager.</p>
             <div class="people">
                 <img id="photo1" src="Poze\Vlad.jpg" alt="Gosman Vlad Andrei" width="300" height="300">
-                <ul id="photo-table">
+                <ul id="photo-table" style="text-align: left;">
                     <li>Name: Gosman Vlad Andrei</li>
                     <li>Age: 21</li>
                     <li>Hobbies: </li>
@@ -56,7 +56,7 @@
                 </ul>
 
                 <img id="photo2" src="Poze\Andrei.jpg" alt="Luca Andrei Iulian" width="200" height="300">
-                <ul id="photo-table">
+                <ul id="photo-table"  style="text-align: left;">
                     <li>Name: Luca Andrei Iulian</li>
                     <li>Age: 20</li>
                     <li>Hobbies: Reading, Music, Guitar, Fishing</li>

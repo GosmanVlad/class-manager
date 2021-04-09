@@ -14,11 +14,13 @@ echo '<nav class="content-center">
         <li>Grades assigned: 20</li>
         <li>You teach the following classes: A3, B2, E3</li>
     </ul>
+    <a href="calculator.php" class="button-app">
     <li class="button-item">
         SD
         <span class="btn"></span><span class="btn"></span><span class="btn"></span><span
             class="btn"></span>
     </li>
+    </a>
     <ul class="button-info">
         <li>Number of students: 100</li>
         <li>Grades assigned: 16</li>
