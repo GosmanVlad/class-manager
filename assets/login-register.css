@@ -1,7 +1,3 @@
-html {
-    cursor: url('images/pencil.svg') 0 24, pointer;
-}
-
 body, html {
     height: 100%;
     margin: 0;
@@ -11,6 +7,15 @@ body, html {
 h2, label, a {
     font-family: 'Open Sans', sans-serif;
     padding: 0;
+}
+
+.cursor {
+    cursor: url('images/pencil.svg') 0 24, pointer;
+}
+
+.background-photo {
+    background-image: url("images/school.jpg");
+    
 }
 
 button {
