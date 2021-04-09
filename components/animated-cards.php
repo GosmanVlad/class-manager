@@ -2,11 +2,13 @@
 echo '<nav class="content-center">
 <ul class="button-list">
     <p class="button-text">Please choose your subject:</p>
+    <a href="class.php" class="button-app">
     <li class="button-item">
         ACSO
         <span class="btn"></span><span class="btn"></span><span class="btn"></span><span
             class="btn"></span>
     </li>
+    </a>
     <ul class="button-info">
         <li>Number of students: 200</li>
         <li>Grades assigned: 20</li>

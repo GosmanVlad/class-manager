@@ -89,9 +89,9 @@
                 <p id="footer">Do you have any suggestions and/or feedback?</p>
                 <p id="footer">Don't hesitate to contact us at:</p>
                 <p id="footer">
-                    <li><a href="mailto:gosman.vlad95@yahoo.com" style="color: white"><u>gosman.vlad95@yahoo.com</u></a></li>
+                    <li><a href="mailto:gosman.vlad95@yahoo.com" id="mail"><u>gosman.vlad95@yahoo.com</u></a></li>
                 <p id="footer">
-                    <li><a href="mailto:luca_andrei_iulian@yahoo.com" style="color: white"><u>luca_andrei_iulian@yahoo.com</u></a></li>
+                    <li><a href="mailto:luca_andrei_iulian@yahoo.com" id="mail"><u>luca_andrei_iulian@yahoo.com</u></a></li>
                 </p>
             </footer>
     </div>
