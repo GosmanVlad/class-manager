@@ -21,17 +21,6 @@ form {
     display: inline-block;
 }
 
-.background-photo {
-    background-image: url("images/school.jpg");
-    height: 100%;
-    margin: 0;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    
-}
-
 .form-container {
     border: 5px inset #834702;
     right: 0;
@@ -40,6 +29,7 @@ form {
     padding: 16px;
     border-radius: 8px;
     background-color: white;
+    display: inline-block;
 }
 
 input[type=text], input[type=password] {
