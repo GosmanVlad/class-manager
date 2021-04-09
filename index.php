@@ -15,7 +15,7 @@
             </p>
            <div class="topright">Hello, <?php echo $_SESSION['last_name']; ?></div>
            
-           <div class="row">
+           <div class="row content-center">
                <?php 
                     if(isset($_SESSION['teacher'])) {
                         echo'<div class="column">

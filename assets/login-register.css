@@ -15,7 +15,14 @@ h2, label, a {
 
 .background-photo {
     background-image: url("images/school.jpg");
-    
+    height: 100%;
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 button {
@@ -37,7 +44,7 @@ form {
     display: inline-block;
 }
 
-input[type=text], input[type=password] {
+.input-login-register {
     width: 100%;
     padding: 12px 20px;
     margin: 6px;
@@ -46,11 +53,6 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
     cursor: url('images/pencil.svg') 0 24, pointer;
 }
-
-a, label, #recover, #login, #student, #teacher {
-    cursor: url('images/pencil.svg') 0 24, move;
-}
-
 button {
     background-color: #4CAF50;
     color: white;
@@ -74,5 +76,4 @@ button:hover {
     opacity: 0.7;
     background-color: red;
     color: black;
-    cursor: url('images/pencil.svg') 0 24, pointer;
 }

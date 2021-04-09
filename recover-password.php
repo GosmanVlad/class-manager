@@ -2,7 +2,7 @@
 <html lang="ro">
 <?php include('./components/header.php');?>
 
-<body class="background-photo">
+<body class="background-photo cursor">
 
     <form class="form-container">
 

@@ -258,13 +258,13 @@ footer {
     }
 }
 
-nav .button-list {
+.button-list {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-nav .button-list .button-item {
+.button-item {
     --c: goldenrod;
     color: var(--c);
     font-size: 16px;
@@ -286,7 +286,7 @@ nav .button-list .button-item {
     padding-top:10%;
 }
 
-nav .button-list .button-item .btn{
+.button-item .btn{
     position: absolute;
     width: 25%;
     height: 100%;
@@ -299,27 +299,27 @@ nav .button-list .button-item .btn{
     z-index: -1;
 }
 
-nav .button-list .button-item:hover {
+.button-item:hover {
     color: black;
 }
 
-nav .button-list .button-item:hover .btn{
+.button-item:hover .btn{
     transform: translateY(0) scale(2);
 }
 
-nav .button-list .button-item .btn:nth-child(1) {
+.button-item .btn:nth-child(1) {
     --n: 1;
 }
 
-nav .button-list .button-item .btn:nth-child(2) {
+.button-item .btn:nth-child(2) {
     --n: 2;
 }
 
-nav .button-list .button-item .btn:nth-child(3) {
+.button-item .btn:nth-child(3) {
     --n: 3;
 }
 
-nav .button-list .button-item .btn:nth-child(4) {
+.button-item .btn:nth-child(4) {
     --n: 4;
 }
 
@@ -376,4 +376,11 @@ nav .button-list .button-item .btn:nth-child(4) {
 
 .card-purple {
     background-color: #A11FDE;
+}
+
+.content-center {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
