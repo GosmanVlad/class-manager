@@ -6,11 +6,12 @@ function showNavMenu() {
     include './components/nav-menu.php';
 }
 
-function showCards($section) {
+function showCards($section, $page = '') {
     if($section == 'home') {
         include './components/colored-cards.php'; 
     }
     else if($section == 'selection') {
+        $_SESSION['selection-page'] = $page;
         include './components/animated-cards.php';
     }
     else echo 'another section';
