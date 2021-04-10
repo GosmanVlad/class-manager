@@ -575,7 +575,7 @@ footer {
     width: 250px;
     height: 400px;
     margin-top: 5%;
-    margin-left: 50%;
+    margin-left: 40%;
     border-radius: 10px;
     background: rgb(214, 214, 214);
     box-shadow: 5px 5px 10px #b6a9a9, -5px -5px 10px #ffffff;
@@ -598,7 +598,7 @@ footer {
     box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff;
 }
 
-.button {
+.button-calc {
     margin: 15px 0 0 5px;
     width: 42px;
     height: 42px;
@@ -613,7 +613,7 @@ footer {
     display: inline-block;
 }
 
-.button:active {
+.button-calc:active {
     box-shadow: inset 1px 1px 2px #babeec, inset -1px -1px 2px #ffffff;
 }
 

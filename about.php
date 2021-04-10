@@ -6,7 +6,7 @@
     <div class="background-color">
         <?php showNavMenu(); ?>
         <main>
-            <h1 id="title">
+            <h1 id="title" >
                 About Us
             </h1>
             <p>
