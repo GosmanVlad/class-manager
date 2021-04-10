@@ -26,11 +26,13 @@ echo '<nav class="content-center">
         <li>Grades assigned: 16</li>
         <li>You teach the following classes: A1, B4, E1, E2</li>
     </ul>
+    <a href="assesments.php" class="button-app">
     <li class="button-item">
         LOGICA
         <span class="btn"></span><span class="btn"></span><span class="btn"></span><span
             class="btn"></span>
     </li>
+    </a>
     <ul class="button-info">
         <li>Number of students: 120</li>
         <li>Grades assigned: 30</li>

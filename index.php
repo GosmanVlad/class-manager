@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php 
+<?php
 include('./components/header.php');
-if(!isLogged())
+if (!isLogged())
     header("Location: login.php");
 ?>
 
 <body>
     <div class="content">
         <?php showNavMenu(); ?>
-        <div class="topright">Hello, <?php echo $_SESSION['last_name'] . ' ' . $_SESSION['first_name'];?>!</div>
+        <div class="topright">Hello, <?php echo $_SESSION['last_name'] . ' ' . $_SESSION['first_name']; ?>!</div>
         <main>
             <h1>
                 Welcome to Class Manager
@@ -20,7 +20,7 @@ if(!isLogged())
             <?php showCards('home'); ?>
             <hr />
 
-            <?php if(isTeacher()) {?>
+            <?php if (isTeacher()) { ?>
                 <h2>Registration applications</h2>
                 <table id="table-style">
                     <tr>
@@ -42,7 +42,7 @@ if(!isLogged())
                         <td><a href="#" class="button-style btn-green btn-small">Approve</a> / <a href="#" class="button-style btn-red btn-small">Reject</a></td>
                     </tr>
                 </table>
-            <?php } else if(isStudent()) {?> 
+            <?php } else if (isStudent()) { ?>
                 <h2>What you study:</h2>
                 <table id="table-style">
                     <tr>

@@ -67,19 +67,19 @@
             </table>
             <div class="input-box">
                 <h2>Generator</h2>
-                <input type="text" name="" placeholder="Random Code" id="code" readonly=""> 
+                <input type="text" name="" placeholder="Random Code" id="code" readonly="">
                 <div id="generate-btn" onclick="getCode();">Generate your presence code</div>
                 <script type="text/javascript">
-                function getCode(){
-                    var chars = "0123456789abcdefghijklmnopqrstuvwxtzABCDEFGHIJKLMNOPQRSTUVWXTZ";
-                    var codeLength = 6;
-                    var code = "";
-                    for(var i=0; i < codeLength; i++){
-                        var randomChar = Math.floor(Math.random() * chars.length);
-                        code += chars.substring(randomChar, randomChar + 1);
+                    function getCode() {
+                        var chars = "0123456789abcdefghijklmnopqrstuvwxtzABCDEFGHIJKLMNOPQRSTUVWXTZ";
+                        var codeLength = 6;
+                        var code = "";
+                        for (var i = 0; i < codeLength; i++) {
+                            var randomChar = Math.floor(Math.random() * chars.length);
+                            code += chars.substring(randomChar, randomChar + 1);
+                        }
+                        document.getElementById("code").value = code;
                     }
-                    document.getElementById("code").value = code;
-                }
                 </script>
             </div>
         </main>
