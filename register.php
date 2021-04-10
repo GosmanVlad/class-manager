@@ -64,6 +64,13 @@ if(isLogged())
                     }
                 ?>
             </select>
+            <select name="group_number">
+                <?php 
+                    foreach (range('1', '6') as $letter){
+                        echo "<option value=$letter>$letter</option>";
+                    }
+                ?>
+            </select>
         </div>
 
         <button class="button-style btn-pencil btn-green btn-full btn-medium cursor" type="submit">Register</button>

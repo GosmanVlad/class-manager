@@ -44,6 +44,7 @@
                         <th>Name of the file</th>
                         <th>Grade given</th>
                         <th>Additional message from you</th>
+                        <th>Download</th>
                         <th>Submit</th>
                     </tr>
                     <tr>
@@ -63,6 +64,9 @@
                             </select>
                         </td>
                         <td><input type="text" id="message"></td>
+                        <td>
+                            <button type="button" class="button-style btn-small btn-red">Download</button>
+                        </td>
                         <td>
                             <input type="submit" class="btn-small btn-cyan">
                         </td>
@@ -84,6 +88,9 @@
                             </select>
                         </td>
                         <td><input type="text" id="message"></td>
+                        <td>
+                            <button type="button" class="button-style btn-small btn-red">Download</button>
+                        </td>
                         <td>
                             <input type="submit" class="btn-small btn-cyan">
                         </td>
