@@ -132,6 +132,14 @@ svg {
 
 /*small screens*/
 
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .navbar {
         bottom: 0;
@@ -154,6 +162,17 @@ svg {
     .input-box {
         overflow: hidden;
         width: auto;
+    }
+    .people {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    footer{
+    font-size: small;
+    }
+    #table-style{
+        overflow: scroll;
     }
 }
 
@@ -343,14 +362,6 @@ footer {
     float: left;
     width: 25%;
     padding: 0 10px;
-}
-
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%;
-        display: block;
-        margin-bottom: 20px;
-    }
 }
 
 .card {

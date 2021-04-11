@@ -50,7 +50,8 @@
                         </a>
                     </li>
                 </ul>
-
+                </div>
+                <div class="people">
                 <img class="margin-left-5" src="assets/images/about-page/Andrei.jpg" alt="Luca Andrei Iulian" width="200" height="300">
                 <ul class="photo-table" style="text-align: left;">
                     <li>Name: Luca Andrei Iulian</li>
