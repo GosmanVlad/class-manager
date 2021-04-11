@@ -132,7 +132,7 @@ svg {
 
 /*small screens*/
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .column {
         width: 100%;
         display: block;
@@ -164,6 +164,7 @@ svg {
         width: auto;
     }
     .people {
+        justify-content: center;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -247,10 +248,8 @@ footer {
 }
 
 .people {
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    
+    display:inline;
 }
 
 .margin-left-5 {
