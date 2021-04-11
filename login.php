@@ -13,12 +13,12 @@ if(isLogged())
         <img src="<?php echo '' . URL . '' ?>assets/images/stud.svg" width="50" height="50" alt="Graduation Logo">
         <div class="margin-20">
             <label for="uname"><b>Email</b></label>
-            <input class="input-login-register" name="email" type="text" class="button" placeholder="Enter Username" required>
+            <input class="input-login-register button" name="email" type="text" placeholder="Enter Username" required>
         </div>
 
         <div class="margin-20">
             <label for="psw"><b>Password</b></label>
-            <input class="input-login-register" name="password" type="password" class="button" placeholder="Enter Password" required>
+            <input class="input-login-register button" name="password" type="password" placeholder="Enter Password" required>
         </div>
 
         <button class="button-style btn-pencil btn-cyan btn-full btn-medium cursor" type="submit">Login</button>

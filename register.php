@@ -12,32 +12,32 @@ if(isLogged())
 
         <div class="margin-20">
             <label for="uname"><b>Username</b></label>
-            <input class="input-login-register" name="username" type="text" class="button" placeholder="Enter Username" required>
+            <input class="input-login-register button" name="username" type="text"  placeholder="Enter Username" required>
         </div>
 
         <div class="margin-20">
             <label for="uname"><b>First Name</b></label>
-            <input class="input-login-register" name="first_name" type="text" class="button" placeholder="Enter First Name" required>
+            <input class="input-login-register button" name="first_name" type="text"  placeholder="Enter First Name" required>
         </div>
 
         <div class="margin-20">
             <label for="uname"><b>Last Name</b></label>
-            <input class="input-login-register" name="last_name" type="text" class="button" placeholder="Enter Last Name" required>
+            <input class="input-login-register button" name="last_name" type="text" placeholder="Enter Last Name" required>
         </div>
 
         <div class="margin-20">
             <label for="email"><b>E-mail</b></label>
-            <input class="input-login-register" name="email" type="text" class="button" placeholder="Enter E-mail" required>
+            <input class="input-login-register button" name="email" type="text"  placeholder="Enter E-mail" required>
         </div>
 
         <div class="margin-20">
             <label for="psw"><b>Password</b></label>
-            <input class="input-login-register" name="password" type="password" class="button" placeholder="Enter Password" required>
+            <input class="input-login-register button" name="password" type="password"  placeholder="Enter Password" required>
         </div>
 
         <div class="margin-20">
             <label for="psw"><b>Confirm password</b></label>
-            <input class="input-login-register" name="repeat-password" type="password" class="button" placeholder="Enter password again" required>
+            <input class="input-login-register button" name="repeat-password" type="password"  placeholder="Enter password again" required>
         </div>
 
         <p>I'm a : </p>

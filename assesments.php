@@ -8,7 +8,7 @@
         <main>
             <?php if (isStudent()) { ?>
                 <h2 style="text-align: left;">Files you have uploaded so far:</h2>
-                <table id="table-style" style="text-align: left;">
+                <table class="table-style" style="text-align: left;">
                     <tr>
                         <th>Name of the file</th>
                         <th>Grade Received</th>
@@ -38,7 +38,7 @@
                 </form>
             <?php } else if (isTeacher()) { ?>
                 <h2 style="text-align: left;">Files you haven't graded yet</h2>
-                <table id="table-style" style="text-align: left;">
+                <table class="table-style" style="text-align: left;">
                     <tr>
                         <th>Name of the student</th>
                         <th>Name of the file</th>
@@ -63,7 +63,7 @@
                                 <option>10</option>
                             </select>
                         </td>
-                        <td><input type="text" id="message"></td>
+                        <td><input type="text" class="message"></td>
                         <td>
                             <button type="button" class="button-style btn-small btn-red">Download</button>
                         </td>
@@ -87,7 +87,7 @@
                                 <option>10</option>
                             </select>
                         </td>
-                        <td><input type="text" id="message"></td>
+                        <td><input type="text" class="message"></td>
                         <td>
                             <button type="button" class="button-style btn-small btn-red">Download</button>
                         </td>
@@ -103,7 +103,3 @@
 </body>
 
 </html>
-
-<!-- Particular style only for this page  -->
-<style>
-</style>

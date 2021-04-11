@@ -33,12 +33,12 @@
                         <option>Group E4</option>
                     </select>
                 </h3>
-                <table id="table-style" style="text-align: left;">
+                <table class="table-style" style="text-align: left;">
                     <tr>
                         <th>Name of Student</th>
                         <th>Group</th>
                         <th>Grades</th>
-                        <th id="fit">Presence</th>
+                        <th>Presence</th>
                         <th>Revoke this student</th>
                     </tr>
                     <tr>
@@ -89,9 +89,10 @@
                         </select>
                         minutes.
                     </h3>
-                    <input type="text" name="" placeholder="Random Code" id="code" readonly="">
+                    <input type="text" name="code" placeholder="Random Code" readonly="">
                     <div class="generate-btn" onclick="getCode();">Generate your presence code</div>
-                    <script type="text/javascript">
+
+                    <script>
                         function getCode() {
                             var chars = "0123456789abcdefghijklmnopqrstuvwxtzABCDEFGHIJKLMNOPQRSTUVWXTZ";
                             var codeLength = 6;
@@ -105,11 +106,11 @@
                     </script>
                 </div>
             <?php } else if (isStudent()) { ?>
-                <table id="table-style" style="text-align: left;">
+                <table class="table-style" style="text-align: left;">
                     <tr>
                         <th>Course Name</th>
                         <th>Your Grades</th>
-                        <th id="fit">Number of presences</th>
+                        <th>Number of presences</th>
                     </tr>
                     <tr>
                         <td>ACSO</td>
@@ -129,7 +130,7 @@
                 </table>
                 <div class="input-box">
                     <h2 class="input-box-h2">Please input your presence code:</h2>
-                    <input type="text" name="" placeholder="" id="code">
+                    <input type="text" name="code" placeholder="" id="code">
                     <div class="generate-btn">Submit</div>
                 </div>
             <?php } ?>
@@ -138,7 +139,3 @@
 </body>
 
 </html>
-
-<!-- Particular style only for this page  -->
-<style>
-</style>

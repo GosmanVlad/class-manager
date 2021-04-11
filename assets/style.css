@@ -169,11 +169,14 @@ svg {
         flex-direction: column;
         flex-wrap: nowrap;
     }
-    footer{
-    font-size: small;
+    footer {
+        font-size: small;
     }
-    #table-style{
+    .table-style {
         overflow: scroll;
+    }
+    .navbar:hover .link-text {
+        display: none;
     }
 }
 
@@ -219,7 +222,7 @@ footer {
 .logo-footer {
     margin-top: 10px;
     -webkit-animation-duration: 1s;
-    -moz-animation-duration:1s;
+    -moz-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
@@ -248,12 +251,11 @@ footer {
 }
 
 .people {
-    
-    display:inline;
+    display: inline;
 }
 
 .margin-left-5 {
-    margin-left:5px;
+    margin-left: 5px;
 }
 
 @keyframes bounce {
@@ -400,26 +402,26 @@ footer {
 
 /* STYLE FOR THE TABLE */
 
-#table-style {
+.table-style {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
 
-#table-style td, #customers th {
+.table-style td, #customers th {
     border: 1px solid #c5c3c3;
     padding: 8px;
 }
 
-#table-style tr:nth-child(even) {
+.table-style tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-#table-style tr:hover {
+.table-style tr:hover {
     background-color: #ddd;
 }
 
-#table-style th {
+.table-style th {
     padding-left: 12px;
     padding-top: 12px;
     padding-bottom: 12px;
@@ -516,7 +518,6 @@ footer {
 .thick-logo {
     fill: black;
 }
-
 
 .input-box {
     position: relative;
@@ -630,4 +631,8 @@ footer {
     text-align: center;
     font-family: "Open Sans";
     margin-left: 100px;
+}
+
+.hide-point li {
+    list-style-type: none;
 }

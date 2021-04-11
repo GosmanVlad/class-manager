@@ -33,12 +33,12 @@
                         <option>Group E4</option>
                     </select>
                 </h3>
-                <table id="table-style" style="text-align: left;">
+                <table class="table-style" style="text-align: left;">
                     <tr>
                         <th>Name of Student</th>
                         <th>Group</th>
                         <th>Grades</th>
-                        <th id="fit">Arithmetic Mean</th>
+                        <th>Arithmetic Mean</th>
                     </tr>
                     <tr>
                         <td>Luca Andrei Iulian</td>
@@ -92,11 +92,11 @@
                 </div>
             <?php } else if (isStudent()) { ?>
                 <h2 style="text-align: left;">Calculator</h2>
-                <table id="table-style" style="text-align: left;">
+                <table class="table-style" style="text-align: left;">
                     <tr>
                         <th>Course name</th>
                         <th>Your Grades</th>
-                        <th id="fit">Arithmetic Mean</th>
+                        <th>Arithmetic Mean</th>
                     </tr>
                     <tr>
                         <td>Introduction to programming</td>
@@ -146,7 +146,3 @@
 </body>
 
 </html>
-
-<!-- Particular style only for this page  -->
-<style>
-</style>

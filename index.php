@@ -22,7 +22,7 @@ if (!isLogged())
 
             <?php if (isTeacher()) { ?>
                 <h2>Registration applications</h2>
-                <table id="table-style">
+                <table class="table-style">
                     <tr>
                         <th>Student</th>
                         <th>Year and Group</th>
@@ -44,7 +44,7 @@ if (!isLogged())
                 </table>
             <?php } else if (isStudent()) { ?>
                 <h2>What you study:</h2>
-                <table id="table-style">
+                <table class="table-style">
                     <tr>
                         <th>Course</th>
                         <th>Credits</th>

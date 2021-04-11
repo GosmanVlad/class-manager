@@ -13,12 +13,13 @@
                 First of all, thank you for using our product!
             </p>
             <p>We made this app with the only goal so we get to see that:<br>
+            <ul class="hide-point">
                 <li>Every teacher gets the chance to easily manage their classes and students so they can focus on more
                     important things;
                 <li>Every student gets to see in real time and in an interactive way their grades and making the whole
                     concept of sending assesments, checking your grades and moving to another class at any time you want
                     easier than ever.</li>
-                </ul>
+            </ul>
             <p><b>Thank you</b> for trusting our services.</p>
 
             <p>About developers:</p>
@@ -50,8 +51,8 @@
                         </a>
                     </li>
                 </ul>
-                </div>
-                <div class="people">
+            </div>
+            <div class="people">
                 <img class="margin-left-5" src="assets/images/about-page/Andrei.jpg" alt="Luca Andrei Iulian" width="200" height="300">
                 <ul class="photo-table" style="text-align: left;">
                     <li>Name: Luca Andrei Iulian</li>
@@ -77,21 +78,19 @@
             </div>
         </main>
         <footer>
-            <img class="logo-footer" src="Favicon\android-chrome-512x512.png" alt="Logo ClaMa" width="50" height="50">
+            <img class="logo-footer" src="Favicon/android-chrome-512x512.png" alt="Logo ClaMa" width="50" height="50">
             <p class="color-white">Developers: Gosman Vladut Andrei & Luca Andrei Iulian</p>
             <p class="color-white">Do you have any suggestions and/or feedback?</p>
             <p class="color-white">Don't hesitate to contact us at:</p>
-            <p class="color-white">
+            <ul class="hide-point">
                 <li><a href="mailto:gosman.vlad95@yahoo.com" class="mail"><u>gosman.vlad95@yahoo.com</u></a></li>
-            <p class="color-white">
+            </ul>
+            
+            <ul class="hide-point">
                 <li><a href="mailto:luca_andrei_iulian@yahoo.com" class="mail"><u>luca_andrei_iulian@yahoo.com</u></a></li>
-            </p>
+            </ul>
         </footer>
     </div>
 </body>
 
 </html>
-
-<!-- Particular style only for this page  -->
-<style>
-</style>
