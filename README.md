@@ -16,4 +16,4 @@ Aplicația trebuie să poată fi folosită simultan la diferite materii și în 
 
 
 Apasa mai jos pentru a vedea videoclipul proiectului
-![Video class manager](https://i.imgur.com/22jbRrJ.png)(https://www.youtube.com/watch?v=tGNoWSWGAQQ)
+[![Video class manager](https://i.imgur.com/22jbRrJ.png)](https://www.youtube.com/watch?v=tGNoWSWGAQQ)
