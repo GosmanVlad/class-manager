@@ -13,12 +13,12 @@
   <header>
     <h1>Class Manager</h1>
   </header>
-
+  
   <div role="contentinfo">
     <dt>Authors</dt>
     <ul>
-      <li>Luca Andrei Iulian </li>
-      <li>Go&#351;man Vl&#259;du&#355;-Andrei</li>
+      <li property="schema:author" typeof="sa:developerRole">Luca Andrei Iulian </li>
+      <li property="schema:author" typeof="sa:developerRole">Go&#351;man Vl&#259;du&#355;-Andrei</li>
     </ul>
   </div>
 
@@ -48,9 +48,9 @@
     </p>
   </section>
 
-  <section id="implementation">
+  <section typeof="sa:Implementation" id="implementation" role="doc-example"> 
     <h2>Sisteme implementate</h2>
-    <section id="register">
+    <section typeof="sa:registerImplementation">
       <h3>Sistemul de inregistrare</h3>
       <p>
         Platforma necesită un cont valid pentru a putea folosi într-un mod eficient întregul sistem. Astfel, pentru
@@ -66,7 +66,7 @@
       </p>
     </section>
 
-    <section id="login">
+    <section typeof="sa:loginImplementation">
       <h3>Sistemul de autentificare</h3>
       <p>
         Similar, pentru sistemul de autentificare, se completează câmpurile cu date valide din baza de date (în caz
@@ -75,13 +75,13 @@
       </p>
     </section>
 
-    <section id="mainpage">
+    <section typeof="sa:mainPage">
       <h3>Pagina principala</h3>
       <p>
         Accesul pe pagina principala se face doar cu un cont valid, autentificat.
       </p>
 
-      <section id="student-mainpage">
+      <section typeof="sa:studentMainpage">
         <h4>Cont de student</h4>
         <p>
           După prima autentificare cu un cont de student, acestuia îi va apărea pe pagina principală materiile din anul
@@ -95,7 +95,7 @@
         </p>
       </section>
 
-      <section id="teacher-mainpage">
+      <section typeof="sa:teacherMainpage">
         <h4>Cont de profesor</h4>
         <p>
           Profesorul va fi repartizat la o anumită grupa (specificată de administratorul platformei odată cu aprobarea
@@ -108,7 +108,7 @@
     </section>
   </section>
 
-  <section id="development-environment">
+  <section typeof="sa:developmentEnvironment" id="development-environment">
     <h2>Mediu de dezvoltare</h2>
     <p>
       Inițial s-a creat sistemul care conectează platforma cu baza de date MariaDB, folosind MySQL PDO (PHP Data
@@ -127,7 +127,7 @@
     </p>
   </section>
 
-  <section id="working-environment">
+  <section typeof="sa:workingEnvironment" id="working-environment">
     <h2>Mediu de lucru</h2>
     <p>
       S-a folosit git pentru versionare, respectiv pentru dezvoltarea proiectului într-un mod curat si sigur.
@@ -141,9 +141,9 @@
     </p>
   </section>
 
-  <section id="design-motivation">
+  <section typeof="sa:designMotivation" id="motivation">
     <h2>Motivatia design-ului</h2>
-    <section id="management-pages">
+    <section typeof="sa:managementPages" id="management-pages">
       <h3>Design-ul pentru paginile de Log-In, Register, Recover Password</h3>
       <p>Pentru acest proiect am optat pentru un design simplu si intuitiv.Pentru paginile de log-in, register si
         password recover am folosit o imagine de fundal relevanta no copyright ce are la baza culoarea blue navy,
@@ -155,7 +155,7 @@
         potrivi cu fundalul, chenar ce contine un logo svg tematic alaturi de titlul relevant paginii respective.</p>
     </section>
 
-    <section id="main-frame">
+    <section typeof="sa:mainFrame" id="main-frame">
       <h3>Design-ul pentru paginile principale ale proiectului</h3>
       <p>Pentru paginile principale ale aplicației noastre WEB (Home, Class, Assesment Grades, Calculator, About) am
         folosit un navbar vertical responsive pentru intuitivitatea ce ne oferă de culoare dark grayish navy
@@ -172,85 +172,127 @@
 
   </section>
 
-  <section id="prototype-images">
+  <section typeof="sa:prototypes" id="prototype-images">
     <h2>Imagini ale prototipului (imagini comprimate din cauza rezolutiei):</h2>
 
-    <section id="login">
+    <section typeof="sa:loginPrototype" id="login">
       <h3>Pagina principala de log-in</h3>
-      <img src="images/login.png" width="800" height="450" alt="log-in">
+      <figure typeof="sa:image">
+        <img src="images/login.png" width="800" height="450" alt="log-in">
+        <figcaption>Pagina autentificare comuna</figcaption>
+      </figure>
     </section>
 
-    <section id="recover">
+    <section typeof="sa:recoverPrototype" id="recover">
       <h3>Pagina de recuperare a parolei</h3>
-      <img src="images/recover.png" width="800" height="450" alt="recover password">
+      <figure typeof="sa:image">
+        <img src="images/recover.png" width="800" height="450" alt="recover password">
+        <figcaption>Recuperare parola pe baza trimiterii unui email</figcaption>
+      </figure>
     </section>
 
-    <section id="register">
-      <h3>Pagina de inregistrare a profesorilor/studentilor - alternativa pe langa inregistrarea lor cu ajutorul
-        fisierelor XML</h3>
-      <img src="images/recover.png" width="800" height="450" alt="recover password">
+    <section typeof="sa:registerPrototype" id="register">
+      <h3>Pagina de inregistrare</h3>
+      <figure typeof="sa:image">
+        <img src="images/register.png" width="800" height="450" alt="recover password">
+        <figcaption>Pagina de inregistrare a unui cont de profesor/student, alternativa pe langa inregistrarea lor cu ajutorul
+          fisierelor XML</figcaption>
+      </figure>
     </section>
 
-    <section id="teachers">
+    <section typeof="sa:teachersModule" id="teachers">
       <h3>Cont tip Profesor</h3>
-      <section id="homepage">
-        <h3>Home page pentru profesori</h3>
-        <img src="images/home-page-teachers.jpeg" width="800" height="450" alt="home page for teachers">
+      <section typeof="sa:homepagePrototypeTeacher" id="homepage">
+        <h3>Home page</h3>
+        <figure typeof="sa:image">
+          <img src="images/home-page-teachers.jpeg" width="800" height="450" alt="home page for teachers">
+          <figcaption>Pagina principala pentru contul de profesori</figcaption>
+        </figure>
       </section>
 
-      <section id="subject-selection">
-        <h3>Pagina de selectare a materiei pentru profesori</h3>
-        <img src="images/subject-selection-teachers.jpeg" width="800" height="450" alt="home page for teachers">
+      <section typeof="sa:selectionPrototypeTeacher" id="subject-selection">
+        <h3>Pagina de selectare a materiei</h3>
+        <figure typeof="sa:image">
+          <img src="images/subject-selection-teachers.jpeg" width="800" height="450" alt="selection page for teachers">
+          <figcaption>Pagina de selectare a materiei, pagina care te redirectioneaza pe diverse pagini, pentru administrarea lor</figcaption>
+        </figure>
       </section>
 
-      <section id="class">
-        <h3>Class page pentru profesori (fotografie extinsa, nu este site-ul original)</h3>
-        <img src="images/thecatalog-teachers.jpeg" width="800" height="450" alt="catalog page for teachers">
+      <section typeof="sa:classPrototypeTeacher" id="class">
+        <h3>Class page</h3>
+        <figure typeof="sa:image">
+          <img src="images/thecatalog-teachers.jpeg" width="800" height="450" alt="catalog page for teachers">
+          <figcaption>Catalogul profesorilor, in functie de materie (fotografie extinsa, nu este site-ul original).</figcaption>
+        </figure>
       </section>
 
-      <section id="assesment">
-        <h3>Assesment page pentru profesori</h3>
-        <img src="images/grade-assesments-teachers.jpeg" width="800" height="450" alt="assesment page for teachers">
+      <section typeof="sa:assesmentPrototypeTeacher" id="assesment">
+        <h3>Assesment page</h3>
+        <figure typeof="sa:image">
+          <img src="images/grade-assesments-teachers.jpeg" width="800" height="450" alt="assesment page for teachers">
+          <figcaption>Pagina unde profesorii pot corecta temele/lucrarile studentilor.</figcaption>
+        </figure>
       </section>
 
-      <section id="calculator">
-        <h3>Calculator page pentru profesori</h3>
-        <img src="images/the-calculator-teachers.jpeg" width="800" height="450" alt="calculator page for teachers">
+      <section typeof="sa:calculatorPrototypeTeacher" id="calculator">
+        <h3>Calculator</h3>
+        <figure typeof="sa:image">
+          <img src="images/the-calculator-teachers.jpeg" width="800" height="450" alt="calculator page for teachers">
+          <figcaption>Pagina de calculator care permite calcularea mediei fiecarui student. Calculatorul afisat in partea de jos a paginii permite calcularea mediilor cu usurinta.</figcaption>
+        </figure>
       </section>
     </section>
 
     <section id="students">
       <h3>Cont tip Student</h3>
-      <section id="homepage">
-        <h3>Home page pentru studenti</h3>
-        <img src="images/home-page-student.png" width="800" height="450" alt="home page for students">
+      <section typeof="sa:homePageStudent" id="homepage">
+        <h3>Home page</h3>
+        <figure typeof="sa:image">
+          <img src="images/home-page-student.png" width="800" height="450" alt="home page for students">
+          <figcaption>Pagina principala pentru studenti. Informatiile afisate sunt diferite fata de cele afisate profesorilor.</figcaption>
+        </figure>
       </section>
 
       <section id="class">
-        <h3>Class page pentru studenti</h3>
-        <img src="images/class-page-student.png" width="800" height="450" alt="catalog page for students">
+        <h3>Class page</h3>
+        <figure typeof="sa:classPageStudent" typeof="sa:image">
+          <img src="images/class-page-student.png" width="800" height="450" alt="catalog page for students">
+          <figcaption>Pagina ce permite introducerea codului de prezenta si vizualizarea informatiilor pentru fiecare materie.</figcaption>
+        </figure>
       </section>
 
-      <section id="assesment">
-        <h3>Assesment page pentru studenti</h3>
-        <img src="images/assesments-page-student.png" width="800" height="450" alt="assesment page for students">
+      <section typeof="sa:assesmentPageStudent" id="assesment">
+        <h3>Assesment page</h3>
+        <figure typeof="sa:image">
+          <img src="images/assesments-page-student.png" width="800" height="450" alt="assesment page for students">
+          <figcaption>Pagina unde studentii isi pot incarca lucrarile si notele primite, respectiv comentarii din partea profesorului.</figcaption>
+        </figure>
       </section>
 
-      <section id="calculator">
-        <h3>Calculator page pentru studenti</h3>
-        <img src="images/calculator-page-student.png" width="800" height="450" alt="calculator page for students">
+      <section typeof="sa:calculatorPageStudent" id="calculator">
+        <h3>Calculator</h3>
+        <figure typeof="sa:image">
+          <img src="images/calculator-page-student.png" width="800" height="450" alt="calculator page for students">
+          <figcaption>Locul unde fiecare student isi poate calcula singur media.</figcaption>
+        </figure>
       </section>
     </section>
     
-    <section id="navbar">
+    <section typeof="sa:navigationMenu" id="navbar">
       <h3>The Nav Bar</h3>
-      <img src="images/navbar.png" width="800" height="450" alt="navbar">
+      <figure typeof="sa:image">
+        <img src="images/navbar.png" width="800" height="450" alt="navbar">
+        <figcaption>Meniul de unde poti naviga pe intregul site.</figcaption>
+      </figure>
     </section>
 
-    <section id="about">
+    <section typeof="sa:aboutPage" id="about">
       <h3>About Page</h3>
-      <img src="images/about-page1.png" width="800" height="450" alt="about page">
-      <img src="images/about-page2.png" width="800" height="450" alt="about page">
+      <figure typeof="sa:image">
+        <img src="images/about-page1.png" width="800" height="450" alt="about page">
+        <img src="images/about-page2.png" width="800" height="450" alt="about page">
+        <figcaption>Pagina de about cu informatii despre site, dezvoltatorii, informatii de contact.</figcaption>
+      </figure>
     </section>
 
   </section>
