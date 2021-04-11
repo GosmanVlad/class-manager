@@ -33,7 +33,7 @@ if (!isLogged())
                         <td>Gosman Vlad</td>
                         <td>2E3</td>
                         <td>Web technologies</td>
-                        <td><a href="#">Approve</a> / <a href="#">Reject</a></td>
+                        <td><a href="#" class="button-style btn-green btn-small">Approve</a> / <a href="#" class="button-style btn-red btn-small">Reject</a></td>
                     </tr>
                     <tr>
                         <td>Luca Andrei Iulian</td>

@@ -65,7 +65,7 @@
                 <div class="container">
                     <div class="cal-box">
                         <form name="calculator">
-                            <input id="display" type="text" name="display" placeholder="Do a calculation" readonly>
+                            <input class="display" type="text" name="display" placeholder="Do a calculation" readonly>
                             <br>
                             <input class="button-calc" type="button" name="button" value="7" onclick="calculator.display.value +='7'">
                             <input class="button-calc" type="button" name="button" value="8" onclick="calculator.display.value +='8'">
@@ -115,7 +115,7 @@
                 <div class="container">
                     <div class="cal-box">
                         <form name="calculator">
-                            <input id="display" type="text" name="display" placeholder="Do a calculation" readonly>
+                            <input class="display" type="text" name="display" placeholder="Do a calculation" readonly>
                             <br>
                             <input class="button-calc" type="button" name="button" value="7" onclick="calculator.display.value +='7'">
                             <input class="button-calc" type="button" name="button" value="8" onclick="calculator.display.value +='8'">

@@ -44,7 +44,7 @@
                         <td>Luca Andrei Iulian</td>
                         <td>E3</td>
                         <td>9</td>
-                        <td><svg id="thick-logo" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <td><svg class="thick-logo" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path d="M5.48 10.089l1.583-1.464c1.854.896 3.028 1.578 5.11 3.063 3.916-4.442 6.503-6.696 11.312-9.688l.515 1.186c-3.965 3.46-6.87 7.314-11.051 14.814-2.579-3.038-4.301-4.974-7.469-7.911zm12.52 3.317v6.594h-16v-16h15.141c.846-.683 1.734-1.341 2.691-2h-19.832v20h20v-11.509c-.656.888-1.318 1.854-2 2.915z" />
                             </svg>
                         </td>
@@ -54,7 +54,7 @@
                         <td>E3</td>
                         <td>10</td>
                         <td>
-                            <svg id="thick-logo" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <svg class="thick-logo" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path d="M5.48 10.089l1.583-1.464c1.854.896 3.028 1.578 5.11 3.063 3.916-4.442 6.503-6.696 11.312-9.688l.515 1.186c-3.965 3.46-6.87 7.314-11.051 14.814-2.579-3.038-4.301-4.974-7.469-7.911zm12.52 3.317v6.594h-16v-16h15.141c.846-.683 1.734-1.341 2.691-2h-19.832v20h20v-11.509c-.656.888-1.318 1.854-2 2.915z" />
                             </svg>
                         </td>
@@ -75,7 +75,7 @@
                 </h3>
                 <button type="button" class="button-style btn-small btn-red" style="float:right">Export</button>
                 <div class="input-box">
-                    <h2>Generator</h2>
+                    <h2 class="input-box-h2">Generator</h2>
                     <h3>This code will be active for:
                         <select>
                             <option>5</option>
@@ -86,7 +86,7 @@
                         minutes.
                     </h3>
                     <input type="text" name="" placeholder="Random Code" id="code" readonly="">
-                    <div id="generate-btn" onclick="getCode();">Generate your presence code</div>
+                    <div class="generate-btn" onclick="getCode();">Generate your presence code</div>
                     <script type="text/javascript">
                         function getCode() {
                             var chars = "0123456789abcdefghijklmnopqrstuvwxtzABCDEFGHIJKLMNOPQRSTUVWXTZ";
@@ -124,9 +124,9 @@
                     </tr>
                 </table>
                 <div class="input-box">
-                    <h2>Please input your presence code:</h2>
+                    <h2 class="input-box-h2">Please input your presence code:</h2>
                     <input type="text" name="" placeholder="" id="code">
-                    <div id="generate-btn">Submit</div>
+                    <div class="generate-btn">Submit</div>
                 </div>
             <?php } ?>
         </main>

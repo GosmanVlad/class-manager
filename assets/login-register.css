@@ -18,7 +18,6 @@ h2, label, a {
     height: 100%;
     margin: 0;
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     background-repeat: no-repeat;
@@ -56,11 +55,6 @@ form {
 
 .margin-20 {
     margin: 20px;
-}
-
-#selection {
-    font-size: 15px;
-    font-weight: 600;
 }
 
 .button-submit:hover {

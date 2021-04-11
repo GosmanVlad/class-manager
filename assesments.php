@@ -34,7 +34,7 @@
                 <p>Click on the "Choose File" button to upload a new file:</p>
                 <form action="#">
                     <input type="file" id="myFile" name="filename">
-                    <input type="submit" class="btn-small btn-cyan">
+                    <input type="submit" class="button-style btn-small btn-cyan">
                 </form>
             <?php } else if (isTeacher()) { ?>
                 <h2 style="text-align: left;">Files you haven't graded yet</h2>
@@ -68,7 +68,7 @@
                             <button type="button" class="button-style btn-small btn-red">Download</button>
                         </td>
                         <td>
-                            <input type="submit" class="btn-small btn-cyan">
+                            <input type="submit" class="button-style btn-small btn-cyan">
                         </td>
                     </tr>
                     <tr>
@@ -92,7 +92,7 @@
                             <button type="button" class="button-style btn-small btn-red">Download</button>
                         </td>
                         <td>
-                            <input type="submit" class="btn-small btn-cyan">
+                            <input type="submit" class="button-style btn-small btn-cyan">
                         </td>
                     </tr>
                 </table>

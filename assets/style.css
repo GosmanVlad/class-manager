@@ -1,11 +1,6 @@
 :root {
     font-size: 16px;
     font-family: 'Open Sans';
-    --text-primary: #b6b6b6;
-    --text-secondary: #ececec;
-    --bg-primary: #23232e;
-    --bg-secondary: #141418;
-    --transition-speed: 600ms;
 }
 
 body {
@@ -31,7 +26,6 @@ body::-webkit-scrollbar-thumb {
     height: auto;
     margin: 0;
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     background-repeat: no-repeat;
@@ -50,14 +44,14 @@ main {
 
 svg {
     fill: white;
-    transition: var(--transition-speed);
+    transition: 600ms;
 }
 
 .navbar {
     width: 5rem;
     height: 100vh;
     position: fixed;
-    background-color: var(--bg-primary);
+    background-color: #23232e;
     transition: width 200ms ease;
 }
 
@@ -78,16 +72,16 @@ svg {
     display: flex;
     align-items: center;
     height: 5rem;
-    color: var(--text-primary);
+    color: #b6b6b6;
     text-decoration: none;
     filter: grayscale(100%) opacity(0.7);
-    transition: var(--transition-speed);
+    transition: 600ms;
 }
 
 .nav-link:hover {
     filter: grayscale(0%) opacity(1);
-    background: var(--bg-secondary);
-    color: var(--text-secondary)
+    background: #141418;
+    color: #ececec;
 }
 
 .link-text {
@@ -113,8 +107,8 @@ svg {
     font-weight: bold;
     margin-bottom: 1rem;
     text-align: center;
-    color: var(--text-secondary);
-    background: var(--bg-secondary);
+    color: #ececec;
+    background: #141418;
     font-size: 1.5rem;
     letter-spacing: 0.3ch;
     width: 100%;
@@ -122,7 +116,7 @@ svg {
 
 .logo svg {
     transform: rotate(0deg);
-    transition: transform var(--transition-speed);
+    transition: transform 600ms;
 }
 
 .navbar:hover .logo svg {
@@ -131,7 +125,7 @@ svg {
 
 .topright {
     position: absolute;
-    top: 0px;
+    top: 0;
     right: 12px;
     font-size: 18px;
 }
@@ -157,9 +151,6 @@ svg {
     main {
         margin: 0;
     }
-    #table-style {
-        overflow: scroll;
-    }
     .input-box {
         overflow: hidden;
         width: auto;
@@ -181,7 +172,7 @@ svg {
         display: inline;
     }
     .navbar:hover .logo-text {
-        left: 0px;
+        left: 0;
     }
 }
 
@@ -195,10 +186,6 @@ svg {
     position: relative;
 }
 
-#title {
-    text-align: center;
-}
-
 footer {
     color: white;
     text-align: center;
@@ -206,15 +193,10 @@ footer {
     margin-left: -20px;
     background-color: #23232e;
     position: relative;
-    width: 100%;
     bottom: 0;
 }
 
-#footer {
-    color: white;
-}
-
-#logo-footer {
+.logo-footer {
     margin-top: 10px;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -226,26 +208,29 @@ footer {
     -webkit-animation-iteration-count: infinite;
 }
 
-#photo-table {
-    display: inline-block;
-}
-
-#github, #facebook {
-    fill: black;
-}
-
-#logo-footer:hover {
+.logo-footer:hover {
     cursor: pointer;
     animation-name: bounce;
     -moz-animation-name: bounce;
 }
 
+.photo-table {
+    display: inline-block;
+}
+
+.github, .facebook {
+    fill: black;
+}
+
 .people {
-    gap: 5px;
     justify-content: center;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+}
+
+.margin-left-5 {
+    margin-left:5px;
 }
 
 @keyframes bounce {
@@ -273,10 +258,9 @@ footer {
 }
 
 .button-item {
-    --c: goldenrod;
-    color: var(--c);
+    color: goldenrod;
     font-size: 16px;
-    border: 0.3em solid var(--c);
+    border: 0.3em solid goldenrod;
     border-radius: 0.5em;
     width: 18em;
     height: 5em;
@@ -291,14 +275,14 @@ footer {
     z-index: 1;
     transition: 0.5s;
     margin: 1em;
-    padding-top: 10%;
+    padding-top: 10px;
 }
 
 .button-item .btn {
     position: absolute;
     width: 25%;
     height: 100%;
-    background-color: var(--c);
+    background-color: goldenrod;
     transform: translateY(150%);
     border-radius: 50%;
     left: calc((var(--n) - 1) * 25%);
@@ -334,7 +318,7 @@ footer {
 .button-info {
     text-align: left;
     font-family: 'Open Sans';
-    list-style-image: url('SVG/arrow.svg');
+    list-style-image: url('images/arrow.svg');
 }
 
 .button-text {
@@ -505,18 +489,19 @@ footer {
     color: red;
 }
 
-#mail {
+.color-white {
+    color: white;
+}
+
+.mail {
     color: white;
     text-decoration: none
 }
 
-#thick-logo {
+.thick-logo {
     fill: black;
 }
 
-#presence {
-    width: fit;
-}
 
 .input-box {
     position: relative;
@@ -528,7 +513,7 @@ footer {
     width: 30%;
 }
 
-.input-box h2 {
+.input-box-h2 {
     font-size: 28px;
     color: #333;
 }
@@ -551,10 +536,10 @@ footer {
 }
 
 .input-box input:placeholder {
-    letter-spacing: 0px;
+    letter-spacing: 0;
 }
 
-.input-box #generate-btn {
+.input-box .generate-btn {
     position: relative;
     cursor: pointer;
     color: #fff;
@@ -565,7 +550,7 @@ footer {
     border-radius: 8px;
 }
 
-.input-box #generate-btn:active {
+.input-box .generate-btn:active {
     background: #187390;
 }
 
@@ -585,7 +570,7 @@ footer {
     margin: 20px auto;
 }
 
-#display {
+.display {
     border: none;
     outline: none;
     color: black;
@@ -626,7 +611,8 @@ footer {
     color: white;
 }
 
-#title {
+.title {
+    text-align: center;
     font-family: "Open Sans";
     margin-left: 100px;
 }
