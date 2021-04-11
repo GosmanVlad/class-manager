@@ -13,3 +13,7 @@ Se dorește realizarea unui utilitar pentru managementul unei grupe de studenți
 * Profesorii vor avea posibilitatea de generare a unui catalog ce poate fi exportat în oricare dintre formatele CSV, HTML, PDF.
 
 Aplicația trebuie să poată fi folosită simultan la diferite materii și în ani diferiți. Lista studenților și profesorilor se va importa/exporta (d)in format XML.
+
+
+Apasa mai jos pentru a vedea videoclipul proiectului
+![Video class manager](https://i.imgur.com/22jbRrJ.png)(https://www.youtube.com/watch?v=tGNoWSWGAQQ)
