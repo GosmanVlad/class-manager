@@ -169,10 +169,10 @@ svg {
         flex-direction: column;
         flex-wrap: nowrap;
     }
-    footer{
-    font-size: small;
+    footer {
+        font-size: small;
     }
-    #table-style{
+    #table-style {
         overflow: scroll;
     }
 }
@@ -219,7 +219,7 @@ footer {
 .logo-footer {
     margin-top: 10px;
     -webkit-animation-duration: 1s;
-    -moz-animation-duration:1s;
+    -moz-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
@@ -248,12 +248,11 @@ footer {
 }
 
 .people {
-    
-    display:inline;
+    display: inline;
 }
 
 .margin-left-5 {
-    margin-left:5px;
+    margin-left: 5px;
 }
 
 @keyframes bounce {
@@ -517,7 +516,6 @@ footer {
     fill: black;
 }
 
-
 .input-box {
     position: relative;
     text-align: center;
@@ -631,3 +629,17 @@ footer {
     font-family: "Open Sans";
     margin-left: 100px;
 }
+
+.copy {
+    fill: black;
+    position: absolute;
+    top: 138px;
+    right: 15px;
+    cursor: pointer;
+    opacity: 0.2;
+}
+
+.copy:hover{
+    opacity:1;
+}
+
