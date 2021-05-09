@@ -89,10 +89,10 @@
                         </select>
                         minutes.
                     </h3>
-                    <input type="text" name="code" placeholder="Random Code" readonly="">
+                    <input type="text" name="" placeholder="Random Code" id="code" readonly="">
                     <div class="generate-btn" onclick="getCode();">Generate your presence code</div>
 
-                    <script>
+                    <script type="text/javascript">
                         function getCode() {
                             var chars = "0123456789abcdefghijklmnopqrstuvwxtzABCDEFGHIJKLMNOPQRSTUVWXTZ";
                             var codeLength = 6;
