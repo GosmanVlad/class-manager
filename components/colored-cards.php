@@ -1,11 +1,12 @@
 <?php
 echo '<div class="row content-center">';
-if(isTeacher()) {
-    echo'
+if(isTeacher()) { ?>
     <div class="column">
         <div class="card card-blue">
-        <h3>Informatii card 1 profesori</h3>
-        <p>Total studenti: 100</p>
+        <h3>Informatii generale</h3>
+        <p><strong>Total studenti:</strong> <?=getCountStudentsByTeacherID(getAuthID())?> <br>
+        <strong>Total materii predate:</strong> <?=getCountCoursesByTeacherID(getAuthID())?><br>
+        <strong>Data inregistrarii:</strong> <?=getRegistrationDate(getAuthID())['registration_date'];?></p>
         </div>
     </div>
 
@@ -22,8 +23,8 @@ if(isTeacher()) {
         <h3>Informatii card 3</h3>
         <p>Profesor</p>
         </div>
-    </div>';
-}
+    </div>
+<?php }
 else if(isStudent()) {
     echo'<div class="column">
         <div class="card card-blue">

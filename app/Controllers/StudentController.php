@@ -4,9 +4,7 @@ class Student extends Account {
 
     public function getStudentByID($id)
     {
-        $dbHandle = new Database();
-
-        $result = Database::dbQuery("SELECT * FROM students WHERE id = '$id'", $dbHandle);
+        $result = Database::dbQuery("SELECT * FROM students WHERE id = '$id'", (new Database()));
         $result->execute();
         $query = $result->fetch();
     

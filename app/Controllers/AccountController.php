@@ -1,5 +1,5 @@
 <?php
-include "Database.php";
+require_once "Database.php";
 class Account
 {
 
@@ -17,8 +17,9 @@ class Account
                                                  (NULL, '$username', '$first_name', '$last_name', '$password', '$email', '$year', '$group_letter')", $dbHandle);
                 }
                 else if($account_type == 'teacher') {
-                    $insert = Database::dbInsert("INSERT INTO teachers (id, username, first_name, last_name, password, email) VALUES 
-                                                 (NULL, '$username', '$first_name', '$last_name', '$password', '$email')", $dbHandle);
+                    $registrationDate = date("Y/m/d");
+                    $insert = Database::dbInsert("INSERT INTO teachers (id, username, first_name, last_name, password, email, registration_date) VALUES 
+                                                 (NULL, '$username', '$first_name', '$last_name', '$password', '$email', '$registrationDate'", $dbHandle);
                 }
             }catch(\Exception $exception) {
                 echo $exception;

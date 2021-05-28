@@ -37,3 +37,34 @@ function isStudent() {
     else 
         return 0;
 }
+
+function getCountStudentsByTeacherID($teacherID) {
+    $result = Database::dbQuery("SELECT * FROM courses c 
+                                JOIN allocations p ON p.course_id = c.id 
+                                JOIN students s ON p.student_id = s.id 
+                                WHERE c.teacher_id=10", (new Database()));
+    $result->execute();
+    return $result->rowCount();
+}
+
+function getCountCoursesByTeacherID($teacherID) 
+{
+    $result = Database::dbQuery("SELECT * FROM courses c 
+                                JOIN teachers t ON c.teacher_id = 10", (new Database()));
+    $result->execute();
+    return $result->rowCount();
+}
+
+function getRegistrationDate($teacherID) 
+{
+    $result = Database::dbQuery("SELECT registration_date FROM teachers WHERE id = $teacherID", (new Database()));
+    $result->execute();
+    return $result->fetch();
+}
+
+function getAuthID() {
+    if(isset($_SESSION['userid'])) {
+        return $_SESSION['userid'];
+    }
+    return 0;
+}
