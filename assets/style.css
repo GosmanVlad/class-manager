@@ -132,16 +132,29 @@ svg {
 
 /*small screens*/
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 600px) {
     .column {
-        width: 100%;
+        width: 25%;
         display: block;
         margin-bottom: 20px;
+        padding: 0 10px;
     }
 }
 
 @media only screen and (max-width: 600px) {
+    .row{
+        display: flex;
+        flex-direction: column;
+    }
+    .column {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
     .navbar {
+        margin-top: 5px;
         bottom: 0;
         width: 100vw;
         height: 5rem;
@@ -362,12 +375,6 @@ footer {
     content: "";
     display: table;
     clear: both;
-}
-
-.column {
-    float: left;
-    width: 25%;
-    padding: 0 10px;
 }
 
 .card {
@@ -635,4 +642,17 @@ footer {
 
 .hide-point li {
     list-style-type: none;
+}
+
+.copy {
+    fill: black;
+    position: absolute;
+    top: 138px;
+    right: 15px;
+    cursor: pointer;
+    opacity: 0.2;
+}
+
+.copy:hover{
+    opacity:1;
 }
