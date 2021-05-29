@@ -7,6 +7,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentControll
 require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/CourseController.php"; 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/AllocationController.php"; 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/GradeController.php"; 
+require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/ApplicationController.php"; 
 if (!isLogged())
     header("Location: login.php");
 ?>
@@ -74,22 +75,33 @@ if (!isLogged())
                         <td><?=(new Course())->getCourseByID($row['course_id'])['name']?></td>
                         <td><?=(new Course())->getCourseCredits($row['course_id'])?></td>
                         <td><?=(new Grade())->getStudentGrade(getAuthID(), $row['course_id']);?></td>
-                        <td><?=(new Teacher())->getTeacherByCourseID($row['course_id'])['first_name']?></td>
+                        <td><strong class="color-green">Acceptat</strong> (Profesor: <?=(new Teacher())->getTeacherByCourseID($row['course_id'])['first_name']?>)</td>
                     </tr>
                     <?php } ?>
                     
-                    <?php foreach($getAllCoursesNotAssigned as $row) { ?>
+                    <?php foreach($getAllCoursesNotAssigned as $row) { 
+                        $listOfTeachers = (new Teacher())->getListOfTeachers($row);
+                    ?>
                         <tr>
                             <td><?=(new Course())->getCourseByID($row)['name']?></td>
                             <td><?=(new Course())->getCourseCredits($row)?></td>
                             <td>-</td>
                             <td>
-                                <strong class="color-red">You don't have a group yet! Choose a teacher!</strong><br />
-                                <select>
-                                    <option>Cosmin Varlan</option>
-                                    <option>Cosmin Varlan</option>
-                                </select>
-                                <a href="#" class="button-style btn-green btn-small">Send</a>
+                                <?php if((new Application())->isInPending(getAuthID(), $row)) {?>
+                                    <strong class="color-orange">In asteptare</strong>
+                                <?php } else { ?>
+                                <form method="POST" action="<?=URL?>app/api/students/send_application.php">
+                                    <input type="text" name="course-id" value="<?=$row?>" hidden>
+                                    <strong class="color-red">You don't have a group yet! Choose a teacher!</strong><br />
+                                    <select name="option">
+                                        <?php if(count($listOfTeachers))
+                                        foreach($listOfTeachers as $teacherRow) { ?>
+                                            <option value="<?=$teacherRow['id']?>"><?=$teacherRow['first_name']?> <?=$teacherRow['last_name']?></option>
+                                        <?php } ?>
+                                    </select>
+                                    <button type="submit" class="button-style btn-green btn-small">Send</button>
+                                </form>
+                                <?php } ?>
                             </td>
                         </tr>
                     <?php } ?>

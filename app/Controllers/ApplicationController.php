@@ -7,4 +7,13 @@ class Application {
         $result->execute();
         return 1;
     }
+
+    public function isInPending($studentID, $courseID) {
+        $result = Database::dbQuery("SELECT * FROM applications WHERE student_id = $studentID AND course_id = $courseID", (new Database()));
+        $result->execute();
+        
+        if($result->rowCount()) 
+            return true;
+        return false;
+    }
 }

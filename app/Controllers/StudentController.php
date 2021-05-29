@@ -61,5 +61,11 @@ class Student extends Account {
         $getAssignedCourse->execute();
         return $getAssignedCourse->fetchAll();
     }
+
+    public function sendApplication($studentID, $teacherID, $courseID, $groupLetter) {
+        $sendApplication = Database::dbQuery("INSERT INTO applications(student_id, teacher_id, course_id, group_letter) VALUES ('$studentID', '$teacherID', '$courseID', '$groupLetter')", (new Database()));
+        $sendApplication->execute();
+        return 1;
+    }
 }
 ?>

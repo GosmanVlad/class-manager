@@ -29,10 +29,10 @@ if(isTeacher()) { ?>
 else if(isStudent()) { ?>
     <div class="column">
         <div class="card card-blue">
-        <h3>Informatii student: <?=$_SESSION['last_name']?> <?=$_SESSION['first_name']?></h3>
-        An: <?=(new Student())->getYear(getAuthID())?> <br/>
-        Grupa: <?=(new Student())->getGroup(getAuthID())?> <br />
-        Bursa: <?=(new Student())->getScholarship(getAuthID())?> 
+        <h3><strong>Informatii student:</strong> <?=$_SESSION['last_name']?> <?=$_SESSION['first_name']?></h3>
+        <strong>An:</strong> <?=(new Student())->getYear(getAuthID())?> <br/>
+        <strong>Grupa:</strong> <?=(new Student())->getGroup(getAuthID())?> <br />
+        <strong>Bursa:</strong> <?=(new Student())->getScholarship(getAuthID())?> 
         </div>
     </div>
 

@@ -510,6 +510,14 @@ footer {
     color: white;
 }
 
+.color-green {
+    color: rgb(5, 131, 26);
+}
+
+.color-orange {
+    color: rgb(197, 110, 11);
+}
+
 .mail {
     color: white;
     text-decoration: none
