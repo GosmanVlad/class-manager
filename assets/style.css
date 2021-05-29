@@ -6,8 +6,7 @@
 body {
     color: black;
     background: #FFFDE7;
-    margin: 0;
-    padding: 0;
+    
 }
 
 body::-webkit-scrollbar {
@@ -142,6 +141,16 @@ svg {
 }
 
 @media only screen and (max-width: 600px) {
+    .content-center {
+        padding-bottom: 5rem;
+    }
+    .container{
+        margin-bottom: 5rem;
+        margin-top: 0.5rem;
+        position: relative;
+        top: 10%;
+        left: -20%;
+    }
     .row{
         display: flex;
         flex-direction: column;
@@ -154,11 +163,14 @@ svg {
         padding: 0 10px;
     }
     .navbar {
-        margin-top: 5px;
+        position: fixed;
+        padding-top: 5px;
+        left : 0;
         bottom: 0;
         width: 100vw;
         height: 5rem;
         z-index: 2;
+        overflow: auto;
     }
     .logo {
         display: none;
@@ -186,10 +198,16 @@ svg {
         font-size: small;
     }
     .table-style {
+        padding-bottom: 5rem;
+        margin-bottom: 5rem;
         overflow: scroll;
     }
     .navbar:hover .link-text {
         display: none;
+    }
+    .generate-btn{
+        margin-bottom: 5rem;
+        width: 100%;
     }
 }
 
