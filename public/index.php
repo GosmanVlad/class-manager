@@ -43,8 +43,8 @@ if (!isLogged())
                             <td><?=(new Student())->getStudentByID($row['student_id'])['first_name']?></td>
                             <td><?=$row['group_letter']?></td>
                             <td><?=(new Course())->getCourseByID($row['course_id'])['name']?></td>
-                            <td><a href="app/api/teacher/accept_student.php?id=<?=$row['id']?>&studentid=<?=$row['student_id']?>&courseid=<?=$row['course_id']?>" class="button-style btn-green btn-small">Approve</a> / 
-                            <a href="app/api/teacher/reject_student.php?id=<?=$row['id']?>" class="button-style btn-red btn-small">Reject</a></td>
+                            <td><a href="<?=URL?>app/api/teacher/accept_student.php?id=<?=$row['id']?>&studentid=<?=$row['student_id']?>&courseid=<?=$row['course_id']?>" class="button-style btn-green btn-small">Approve</a> / 
+                            <a href="<?=URL?>app/api/teacher/reject_student.php?id=<?=$row['id']?>" class="button-style btn-red btn-small">Reject</a></td>
                         </tr>
                     <?php }
                     } else {?>

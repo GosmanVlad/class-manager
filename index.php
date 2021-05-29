@@ -1,6 +1,7 @@
 <?php
 header( "refresh:1;url=http://localhost/class/public/index.php" );
 include "components/header.php"; ?>
+<script src="<?=URL?>assets/js/loader.js"></script>
 
 <html>
 <head>
