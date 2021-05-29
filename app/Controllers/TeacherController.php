@@ -1,4 +1,5 @@
 <?php
+require_once "AccountController.php";
 class Teacher extends Account {
 
     public function getTeacherByID($id)

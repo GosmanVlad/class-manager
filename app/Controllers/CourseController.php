@@ -19,4 +19,8 @@ class Course {
             return $result->fetch()['credits'];
         return 'Nu s-a gasit';
     }
+
+    public function getCoursesByYear($year) {
+        
+    }
 }
