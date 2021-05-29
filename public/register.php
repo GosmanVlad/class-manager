@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ro">
 <?php
-include('./components/header.php');
+include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php";
 if(isLogged())
     header("Location: index.php"); ?>
 

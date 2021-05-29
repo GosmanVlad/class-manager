@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="ro">
 <?php
-include('./components/header.php');
-if(isLogged())
-    header("Location: index.php");
+include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php";
+if(isLogged()) {
+    $url = URL . "/public/index.php";
+    header("Location: $url");
+}
 ?>
 
 <body class="background-photo cursor">
-    <form method="POST" action="app/api/auth/login_back.php" class="form-container">
+    <form method="POST" action="<?=URL?>/app/api/auth/login_back.php" class="form-container">
 
         <h2>Welcome to ClaMa</h2>
-        <img src="<?php echo '' . URL . '' ?>assets/images/stud.svg" width="50" height="50" alt="Graduation Logo">
+        <img src="<?=URL?>assets/images/stud.svg" width="50" height="50" alt="Graduation Logo">
         <div class="margin-20">
             <label for="uname"><b>Email</b></label>
             <input class="input-login-register button" name="email" type="text" placeholder="Enter Username" required>

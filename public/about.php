@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include('./components/header.php'); ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php"; ?>
 
 <body>
     <div class="background-color">
@@ -29,7 +29,7 @@
             <p>They get along very well and thought it would be a great idea to
                 make their own Class Manager.</p>
             <div class="people">
-                <img class="margin-left-5" src="assets/images/about-page/Vlad.jpg" alt="Gosman Vlad Andrei" width="300" height="300">
+                <img class="margin-left-5" src="<?=URL?>assets/images/about-page/Vlad.jpg" alt="Gosman Vlad Andrei" width="300" height="300">
                 <ul class="photo-table" style="text-align: left;">
                     <li>Name: Gosman Vlad Andrei</li>
                     <li>Age: 21</li>
@@ -53,7 +53,7 @@
                 </ul>
             </div>
             <div class="people">
-                <img class="margin-left-5" src="assets/images/about-page/Andrei.jpg" alt="Luca Andrei Iulian" width="200" height="300">
+                <img class="margin-left-5" src="<?=URL?>assets/images/about-page/Andrei.jpg" alt="Luca Andrei Iulian" width="200" height="300">
                 <ul class="photo-table" style="text-align: left;">
                     <li>Name: Luca Andrei Iulian</li>
                     <li>Age: 20</li>
@@ -78,7 +78,7 @@
             </div>
         </main>
         <footer>
-            <img class="logo-footer" src="Favicon/android-chrome-512x512.png" alt="Logo ClaMa" width="50" height="50">
+            <img class="logo-footer" src="<?=URL?>assets/images/android-chrome-512x512.png" alt="Logo ClaMa" width="50" height="50">
             <p class="color-white">Developers: Gosman Vladut Andrei & Luca Andrei Iulian</p>
             <p class="color-white">Do you have any suggestions and/or feedback?</p>
             <p class="color-white">Don't hesitate to contact us at:</p>

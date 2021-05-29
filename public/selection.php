@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include('./components/header.php'); 
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php";
 if(isset($_GET['page']))
     $page = $_GET['page'];
 else

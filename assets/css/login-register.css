@@ -10,11 +10,11 @@ h2, label, a {
 }
 
 .cursor {
-    cursor: url('images/pencil.svg') 0 24, pointer;
+    cursor: url('../images/pencil.svg') 0 24, pointer;
 }
 
 .background-photo {
-    background-image: url("images/school.jpg");
+    background-image: url("../images/school.jpg");
     height: 100%;
     margin: 0;
     background-position: center;
@@ -50,7 +50,7 @@ form {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    cursor: url('images/pencil.svg') 0 24, pointer;
+    cursor: url('../images/pencil.svg') 0 24, pointer;
 }
 
 .margin-20 {
