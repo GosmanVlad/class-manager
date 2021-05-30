@@ -7,7 +7,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php";?>
 <div class="form-container">
     <?php
     if(empty($_POST['email'] || empty($_POST['password']) ))
-        header("Location: index.php");
+        header("Location: https://localhost/class/index.php");
     else {
         $email = $_POST['email'];
         $password = md5($_POST['password']);
@@ -15,7 +15,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php";?>
         $account = new Account();
 
         if($account->tryToLogin($email, $password) == 1) {
-            header( "Location: ../../../index.php" );
+            header( "Location: https://localhost/class/index.php" );
         }
         else {
             echo 'Error. <br /> Please try again! <hr/>';

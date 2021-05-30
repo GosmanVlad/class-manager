@@ -6,9 +6,9 @@ if(isLogged())
     header("Location: index.php"); ?>
 
 <body class="background-photo cursor">
-    <form method="POST" action="app/api/auth/register_back.php" class="form-container">
+    <form method="POST" action="<?=URL?>app/api/auth/register_back.php" class="form-container">
         <h2>Register Form</h2>
-        <img src="<?php echo '' . URL . '' ?>assets/images/register.svg" width="50" height="50" alt="Register Logo">
+        <img src="<?=URL?>assets/images/register.svg" width="50" height="50" alt="Register Logo">
 
         <div class="margin-20">
             <label for="uname"><b>Username</b></label>

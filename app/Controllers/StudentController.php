@@ -43,7 +43,8 @@ class Student extends Account
 
     public function getAllCoursesNotAssigned($studentID)
     {
-        $getAssignedCourse = Database::dbQuery("SELECT * FROM courses", (new Database()));
+        $studentYear = $this->getYear($studentID);
+        $getAssignedCourse = Database::dbQuery("SELECT * FROM courses WHERE year = $studentYear", (new Database()));
         $getAssignedCourse->execute();
         $fetchCourses = $getAssignedCourse->fetchAll();
 
