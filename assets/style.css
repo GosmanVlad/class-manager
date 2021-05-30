@@ -138,6 +138,16 @@ svg {
         margin-bottom: 20px;
         padding: 0 10px;
     }
+    .input-box {
+        position: relative;
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        width: 30%;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -149,7 +159,7 @@ svg {
         margin-top: 0.5rem;
         position: relative;
         top: 10%;
-        left: -20%;
+        left: -23%;
     }
     .row{
         display: flex;
@@ -184,10 +194,6 @@ svg {
     main {
         margin: 0;
     }
-    .input-box {
-        overflow: hidden;
-        width: auto;
-    }
     .people {
         justify-content: center;
         display: flex;
@@ -207,7 +213,36 @@ svg {
     }
     .generate-btn{
         margin-bottom: 5rem;
-        width: 100%;
+    }
+    .title{
+        padding-left: -70%;
+    }
+    .photo-table li{
+        text-align:left;
+    }
+    .last-item{
+        padding-bottom: 5rem;
+    }
+    .hide-point-footer li{
+        list-style-type: none;
+        margin-left: -8%;
+    }
+    .color-white{
+        margin-left:20px;
+        font-size: medium;
+    }
+    .input-box{
+        position: relative;
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+        margin-bottom: 5%;
+        width: 70%;
+    }
+    .copy{
+        margin-top: 10%;
     }
 }
 
@@ -274,6 +309,7 @@ footer {
 }
 
 .photo-table {
+    text-align: left;
     display: inline-block;
 }
 
@@ -544,16 +580,6 @@ footer {
     fill: black;
 }
 
-.input-box {
-    position: relative;
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5%;
-    width: 30%;
-}
-
 .input-box-h2 {
     font-size: 28px;
     color: #333;
@@ -653,12 +679,16 @@ footer {
 }
 
 .title {
-    text-align: center;
     font-family: "Open Sans";
-    margin-left: 100px;
+    margin: auto;
 }
 
 .hide-point li {
+    list-style-type: circle;
+    text-align: left;
+}
+
+.hide-point-footer li{
     list-style-type: none;
 }
 
