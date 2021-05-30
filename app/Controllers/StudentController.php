@@ -1,7 +1,7 @@
 <?php
-include "AccountController.php";
-include "CourseController.php";
-include "GradeController.php";
+require_once "AccountController.php";
+require_once "CourseController.php";
+require_once "GradeController.php";
 class Student extends Account
 {
 

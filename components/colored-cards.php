@@ -1,6 +1,7 @@
 <div class="row content-center">
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/TeacherController.php"; 
+require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/AssesmentsController.php"; 
 if(isTeacher()) { ?>
     <div class="column">
         <div class="card card-blue">
@@ -13,9 +14,10 @@ if(isTeacher()) { ?>
 
     <div class="column">
         <div class="card card-light">
-        <h3>Informatii card 2</h3>
-        <p>Profesor</p>
-        <p>Profesor</p>
+        <h3>Informatii despre teme</h3>
+        <p><strong>Teme corectate:</strong> <?=(new Teacher())->getCorrectedHomeworks(getAuthID())?><br>
+        <strong>Teme corectate:</strong> <strong class="color-red"><?=(new Teacher())->getUncorrectedHomeworks(getAuthID())?></strong> <br>
+        <strong>Media temelor corectate:</strong> <?=(new Assesments())->getAverageGrades(getAuthID())?></p>
         </div>
     </div>
 
