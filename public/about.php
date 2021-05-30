@@ -15,7 +15,7 @@
             <p>We made this app with the only goal so we get to see that:<br>
             <ul class="hide-point">
                 <li>Every teacher gets the chance to easily manage their classes and students so they can focus on more
-                    important things;
+                    important things;</li>
                 <li>Every student gets to see in real time and in an interactive way their grades and making the whole
                     concept of sending assesments, checking your grades and moving to another class at any time you want
                     easier than ever.</li>
@@ -82,12 +82,12 @@
             <p class="color-white">Developers: Gosman Vladut Andrei & Luca Andrei Iulian</p>
             <p class="color-white">Do you have any suggestions and/or feedback?</p>
             <p class="color-white">Don't hesitate to contact us at:</p>
-            <ul class="hide-point">
+            <ul class="hide-point-footer">
                 <li><a href="mailto:gosman.vlad95@yahoo.com" class="mail"><u>gosman.vlad95@yahoo.com</u></a></li>
             </ul>
             
-            <ul class="hide-point">
-                <li><a href="mailto:luca_andrei_iulian@yahoo.com" class="mail"><u>luca_andrei_iulian@yahoo.com</u></a></li>
+            <ul class="hide-point-footer">
+                <li class="last-item"><a href="mailto:luca_andrei_iulian@yahoo.com" class="mail"><u>luca_andrei_iulian@yahoo.com</u></a></li>
             </ul>
         </footer>
     </div>
