@@ -22,9 +22,11 @@ class Student extends Account
 
     public function getYear($studentID)
     {
-        $result = Database::dbQuery("SELECT year FROM students WHERE id = $studentID", (new Database()));
+        $result = Database::dbQuery("SELECT * FROM students WHERE id = '$studentID'", (new Database()));
         $result->execute();
-        return $result->fetch()['year'];
+        if($result->rowCount())
+            return $result->fetch()['year'];
+        else 1;
     }
 
     public function getGroup($studentID)
@@ -99,5 +101,31 @@ class Student extends Account
         $sendApplication = Database::dbQuery("INSERT INTO applications(student_id, teacher_id, course_id, group_letter) VALUES ('$studentID', '$teacherID', '$courseID', '$groupLetter')", (new Database()));
         $sendApplication->execute();
         return 1;
+    }
+
+    public function insertCode($code, $studentID, $courseID) 
+    {
+        $checkPresenceCode = Database::dbQuery("SELECT * FROM presence_codes WHERE code = '$code'", (new Database()));
+        $checkPresenceCode->execute();
+
+        if($checkPresenceCode->rowCount()) {
+            $fetch = $checkPresenceCode->fetch();
+            $code = $fetch['code'];
+
+            $now = date("Y/m/d G:i");
+            $time = new DateTime($now);
+            $expirationDate = new DateTime($fetch['expiration_date']);
+            $interval = $expirationDate->diff($time);
+            $minutes=$interval->format("%i");
+
+            if($minutes <= 5) {
+                $insertCode = Database::dbQuery("INSERT INTO presences(presence_code_id, student_id, course_id) VALUES('$code', '$studentID', '$courseID')", (new Database()));
+                $insertCode->execute();
+                return 1;
+            }
+            else 
+                return 2;
+        }
+        return 0;
     }
 }

@@ -1,5 +1,6 @@
 <?php
 require_once "AccountController.php";
+require_once "StudentController.php";
 require_once "CourseController.php";
 class Teacher extends Account
 {
@@ -105,5 +106,54 @@ class Teacher extends Account
         $result = Database::dbQuery("SELECT * FROM assesments WHERE teacher_id = $teacherID AND corrected = 1;", (new Database()));
         $result->execute();
         return $result->rowCount();
+    }
+
+    public function getStudentsByYearAndGroup($teacherID, $year, $group, $courseID) 
+    {
+        $result = Database::dbQuery("SELECT * FROM `allocations` WHERE teacher_id=$teacherID AND course_id=$courseID;", (new Database()));
+        $result->execute();
+
+        $sendResult = [];
+
+        if($result->rowCount()) {
+            $fetch = $result->fetchAll();
+            foreach($fetch as $row) {
+                if(((new Student())->getYear($row['student_id'])) == intval($year) && 
+                (new Student())->getStudentByID($row['student_id'])['group_letter'] == $group) {
+                    $grades = '';
+                    $presences = 0;
+
+                    $student = (new Student())->getStudentByID($row['student_id'])['first_name'] . ' ' . (new Student())->getStudentByID($row['student_id'])['last_name'];
+                    $studentID = $row['student_id'];
+                    //-------------------------------------------------------
+                    $getGrades = Database::dbQuery("SELECT * FROM grades WHERE student_id = $studentID AND course_id=$courseID", (new Database()));
+                    $getGrades->execute();
+                    if($getGrades->rowCount()) {
+                        $getGrade = $getGrades->fetchAll();
+                        foreach($getGrade as $gradeRow) {
+                            $grades = $grades . ', ' . $gradeRow['grade'];
+                        }
+                    }
+                    //-------------------------------------------------------
+                    $fetchPresences = Database::dbQuery("SELECT * FROM presences WHERE student_id = $studentID AND course_id=$courseID", (new Database()));
+                    $fetchPresences->execute();
+                    if($fetchPresences->rowCount()) {
+                        $getPresences = $fetchPresences->fetchAll();
+                        foreach($getPresences as $presenceRow) {
+                            $presences++;
+                        }
+                    }
+                    //-------------------------------------------------------
+                    array_push($sendResult, [
+                        'id' => $row['id'],
+                        'student_id' => $studentID,
+                        'student' => $student,
+                        'grades' => $grades,
+                        'presences' => $presences
+                    ]);
+                }
+            }
+        }
+        return $sendResult;
     }
 }

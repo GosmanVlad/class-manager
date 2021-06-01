@@ -16,7 +16,7 @@ if(isTeacher()) { ?>
         <div class="card card-light">
         <h3>Informatii despre teme</h3>
         <p><strong>Teme corectate:</strong> <?=(new Teacher())->getCorrectedHomeworks(getAuthID())?><br>
-        <strong>Teme corectate:</strong> <strong class="color-red"><?=(new Teacher())->getUncorrectedHomeworks(getAuthID())?></strong> <br>
+        <strong>Teme necorectate:</strong> <strong class="color-red"><?=(new Teacher())->getUncorrectedHomeworks(getAuthID())?></strong> <br>
         <strong>Media temelor corectate:</strong> <?=(new Assesments())->getAverageGrades(getAuthID())?></p>
         </div>
     </div>
