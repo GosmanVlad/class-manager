@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php"; 
+include $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentController.php";?>
 <script src="<?=URL?>assets/js/presence-code.js"></script>
 <script src="<?=URL?>assets/js/course-list.js"></script>
 <script src="<?=URL?>assets/js/download-csv.js"></script>
@@ -68,28 +69,23 @@
                     </svg>
                     <div class="generate-btn" onclick="getCode();">Generate your presence code</div>
                 </div>
-            <?php } else if (isStudent()) { ?>
+            <?php } else if (isStudent()) {
+                $courses = (new Student()) -> getAssignedCourses(getAuthID()); ?>
                 <table class="table-style" style="text-align: left;">
                     <tr>
                         <th>Course Name</th>
                         <th>Your Grades</th>
                         <th>Number of presences</th>
                     </tr>
-                    <tr>
-                        <td>ACSO</td>
-                        <td>6,7,8</td>
-                        <td>9/12</td>
-                    </tr>
-                    <tr>
-                        <td>Data Structures</td>
-                        <td>8,5,10</td>
-                        <td>8/12</td>
-                    </tr>
-                    <tr>
-                        <td>Math</td>
-                        <td>6,7,9</td>
-                        <td>7/12</td>
-                    </tr>
+                    <?php
+                    foreach($courses as $row){ ?>
+                        <tr>
+                            <td><?=$row['course']?></td>
+                            <td><?=$row['grades']?></td>
+                            <td><?=$row['presences']?></td>
+                       </tr>
+                    <?php } ?>
+                    
                 </table>
                 <div class="input-box">
                     <?php if(isset($_GET['error'])) { 

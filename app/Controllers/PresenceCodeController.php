@@ -5,9 +5,10 @@ class PresenceCode
     public function add($code, $expiration, $teacher, $course) 
     {
         try {
-            $createdAt = date("Y/m/d G:i");
+            $created = new DateTime("now", new DateTimeZone('Europe/Bucharest'));
+            $createdAt = $created->format('Y-m-d H:i');
             $minutesToAdd = $expiration;
-            $time = new DateTime($createdAt);
+            $time = new DateTime("now", new DateTimeZone('Europe/Bucharest'));
             $time->add(new DateInterval('PT' . $minutesToAdd . 'M'));
             $expirationDate = $time->format('Y-m-d H:i');
 
@@ -21,5 +22,13 @@ class PresenceCode
         }
         http_response_code(200);
         return 1;
+    }
+    
+    public function getPresences($studentID, $courseID){
+        $result = Database::dbQuery("SELECT * FROM presences WHERE student_id = $studentID and course_id = $courseID", (new Database()));
+        $result->execute();
+
+
+        return $result -> rowCount();
     }
 }

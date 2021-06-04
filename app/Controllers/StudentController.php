@@ -2,6 +2,8 @@
 require_once "AccountController.php";
 require_once "CourseController.php";
 require_once "GradeController.php";
+require_once "TeacherController.php";
+require_once "PresenceCodeController.php";
 class Student extends Account
 {
 
@@ -90,9 +92,10 @@ class Student extends Account
                     'course' => (new Course())->getCourseByID($row['course_id'])['name'],
                     'course_id' => $row['course_id'],
                     'credits' => (new Course())->getCourseCredits($row['course_id']),
-                    'grade' => (new Grade())->getStudentGrade(getAuthID(), $row['course_id']),
+                    'grades' => (new Grade())->getEveryGradesOfStudent(getAuthID(), $row['course_id']),
                     'teacher' => $teacher,
                     'teacher_id' => $teacherID,
+                    'presences' => (new PresenceCode())->getPresences(getAuthID(), $row['course_id'])
                 ]);
             }
         }
@@ -129,7 +132,6 @@ class Student extends Account
             $minutes=$interval->format("%i");
 
             if($minutes <= 5 && $minutes > 0 && $expirationDate > $time) {
-                echo $minutes;
                 $insertCode = Database::dbQuery("INSERT INTO presences(presence_code_id, student_id, course_id) VALUES('$code', '$studentID', '$courseID')", (new Database()));
                 $insertCode->execute();
                 return 1;

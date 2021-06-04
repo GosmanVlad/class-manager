@@ -76,7 +76,7 @@ if (!isLogged())
                         <tr>
                             <td><?= $row['course'] ?></td>
                             <td><?= $row['credits'] ?></td>
-                            <td><?= $row['grade'] ?></td>
+                            <td><?= $row['grades'] ?></td>
                             <td><strong class="color-green">Acceptat</strong> (Profesor: <?= $row['teacher'] ?>)</td>
                         </tr>
                     <?php } ?>
