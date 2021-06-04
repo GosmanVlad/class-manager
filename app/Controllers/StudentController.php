@@ -26,7 +26,10 @@ class Student extends Account
         $result->execute();
         if($result->rowCount())
             return $result->fetch()['year'];
-        else 1;
+        else {
+            return 0;
+            http_response_code(404);
+        };
     }
 
     public function getGroup($studentID)
@@ -98,8 +101,15 @@ class Student extends Account
 
     public function sendApplication($studentID, $teacherID, $courseID, $groupLetter)
     {
-        $sendApplication = Database::dbQuery("INSERT INTO applications(student_id, teacher_id, course_id, group_letter) VALUES ('$studentID', '$teacherID', '$courseID', '$groupLetter')", (new Database()));
-        $sendApplication->execute();
+        try {
+            $sendApplication = Database::dbQuery("INSERT INTO applications(student_id, teacher_id, course_id, group_letter) VALUES ('$studentID', '$teacherID', '$courseID', '$groupLetter')", (new Database()));
+            $sendApplication->execute();
+        }catch(Exception $exception) {
+            echo $exception;
+            http_response_code(500);
+            return 0;
+        }
+        http_response_code(200);
         return 1;
     }
 
@@ -118,13 +128,15 @@ class Student extends Account
             $interval = $expirationDate->diff($time);
             $minutes=$interval->format("%i");
 
-            if($minutes <= 5) {
+            if($minutes <= 5 && $minutes > 0 && $expirationDate > $time) {
+                echo $minutes;
                 $insertCode = Database::dbQuery("INSERT INTO presences(presence_code_id, student_id, course_id) VALUES('$code', '$studentID', '$courseID')", (new Database()));
                 $insertCode->execute();
                 return 1;
             }
-            else 
+            else {
                 return 2;
+            }
         }
         return 0;
     }

@@ -40,9 +40,16 @@ class Assesments
 
     public function addAssesment($studentID, $courseID, $path, $fileName)
     {
-        $getTeacherID = (new Teacher())->getTeacherByCourseID($courseID)['id'];
-        $sendApplication = Database::dbQuery("INSERT INTO assesments(student_id, course_id, file, file_name, teacher_id) VALUES('$studentID', '$courseID', '$path', '$fileName', '$getTeacherID')", (new Database()));
-        $sendApplication->execute();
+        try {
+            $getTeacherID = (new Teacher())->getTeacherByCourseID($courseID)['id'];
+            $sendApplication = Database::dbQuery("INSERT INTO assesments(student_id, course_id, file, file_name, teacher_id) VALUES('$studentID', '$courseID', '$path', '$fileName', '$getTeacherID')", (new Database()));
+            $sendApplication->execute();
+        }catch(Exception $exception) {
+            echo $exception;
+            http_response_code(500);
+            return 0;
+        }
+        http_response_code(200);
         return 1;
     }
 
@@ -78,9 +85,16 @@ class Assesments
 
     public function update($assesmentID, $grade, $observations) 
     {
-        $date = date("Y/m/d G:i");
-        $getAssesment = Database::dbQuery("UPDATE assesments SET grade = $grade, observations = '$observations', corrected = 1, corrected_at = '$date' WHERE id = $assesmentID", (new Database()));
-        $getAssesment->execute();
+        try {
+            $date = date("Y/m/d G:i");
+            $getAssesment = Database::dbQuery("UPDATE assesments SET grade = $grade, observations = '$observations', corrected = 1, corrected_at = '$date' WHERE id = $assesmentID", (new Database()));
+            $getAssesment->execute();
+        }catch(Exception $exception) {
+            echo $exception;
+            http_response_code(500);
+            return 0;
+        }
+        return 1;
     }
 
     public function getAverageGrades($teacherID) 

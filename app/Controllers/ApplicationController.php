@@ -5,9 +5,14 @@ class Application
 {
     public function delete($applicationID)
     {
-        $result = Database::dbQuery("DELETE FROM applications WHERE id = $applicationID", (new Database()));
-        $result->execute();
-        return 1;
+        try {
+            $result = Database::dbQuery("DELETE FROM applications WHERE id = $applicationID", (new Database()));
+            $result->execute();
+        }catch(Exception $exception) {
+            echo $exception;
+            http_response_code(500);
+        }
+        http_response_code(200);
     }
 
     public function isInPending($studentID, $courseID)

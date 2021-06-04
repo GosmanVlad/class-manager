@@ -23,12 +23,14 @@ class Account
                 }
             }catch(\Exception $exception) {
                 echo $exception;
+                http_response_code(500);
             }
             return 1;
         }
         else {
             echo 'This e-mail has been already used! <br /> Please try again..  <hr />';
             echo "<a href='".URL."register.php'>Back to register</a>";
+            http_response_code(500);
         }
         return 0;
     }

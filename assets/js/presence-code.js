@@ -13,14 +13,13 @@ function getCode() {
 
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", "http://localhost/class/app/api/teacher/save_presence_code.php?code="+code+"&expiration="+document.getElementById("expiration").value+"&teacher="+document.getElementById("teacher-id").value+"&course="+document.getElementById("course-id").value, true);
-    xmlHttp.addEventListener("load", ajaxCallback, false);
+    xmlHttp.addEventListener("load", sendAlert, false);
     xmlHttp.send();
-    alert("Reload the page!");
 }
 
-function ajaxCallback(event){
+function sendAlert(){
+    alert("Codul de prezenta generat a fost inregistrat in baza de date! Poti distribui codul catre studenti.")
 }
-
 
 function copyCode() {
     var copyCodeText = document.getElementById("code");
@@ -32,6 +31,25 @@ function copyCode() {
 function insertCode() {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", "http://localhost/class/app/api/students/insert_code.php?code="+document.getElementById("code").value+"&student="+document.getElementById("student-id").value+"&course="+document.getElementById("course-id").value, true);
-    xmlHttp.addEventListener("load", ajaxCallback, false);
+    xmlHttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+           var response = this.responseText; 
+           reload(response);
+     
+        }
+    };
     xmlHttp.send();
+}
+
+function reload(errorType)  {
+    if(errorType == 2) {
+        alert("Acest cod de perzenta a expirat! See you next time! :)");
+    }
+    else if(errorType == 1) {
+        alert("Welcome to the course!");
+    }
+    else if(errorType == 0) {
+        alert("Acest cod nu exista!");
+    }
+    location.reload();
 }

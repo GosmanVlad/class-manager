@@ -8,6 +8,6 @@ class Grade {
 
         if($result->rowCount())
             return $result->fetch();
-        return 'Nu s-a gasit';
+        http_response_code(404);
     }
 }

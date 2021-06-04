@@ -8,7 +8,8 @@ class Course {
 
         if($result->rowCount())
             return $result->fetch();
-        return 'Nu s-a gasit';
+        http_response_code(404);
+        return 0;
     }
 
     public function getCourseCredits($courseID) {
@@ -17,7 +18,8 @@ class Course {
 
         if($result->rowCount())
             return $result->fetch()['credits'];
-        return 'Nu s-a gasit';
+        http_response_code(404);
+        return 0;
     }
 
     public function getCoursesByYear($year) {
