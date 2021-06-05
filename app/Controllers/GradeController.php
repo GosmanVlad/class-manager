@@ -24,7 +24,7 @@ class Grade {
                 if($index == 0)
                     $grades = $row['grade'];
                 else
-                    $grades = $grades.', '.$row['grade'];
+                    $grades = $grades.'; '.$row['grade'];
                 
                 $index++;
             } 

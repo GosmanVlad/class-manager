@@ -130,8 +130,13 @@ class Teacher extends Account
                     $getGrades->execute();
                     if($getGrades->rowCount()) {
                         $getGrade = $getGrades->fetchAll();
+                        $index = 0;
                         foreach($getGrade as $gradeRow) {
-                            $grades = $grades . ', ' . $gradeRow['grade'];
+                            if($index==0)
+                            $grades = $gradeRow['grade'];
+                            else
+                            $grades = $grades . '; ' . $gradeRow['grade'];
+                            $index++;
                         }
                     }
                     //-------------------------------------------------------
