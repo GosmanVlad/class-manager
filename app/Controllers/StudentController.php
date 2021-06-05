@@ -92,7 +92,11 @@ class Student extends Account
                     'course' => (new Course())->getCourseByID($row['course_id'])['name'],
                     'course_id' => $row['course_id'],
                     'credits' => (new Course())->getCourseCredits($row['course_id']),
-                    'grades' => (new Grade())->getEveryGradesOfStudent(getAuthID(), $row['course_id']),
+                    'grades' => (new Grade())->getEveryGradesOfStudent(getAuthID(), $row['course_id'])['grades'] ?? null,
+                    'average' => (new Grade())->getEveryGradesOfStudent(getAuthID(), $row['course_id'])['average'] ?? '0',
+                    'average_ceil' => (new Grade())->getEveryGradesOfStudent(getAuthID(), $row['course_id'])['average_ceil'] ?? '0',
+                    'average_floor' => (new Grade())->getEveryGradesOfStudent(getAuthID(), $row['course_id'])['average_floor'] ?? '0',
+                    'average_round' => (new Grade())->getEveryGradesOfStudent(getAuthID(), $row['course_id'])['average_round'] ?? '0',
                     'teacher' => $teacher,
                     'teacher_id' => $teacherID,
                     'presences' => (new PresenceCode())->getPresences(getAuthID(), $row['course_id'])

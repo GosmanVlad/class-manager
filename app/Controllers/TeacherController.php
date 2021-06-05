@@ -122,6 +122,8 @@ class Teacher extends Account
                 (new Student())->getStudentByID($row['student_id'])['group_letter'] == $group) {
                     $grades = '';
                     $presences = 0;
+                    $sumOfGrades = 0;
+                    $index = 0;
 
                     $student = (new Student())->getStudentByID($row['student_id'])['first_name'] . ' ' . (new Student())->getStudentByID($row['student_id'])['last_name'];
                     $studentID = $row['student_id'];
@@ -130,12 +132,12 @@ class Teacher extends Account
                     $getGrades->execute();
                     if($getGrades->rowCount()) {
                         $getGrade = $getGrades->fetchAll();
-                        $index = 0;
                         foreach($getGrade as $gradeRow) {
                             if($index==0)
-                            $grades = $gradeRow['grade'];
+                                $grades = $gradeRow['grade'];
                             else
-                            $grades = $grades . '; ' . $gradeRow['grade'];
+                                $grades = $grades . '; ' . $gradeRow['grade'];
+                            $sumOfGrades = $sumOfGrades + $gradeRow['grade'];
                             $index++;
                         }
                     }
@@ -154,7 +156,11 @@ class Teacher extends Account
                         'student_id' => $studentID,
                         'student' => $student,
                         'grades' => $grades,
-                        'presences' => $presences
+                        'presences' => $presences,
+                        'average' => $index == 0 ? 0 : $sumOfGrades / $index,
+                        'average_round' => round($sumOfGrades / $index),
+                        'average_ceil' => ceil($sumOfGrades / $index),
+                        'average_floor' => floor($sumOfGrades / $index),
                     ]);
                 }
             }
