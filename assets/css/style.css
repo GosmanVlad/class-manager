@@ -129,7 +129,7 @@ svg {
     font-size: 18px;
 }
 
-/*small screens*/
+/*larger screens*/
 
 @media only screen and (min-width: 600px) {
     .column {
@@ -148,9 +148,29 @@ svg {
         margin-bottom: 5%;
         width: 30%;
     }
+    .navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+    .navbar:hover {
+        width: 16rem;
+    }
+    .navbar:hover .link-text {
+        display: inline;
+    }
+    .navbar:hover .logo-text {
+        left: 0;
+    }
 }
+/*smaller screens*/
 
 @media only screen and (max-width: 600px) {
+    
+    .form-container {
+        margin:20px 0px 20px 0px;
+    }
+
     .content-center {
         padding-bottom: 5rem;
     }
@@ -243,25 +263,6 @@ svg {
     }
     .copy{
         margin-top: 10%;
-    }
-}
-
-/*larger screens*/
-
-@media only screen and (min-width: 600px) {
-    .navbar {
-        top: 0;
-        width: 5rem;
-        height: 100vh;
-    }
-    .navbar:hover {
-        width: 16rem;
-    }
-    .navbar:hover .link-text {
-        display: inline;
-    }
-    .navbar:hover .logo-text {
-        left: 0;
     }
 }
 
