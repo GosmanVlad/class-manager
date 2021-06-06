@@ -45,7 +45,46 @@ class Grade {
 
     public function sendGrade($studentID, $courseID, $grade) 
     {
-        $result = Database::dbQuery("INSERT INTO grades(student_id, course_id, grade) VALUES ('$studentID', '$courseID', '$grade')", (new Database()));
+        $result = Database::dbQuery("SELECT * FROM courses WHERE id = $courseID", (new Database()));
+        $result->execute();
+
+        if($result->rowCount()) {
+            $fetch = $result->fetch();
+
+            $grades = Database::dbQuery("SELECT * FROM grades WHERE student_id = $studentID AND course_id = $courseID", (new Database()));
+            $grades->execute();
+            if($grades->rowCount() > $fetch['max_grades'])
+                return 0;
+
+            $setGrade = Database::dbQuery("INSERT INTO grades(student_id, course_id, grade) VALUES ('$studentID', '$courseID', '$grade')", (new Database()));
+            $setGrade->execute();
+            return 1;
+        }
+    }
+
+    public function getCourseInfo($courseID) 
+    {
+        $result = Database::dbQuery("SELECT * FROM courses WHERE id = $courseID", (new Database()));
+        $result->execute();
+        $finalResult = [];
+
+        if($result->rowCount()) {
+            $fetch = $result->fetchAll();
+            foreach($fetch as $row) {
+                $finalResult = [
+                    'name' => $row['name'],
+                    'year' => $row['year'],
+                    'credits' => $row['credits'],
+                    'max_grades' => $row['max_grades'] ?? 0
+                ];
+            }
+        }
+        return $finalResult;
+    }
+
+    public function updateMaxGrade($courseID, $grades) 
+    {
+        $result = Database::dbQuery("UPDATE courses SET max_grades = $grades WHERE id = $courseID", (new Database()));
         $result->execute();
     }
 }

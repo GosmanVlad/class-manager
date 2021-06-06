@@ -9,7 +9,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentControll
         <?php showNavMenu(); ?>
         <main>
             <h2 style="text-align: left;">Calculator</h2>
-            <?php if (isTeacher()) { ?>
+            <?php if (isTeacher()) { 
+                $maxGrades = (new Grade())->getCourseInfo($_GET['course'])['max_grades'];
+                ?>
                 <h3>Please choose the year:
                     <select id="year"  onchange="showStudents(this.value, 'A', <?=getAuthID()?>, <?=$_GET['course']?>)">
                         <option selected="true" disabled>Select</option>
@@ -28,6 +30,31 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentControll
                         <option>E</option>
                     </select>
                 </h3>
+                <?php if($maxGrades == 0) { ?>
+                    <h3>Please choose the maximum number of grades:
+                    <form action="<?=URL?>app/api/teacher/set_max_grades.php" method="POST">
+                        <input type="text" name="course-id" value=<?=$_GET['course']?> hidden>
+                        <select name="max-grades">
+                            <option selected="true" disabled>Select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                        <button type="submit" class="button-style btn-small btn-green">Save</button>
+                    </form>
+                </h3>
+                <?php } else { ?> 
+                    <h3>Please choose the maximum number of grades: <strong class="color-red"><?=$maxGrades?></strong></a>
+                        <a href="<?=URL?>app/api/teacher/set_max_grades.php?change=<?=$_GET['course']?>" class="button-style btn-small btn-green">Change</a>
+                    </h3>
+                <?php } ?>
                 <table class="table-style" style="text-align: left;">
                     <tr>
                         <th>Name of Student</th>
@@ -46,8 +73,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentControll
                         <th>Course name</th>
                         <th>Your Grades</th>
                         <th>Average</th>
+                        <th>Maximum number of grades</th>
                     </tr>
-                    <?php foreach($assignedCourses as $row) { ?>
+                    <?php foreach($assignedCourses as $row) { 
+                        $maxGrades = (new Grade())->getCourseInfo($row['course_id'])['max_grades']; ?>
                         <tr>
                             <td><?=$row['course']?></td>
                             <td><?=$row['grades']?></td>
@@ -57,6 +86,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentControll
                                 <strong>Media aritmetica rotunjita prin lipsa:</strong> <?=$row['average_floor']?> <br />
                                 <strong>Media aritmetica rotunjita prin adaos:</strong> <?=$row['average_ceil']?> <br />
                             </td>
+                            <td><?=$maxGrades?></td>
                         </tr>
                     <?php } ?>
                 </table>
