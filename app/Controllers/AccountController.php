@@ -81,6 +81,9 @@ class Account
                     $_SESSION['userid'] = $query['id'];
                     $_SESSION['last_name'] = $query['last_name'];
                     $_SESSION['first_name'] = $query['first_name'];
+
+                    if($query['admin'] == 1) 
+                        $_SESSION['admin'] = 1;
                     return 1;
                 }
             }

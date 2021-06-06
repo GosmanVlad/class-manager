@@ -108,6 +108,13 @@ class Teacher extends Account
         return $result->rowCount();
     }
 
+    public function revokeStudent($studentID, $courseID) 
+    {
+        $result = Database::dbQuery("DELETE FROM allocations WHERE student_id=$studentID AND course_id=$courseID", (new Database()));
+        $result->execute();
+        return $result->rowCount();
+    }
+
     public function getStudentsByYearAndGroup($teacherID, $year, $group, $courseID) 
     {
         $result = Database::dbQuery("SELECT * FROM `allocations` WHERE teacher_id=$teacherID AND course_id=$courseID;", (new Database()));

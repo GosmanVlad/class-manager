@@ -15,5 +15,6 @@ if(isset($_GET['year']) && isset($_GET['group']) && isset($_GET['course']) && is
             <?php } ?>
             <?=$row['presences']?>
         </td>
+        <td><a href="http://localhost/class/app/api/teacher/revoke_student.php?student=<?=$row['student_id']?>&course=<?=$_GET['course']?>" class="button-style btn-small btn-red" disabled>Revoke</button></td>
     <?php } 
 }

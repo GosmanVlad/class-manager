@@ -19,7 +19,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php";?>
         }
         else {
             echo 'Error. <br /> Please try again! <hr/>';
-            echo "<a href='".URL."login.php'>Back to login</a>";
+            echo "<a href='".URL."index.php'>Back to login</a>";
         }
     }
     ?>

@@ -35,6 +35,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentController.ph
                         <th>Name of Student</th>
                         <th>Grades</th>
                         <th>Presence</th>
+                        <th>Actions</th>
                     </tr>
                     <tr id="student-table">
                     </tr>

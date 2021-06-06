@@ -38,6 +38,13 @@ function isStudent() {
         return 0;
 }
 
+function isAdmin() {
+    if(isset($_SESSION['admin']))
+        return 1;
+    else
+        return 0;
+}
+
 function getAuthID() {
     if(isset($_SESSION['userid'])) {
         return $_SESSION['userid'];
