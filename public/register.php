@@ -74,6 +74,7 @@ if(isLogged())
         </div>
 
         <button class="button-style btn-pencil btn-green btn-full btn-medium cursor" type="submit">Register</button>
+        <p id="register"><a href="login.php" class="cursor">Go back to log-in</a></p>
     </form>
 
 </body>
