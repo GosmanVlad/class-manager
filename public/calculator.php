@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php"; 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentController.php";?>
-<script src="<?=URL?>assets/js/table-list.js"></script>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentController.php"; ?>
+<script src="<?= URL ?>assets/js/table-list.js"></script>
 
 <body>
     <div class="background-color">
         <?php showNavMenu(); ?>
         <main>
             <h2 style="text-align: left;">Calculator</h2>
-            <?php if (isTeacher()) { 
+            <?php if (isTeacher()) {
                 $maxGrades = (new Grade())->getCourseInfo($_GET['course'])['max_grades'];
-                ?>
+            ?>
                 <h3>Please choose the year:
-                    <select id="year"  onchange="showStudents(this.value, 'A', <?=getAuthID()?>, <?=$_GET['course']?>)">
+                    <select id="year" onchange="showStudents(this.value, 'A', <?= getAuthID() ?>, <?= $_GET['course'] ?>)">
                         <option selected="true" disabled>Select</option>
                         <option>1</option>
                         <option>2</option>
@@ -21,7 +21,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentControll
                     </select>
                 </h3>
                 <h3>Please choose the group:
-                    <select id="group" onchange="selectGroup(this.value, <?=getAuthID()?>, <?=$_GET['course']?>)">
+                    <select id="group" onchange="selectGroup(this.value, <?= getAuthID() ?>, <?= $_GET['course'] ?>)">
                         <option selected="true" disabled>Select</option>
                         <option>A</option>
                         <option>B</option>
@@ -30,44 +30,36 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentControll
                         <option>E</option>
                     </select>
                 </h3>
-                <?php if($maxGrades == 0) { ?>
+                <?php if ($maxGrades == 0) { ?>
                     <h3>Please choose the maximum number of grades:
-                    <form action="<?=URL?>app/api/teacher/set_max_grades.php" method="POST">
-                        <input type="text" name="course-id" value=<?=$_GET['course']?> hidden>
-                        <select name="max-grades">
-                            <option selected="true" disabled>Select</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                        <button type="submit" class="button-style btn-small btn-green">Save</button>
-                    </form>
-                </h3>
-                <?php } else { ?> 
-                    <h3>Please choose the maximum number of grades: <strong class="color-red"><?=$maxGrades?></strong></a>
-                        <a href="<?=URL?>app/api/teacher/set_max_grades.php?change=<?=$_GET['course']?>" class="button-style btn-small btn-green">Change</a>
+                        <form action="<?= URL ?>app/api/teacher/set_max_grades.php" method="POST">
+                            <input type="text" name="course-id" value=<?= $_GET['course'] ?> hidden>
+                            <select name="max-grades">
+                                <option selected="true" disabled>Select</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                            <button type="submit" class="button-style btn-small btn-green">Save</button>
+                        </form>
+                    </h3>
+                <?php } else { ?>
+                    <h3>Please choose the maximum number of grades: <strong class="color-red"><?= $maxGrades ?></strong></a>
+                        <a href="<?= URL ?>app/api/teacher/set_max_grades.php?change=<?= $_GET['course'] ?>" class="button-style btn-small btn-green">Change</a>
                     </h3>
                 <?php } ?>
-                <table class="table-style" style="text-align: left;">
-                    <tr>
-                        <th>Name of Student</th>
-                        <th>Grades</th>
-                        <th>Give a grade</th>
-                        <th>Average</th>
-                    </tr>
-                    <tr id="student-table">
-                    </tr>
+                <table class="table-style" style="text-align: left;" id="student-table">
                 </table>
-            <?php } else if (isStudent()) { 
-                    $assignedCourses = (new Student())->getAssignedCourses(getAuthID());
-                ?>
+            <?php } else if (isStudent()) {
+                $assignedCourses = (new Student())->getAssignedCourses(getAuthID());
+            ?>
                 <table class="table-style" style="text-align: left;">
                     <tr>
                         <th>Course name</th>
@@ -75,18 +67,18 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentControll
                         <th>Average</th>
                         <th>Maximum number of grades</th>
                     </tr>
-                    <?php foreach($assignedCourses as $row) { 
+                    <?php foreach ($assignedCourses as $row) {
                         $maxGrades = (new Grade())->getCourseInfo($row['course_id'])['max_grades']; ?>
                         <tr>
-                            <td><?=$row['course']?></td>
-                            <td><?=$row['grades']?></td>
+                            <td><?= $row['course'] ?></td>
+                            <td><?= $row['grades'] ?></td>
                             <td>
-                                <strong>Media aritmetica:</strong> <?=$row['average']?> <br />
-                                <strong>Media aritmetica rotunjita:</strong> <?=$row['average_round']?> <br />
-                                <strong>Media aritmetica rotunjita prin lipsa:</strong> <?=$row['average_floor']?> <br />
-                                <strong>Media aritmetica rotunjita prin adaos:</strong> <?=$row['average_ceil']?> <br />
+                                <strong>Media aritmetica:</strong> <?= $row['average'] ?> <br />
+                                <strong>Media aritmetica rotunjita:</strong> <?= $row['average_round'] ?> <br />
+                                <strong>Media aritmetica rotunjita prin lipsa:</strong> <?= $row['average_floor'] ?> <br />
+                                <strong>Media aritmetica rotunjita prin adaos:</strong> <?= $row['average_ceil'] ?> <br />
                             </td>
-                            <td><?=$maxGrades?></td>
+                            <td><?= $maxGrades ?></td>
                         </tr>
                     <?php } ?>
                 </table>
@@ -123,8 +115,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentControll
     </div>
 </body>
 <script>
-function selectGroup(value, teacher, course) {
-    showStudents(this.document.getElementById('year').value, this.document.getElementById('group').value, teacher, course);
-}
+    function selectGroup(value, teacher, course) {
+        showStudents(this.document.getElementById('year').value, this.document.getElementById('group').value, teacher, course);
+    }
 </script>
+
 </html>

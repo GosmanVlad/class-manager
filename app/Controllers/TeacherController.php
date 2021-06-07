@@ -165,9 +165,9 @@ class Teacher extends Account
                         'grades' => $grades,
                         'presences' => $presences,
                         'average' => $index == 0 ? 0 : $sumOfGrades / $index,
-                        'average_round' => round($sumOfGrades / $index),
-                        'average_ceil' => ceil($sumOfGrades / $index),
-                        'average_floor' => floor($sumOfGrades / $index),
+                        'average_round' => $index == 0 ? 0 : round($sumOfGrades / $index),
+                        'average_ceil' => $index == 0 ? 0 : ceil($sumOfGrades / $index),
+                        'average_floor' => $index == 0 ? 0 : floor($sumOfGrades / $index),
                     ]);
                 }
             }

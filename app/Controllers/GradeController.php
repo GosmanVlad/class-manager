@@ -34,9 +34,9 @@ class Grade {
             $resultGrades = [
                 'grades' => $grades,
                 'average' => $index == 0 ? 0 : $sumOfGrades / $index,
-                'average_ceil' => ceil($sumOfGrades / $index),
-                'average_floor' => floor($sumOfGrades / $index),
-                'average_round' => round($sumOfGrades / $index),
+                'average_ceil' => $index == 0 ? 0 : ceil($sumOfGrades / $index),
+                'average_floor' => $index == 0 ? 0 : floor($sumOfGrades / $index),
+                'average_round' => $index == 0 ? 0 : round($sumOfGrades / $index),
             ];
             return $resultGrades;
         }
