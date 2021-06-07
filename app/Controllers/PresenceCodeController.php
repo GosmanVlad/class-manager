@@ -1,8 +1,8 @@
 <?php
 require_once "Database.php";
-class PresenceCode 
+class PresenceCode
 {
-    public function add($code, $expiration, $teacher, $course) 
+    public function add($code, $expiration, $teacher, $course)
     {
         try {
             $result = Database::dbQuery("SELECT * FROM presence_codes WHERE course_id = $course AND teacher_id = $teacher", (new Database()));
