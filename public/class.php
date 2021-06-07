@@ -52,10 +52,12 @@ include $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentController.ph
                     <h2 class="input-box-h2">Generator</h2>
                     <h3>This code will be active for:
                         <select id="expiration">
+                            <option>1</option>
+                            <option>3</option>
                             <option>5</option>
+                            <option>7</option>
+                            <option>9</option>
                             <option>10</option>
-                            <option>15</option>
-                            <option>20</option>
                         </select>
                         minutes.
                     </h3>
@@ -70,6 +72,8 @@ include $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentController.ph
                     </svg>
                     <div class="generate-btn" onclick="getCode();">Generate your presence code</div>
                 </div>
+                <h3 id="countdown"></h3>
+                
             <?php } else if (isStudent()) {
                 $courses = (new Student()) -> getAssignedCourses(getAuthID()); ?>
                 <table class="table-style" style="text-align: left;">

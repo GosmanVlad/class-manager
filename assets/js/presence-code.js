@@ -13,12 +13,32 @@ function getCode() {
 
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", "http://localhost/class/app/api/teacher/save_presence_code.php?code="+code+"&expiration="+document.getElementById("expiration").value+"&teacher="+document.getElementById("teacher-id").value+"&course="+document.getElementById("course-id").value, true);
-    xmlHttp.addEventListener("load", sendAlert, false);
+    xmlHttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+           var response = this.responseText; 
+           sendAlert(response);
+     
+        }
+    };
     xmlHttp.send();
 }
 
-function sendAlert(){
+function sendAlert(response){
     alert("Codul de prezenta generat a fost inregistrat in baza de date! Poti distribui codul catre studenti.")
+    var countDownDate = new Date(response).getTime();
+    var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = minutes + "m " + seconds + "s ";
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "EXPIRED";
+        }
+    }, 1000);
 }
 
 function copyCode() {

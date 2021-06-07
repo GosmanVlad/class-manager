@@ -28,4 +28,18 @@ class Admin
         }
         return $teachers;
     }
+
+    public function updateApprovedTeacher($id, $approved)
+    {
+        $result = Database::dbQuery("UPDATE teachers SET approved = $approved WHERE id = $id", (new Database()));
+        $result->execute();
+        return 1;
+    }
+
+    public function deleteTeacherApplication($id)
+    {
+        $result = Database::dbQuery("DELETE FROM teachers WHERE id = $id", (new Database()));
+        $result->execute();
+        return 1;
+    }
 }

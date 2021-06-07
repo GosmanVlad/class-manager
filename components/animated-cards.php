@@ -18,7 +18,10 @@ $getCourses = (new Teacher())->getCoursesByTeacherID(getAuthID());
 <ul class="button-list">
     <p class="button-text">Please choose your subject:</p>
 
-    <?php foreach($getCourses as $row) { ?>
+    <?php foreach($getCourses as $row) { 
+        $getAllStudents = (new Course())->getAllStudents($row['course_id']); 
+        $getAllAssignedGrades = (new Course())->getAllAssignedGrades(getAuthID(), $row['course_id']);
+        $getTeachClasses = (new Course())->getTeachClasses(getAuthID(), $row['course_id']); ?>
         <a href="<?=$link . '?course=' . $row['course_id']?>" class="button-app">
             <li class="button-item">
                 <?=$row['course']?>
@@ -27,9 +30,9 @@ $getCourses = (new Teacher())->getCoursesByTeacherID(getAuthID());
             </li>
         </a>
         <ul class="button-info">
-            <li>Number of students: 200</li>
-            <li>Grades assigned: 20</li>
-            <li>You teach the following classes: A3, B2, E3</li>
+            <li>Number of students: <?=$getAllStudents?></li>
+            <li>Grades assigned: <?=$getAllAssignedGrades?></li>
+            <li>You teach the following classes: <?=$getTeachClasses?></li>
         </ul>
     <?php } ?>
 </nav>

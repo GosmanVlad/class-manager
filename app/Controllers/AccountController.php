@@ -75,6 +75,8 @@ class Account
                 return 0;
             } else {
                 $query = $dbQuery->fetch();
+                if ($query['approved'] == 0)
+                    return 0;
                 if ($password == $query['password']) {
                     $_SESSION['auth'] = 1;
                     $_SESSION['teacher'] = 1;
@@ -82,7 +84,7 @@ class Account
                     $_SESSION['last_name'] = $query['last_name'];
                     $_SESSION['first_name'] = $query['first_name'];
 
-                    if($query['admin'] == 1) 
+                    if ($query['admin'] == 1)
                         $_SESSION['admin'] = 1;
                     return 1;
                 }
