@@ -1,0 +1,22 @@
+<students>
+  <student>
+    <username>Name 1</username>
+    <first_name>100</first_name>
+    <last_name>2</last_name>
+	<password>21232f297a57a5a743894a0e4a801fc3</password>
+	<email>te</email>
+	<year>0</year>
+	<group_letter>1</group_letter>
+	<scholarship>1</scholarship>
+  </student>
+  <student>
+    <username>Name 2</username>
+    <first_name>100</first_name>
+    <last_name>2</last_name>
+	<password>21232f297a57a5a743894a0e4a801fc3</password>
+	<email>te</email>
+	<year>0</year>
+	<group_letter>1</group_letter>
+	<scholarship>1</scholarship>
+  </student>
+</students>

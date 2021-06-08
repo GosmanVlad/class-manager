@@ -1,0 +1,14 @@
+<courses>
+  <course>
+    <name>Name 1</name>
+    <year>1</year>
+    <credits>2</credits>
+	<max_grades>2</max_grades>
+  </course>
+  <course>
+    <name>Name 2</name>
+    <year>1</year>
+    <credits>2</credits>
+	<max_grades>3</max_grades>
+  </course>
+</courses>

@@ -35,8 +35,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentController.ph
                 <h3 style="text-align: right;">Export this catalog in:
                     <select>
                         <option>CSV</option>
-                        <option>HTML</option>
-                        <option>PDF</option>
                     </select>
                 </h3>
                 <button type="submit" class="button-style btn-small btn-red" style="float:right" id="export" onclick='exportCSV(document.querySelector("table").outerHTML, "students.csv")'>Export</button>

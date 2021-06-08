@@ -42,4 +42,35 @@ class Admin
         $result->execute();
         return 1;
     }
+
+    public function importData($data, $table)
+    {
+        try {
+            if($table == "teachers") {
+                foreach($data as $row){
+                    $result = Database::dbQuery("INSERT INTO teachers(username, first_name, last_name, password, email, admin, approved) 
+                                        VALUES ('$row->username', '$row->first_name', '$row->last_name', '$row->password', '$row->email', '$row->admin', '$row->approved')", (new Database()));
+                    $result->execute();
+                }
+            }
+            else if($table == "students") {
+                foreach($data as $row){
+                    $result = Database::dbQuery("INSERT INTO students(username, first_name, last_name, password, email, year, group_letter, scholarship) 
+                                        VALUES ('$row->username', '$row->first_name', '$row->last_name', '$row->password', '$row->email', '$row->year', '$row->group_letter', '$row->scholarship')", (new Database()));
+                    $result->execute();
+                }
+            }
+            else if($table == "courses") {
+                foreach($data as $row){
+                    $result = Database::dbQuery("INSERT INTO courses(name, year, credits, max_grades) 
+                                        VALUES ('$row->name', '$row->year', '$row->credits', '$row->max_grades')", (new Database()));
+                    $result->execute();
+                }
+            }
+        }catch(Exception $exception) {
+            echo $exception;
+            return 0;
+        }
+        return 1;
+    }
 }
