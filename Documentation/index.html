@@ -75,45 +75,135 @@
       </p>
     </section>
 
-    <section typeof="sa:mainPage">
-      <h3>Pagina principala</h3>
+    <section typeof="sa:presencesImplementation">
+      <h3>Sistemul de evidenta al prezentelor</h3>
       <p>
-        Accesul pe pagina principala se face doar cu un cont valid, autentificat.
+        Profesorul poate genera un cod de prezenta random, pentru un anumit curs (selectat din pagina de selectie).
+        Codul de prezenta poate fi valabil pentru 1, 3, 5, 7, 9, 10 minute.
+        Odata generat codul de prezenta pentru acest curs, nu se va mai putea genera altul, pana cand cel curent nu
+        expira. Un countdown va fi afisat in pagina.
       </p>
+      <p>
+        Studentii primesc codul de prezenta pe care il vor introduce in pagina 'Class'. In functie de valabilitatea
+        codului, acesta primeste un mesaj de eroare/succes. In cazul
+        mesajelor de eroare, prezenta nu va fi luata in considerare. In cazul mesajului de succes (prezenta se
+        inregistreaza), codul respectiv nu va mai fi valabil pentru acest student.
+      </p>
+    </section>
 
-      <section typeof="sa:studentMainpage">
-        <h4>Cont de student</h4>
-        <p>
-          După prima autentificare cu un cont de student, acestuia îi va apărea pe pagina principală materiile din anul
-          respectiv (an selectat odată cu înregistrarea
-          contului). Acesta va avea posibilitatea să vadă, pentru fiecare materie, profesorul care predă materia
-          selectată, alături de grupa unde o preda (în cazul în care acesta nu dorește
-          să facă cursurile și seminariile la grupa în care se află inițial). Acesta poate selecta un anumit profesor,
-          care predă la o anumită grupă. Cererea va fi trimisă direct către profesorul selectat
-          acesta având posibilitatea de a accepta/respinge cererea făcută de student, alături de un mesaj (în cazul
-          respingerii) în care va fi menționat motivul respingerii.
-        </p>
-      </section>
+    <section typeof="sa:studentsManagementImplementation">
+      <h3>Sistemul de management al studentilor</h3>
+      <p>
+        Studentul are dreptul de a-si selecta profesorii pentru materiile din anul in care se afla. Odata trimisa
+        cererea, aceasta va deveni 'In pending' pana cand profesorul tinta
+        va accepta/respinge acest student. Daca accepta, pe homepage-ul studentului cererea va aparea cu status
+        'Accepted'.
+      </p>
+      <p>
+        Un profesor poate elimina un student dintr-o grupa in orice moment de pe pagina 'Class'. Chiar daca studentul a
+        fost eliminat din grupa, notele lui vor fi pastrate.
+      </p>
+    </section>
 
-      <section typeof="sa:teacherMainpage">
-        <h4>Cont de profesor</h4>
-        <p>
-          Profesorul va fi repartizat la o anumită grupa (specificată de administratorul platformei odată cu aprobarea
-          contului), astfel acesta își va putea administra
-          propriile cursuri/laboratoare de pe pagina principala, cu referințe către alte pagini interne (vom dezvoltă
-          mai mult această secțiune atunci când vom stabili arhitectura pentru pagină
-          principală, în cazul autentificării cu un cont de profesor).
-        </p>
-      </section>
+    <section typeof="sa:homeworkImplementation">
+      <h3>Sistemul de trimitere a temelor</h3>
+      <p>
+        Studentul poate trimite diverse teme catre profesori pentru diverse cursuri (la care este acceptat). Pe pagina
+        dedicata acestui sistem, studentul poate incarca orice tip de fisier
+        care va ajunge ulterior in pagina de Assesments la profesor. Acesta ii poate acorda o nota de la 1 la 10 si un
+        mesaj de observatii (optional). Odata corectata tema, se va inregistra
+        data la care a fost corectata tema, nota si observatiile trimise catre student si se vor afisa pe pagina de
+        'Assesments' in contul de student.
+      </p>
+    </section>
 
-      <section typeof="sa:adminMainpage">
-        <h4>Cont de admin</h4>
-        <p>
-          Adminul va avea drepturi totale asupra cataloagelor, studentilor si profesorilor.
-          Va avea posibilitatea de a popula baza de date utilizand fisiere de tip XML si va putea oferi drepturi de
-          admin unor profesori
-        </p>
-      </section>
+    <section typeof="sa:averageCalculationImplementation">
+      <h3>Sistemul de calcul al mediilor </h3>
+      <p>
+        Platforma calculeaza mediile fiecarui student, pe baza notelor puse pana in acest moment. Aceste medii (media
+        propriu-zisa, media rotunjita, media rotunjita superior si inferior) vor
+        aparea pentru fiecare student pe pagina 'Calculator' atat pentru studenti cat si pentru profesori.
+      </p>
+      <p>
+        Profesorul poate modifica numarul maxim de note posibile pentru un anumit curs si poate pune note pe diverse
+        ascultari (separate de notele puse pe teme). Numarul maxim de note
+        poate fi modificat de orice profesor care preda acel curs si poate fi resetat oricand.
+      </p>
+    </section>
+
+    <section typeof="sa:teachersManagementImplementation">
+      <h3>Sistemul de management al profesorilor</h3>
+      <p>
+        Profesorii pot primi acces la platforma prin 2 metode: Import XML oferit de administrator (care ofera acces
+        direct pe platforma) si inregistrarea propriu-zisa facuta de profesori direct
+        pe platforma prin introducerea datelor personale. Acest tip de inregistrare nu ofera acces direct pe platforma,
+        intrucat oricine isi poate crea un astfel de cont. Astfel, odata inregistrat contul
+        de profesor va ajunge in pagina de administrator, unde poate fi aprobat sau respins. In cazul aprobarii, acel
+        cont va fi valid si primeste acces pe platforma. In cazul respingerii, datele contului
+        respectiv vor fi sterse definitiv.
+      </p>
+    </section>
+
+    <section typeof="sa:averageCalculationImplementation">
+      <h3>Sistemul de importare XML</h3>
+      <p>
+        Administratorul poate importa in baza de date pe baza unui fisier de tip XML. Astfel, pe pagina de admin este
+        pus la dispozitie un dropdown de tip select, care ofera administratorului
+        posibilitatea de a alege tabelul tinta in care vor fi introduse datele in urma importului.
+        Administratorul poate importa: studenti, profesori, alocari (poate aloca studenti la anumite cursuri si anumiti
+        profesori la anumite cursuri - pe care le va preda ulterior), cursuri.
+        Intrucat pentru construirea XML-ului va fi nevoie de ID-urile diversilor profesori/studenti/cursuri, am pus la
+        dispozitie sistemul de cautare in baza de date, descris mai jos.
+    </section>
+
+    <section typeof="sa:averageCalculationImplementation">
+      <h3>Sistemul de cautare pentru admin</h3>
+      <p>
+        Administratorul poate cauta in baza de date pentru a afla mai multe informatii despre un student/profesor sau
+        curs. Astfel, pe pagina 'Lists' am pus la dispozitie un input de tip cautare,
+        unde se va introduce numele unui student/profesor sau curs, ulterior afisand informatii din toate 3 tabele pe
+        baza datelor introduse in camp.
+    </section>
+
+
+  </section>
+  </section>
+
+  <section typeof="sa:Pages implemented" id="pages" role="doc-pages">
+    <h2>Tipuri de conturi</h2>
+    <section typeof="sa:studentMainpage">
+      <h4>Cont de student</h4>
+      <p>
+        După prima autentificare cu un cont de student, acestuia îi va apărea pe pagina principală materiile din anul
+        respectiv (an selectat odată cu înregistrarea
+        contului). Acesta va avea posibilitatea să vadă, pentru fiecare materie, profesorul care predă materia
+        selectată, alături de grupa unde o preda (în cazul în care acesta nu dorește
+        să facă cursurile și seminariile la grupa în care se află inițial). Acesta poate selecta un anumit profesor,
+        care predă la o anumită grupă. Cererea va fi trimisă direct către profesorul selectat
+        acesta având posibilitatea de a accepta/respinge cererea făcută de student, alături de un mesaj (în cazul
+        respingerii) în care va fi menționat motivul respingerii.
+      </p>
+    </section>
+
+
+    <section typeof="sa:teacherMainpage">
+      <h4>Cont de profesor</h4>
+      <p>
+        Profesorul va fi repartizat la o anumită grupa (specificată de administratorul platformei odată cu aprobarea
+        contului), astfel acesta își va putea administra
+        propriile cursuri/laboratoare de pe pagina principala, cu referințe către alte pagini interne (vom dezvoltă
+        mai mult această secțiune atunci când vom stabili arhitectura pentru pagină
+        principală, în cazul autentificării cu un cont de profesor).
+      </p>
+    </section>
+
+    <section typeof="sa:adminMainpage">
+      <h4>Cont de admin</h4>
+      <p>
+        Adminul va avea posibilitatea de a popula baza de date utilizand fisiere de tip XML si va putea oferi drepturi
+        de
+        admin unor profesori
+      </p>
     </section>
   </section>
 
@@ -129,6 +219,13 @@
         inregistrare si va avea posibilitatea
         de a vedea informatii importante despre aceasta si de a accepta sau refuza cererea.
       </p>
+      <section typeof="sa:homepagePrototypeTeacher" id="homepage">
+        <h3>Home page</h3>
+        <figure typeof="sa:image">
+          <img src="images/homePageTeachers.png" width="800" height="450" alt="home page for teachers">
+          <figcaption>Pagina principala pentru contul de profesori</figcaption>
+        </figure>
+      </section>
       <p>
         Studentii vor descoperi pe pagina principala informatii utile despre grupa in care se afla, despre temele
         predate si notele primite.
@@ -136,6 +233,10 @@
         card-urile cu informatii utile
         simultan, isi pot vizualiza notele primite la fiecare materie intr-un mod rapid si eficient
       </p>
+      <figure typeof="sa:image">
+        <img src="images//homePageStudents.png" width="800" height="450" alt="calculator page for students">
+        <figcaption>Pagina calculator pentru studenti</figcaption>
+      </figure>
     </section>
 
     <section typeof="sa:classPage">
@@ -148,11 +249,33 @@
         De asemenea, aveti posibilitatea de a exporta catalogul in format CSV si de a genera un cod unic de prezenta pe
         care mai apoi sa il puteti trimite studentilor pentru a-si inregistra prezenta.
       </p>
+      <section typeof="sa:chooseSubjectPage" id="chooseSubjectPage">
+        <h3>Pagina de alegere a materiei (teachers)</h3>
+        <figure typeof="sa:image">
+          <img src="images/chooseSubjectPage.png" width="800" height="450" alt="select subject page for teachers">
+          <figcaption>Pagina de selectare a materiei la care profesorul preda</figcaption>
+        </figure>
+      </section>
+
+      <section typeof="sa:classPage" id="classPage">
+        <h3>Pagina class (teachers)</h3>
+        <figure typeof="sa:image">
+          <img src="images/classPageTeachers.png" width="800" height="450" alt="class for teachers">
+          <figcaption>Pagina class pentru conturile de tip profesor</figcaption>
+        </figure>
+      </section>
       <p>
-        In cazul studentilor, trebuie putem vizualiza din nou notele la materiile inscrise si gasim un field special
-        unde trebuie introdus codul de prezenta primit de la profesor, numarul de prezente va fi incerementat in mod
+        In cazul studentilor, putem vizualiza din nou notele la materiile inscrise si gasim un field special
+        unde trebuie introdus codul de prezenta primit de la profesor, numarul de prezente va fi incrementat in mod
         automat la materia profesorului.
       </p>
+      <section typeof="sa:classPage" id="classPage">
+        <h3>Pagina class (students)</h3>
+        <figure typeof="sa:image">
+          <img src="images/classPageStudents.png" width="800" height="450" alt="class for students">
+          <figcaption>Pagina class pentru conturile de tip student</figcaption>
+        </figure>
+      </section>
     </section>
 
     <section typeof="sa:assesmentsPage">
@@ -162,10 +285,27 @@
         ulterior de a le da o nota si un mesaj aditional + data la care a fost trimisa tema.
 
       </p>
+
+      <section typeof="sa:assesmentsPage" id="assesmentsPage">
+        <h3>Pagina assesments (teachers)</h3>
+        <figure typeof="sa:image">
+          <img src="images/assesmentsPageTeachers.png" width="800" height="450" alt="assesments page for teachers">
+          <figcaption>Pagina assesments pentru conturile de tip profesor</figcaption>
+        </figure>
+      </section>
+
       <p>
         Studentii vor putea selecta materia la care trebuie sa trimita materia si vor putea trimite un fisier de pe
         masina locala.
       </p>
+
+      <section typeof="sa:assesmentsPage" id="assesmentsPage">
+        <h3>Pagina assesments (students)</h3>
+        <figure typeof="sa:image">
+          <img src="images/assesmentsPageStudents.png" width="800" height="450" alt="assesments page for students">
+          <figcaption>Pagina assesments pentru conturile de tip student</figcaption>
+        </figure>
+      </section>
     </section>
 
     <section typeof="sa:calculatorPage">
@@ -179,9 +319,24 @@
         atribuie studentilor.
 
       </p>
+      <section typeof="sa:calculatorPageTeachers" id="calculatorPageTeachers">
+        <h3>Pagina calculator (teachers)</h3>
+        <figure typeof="sa:image">
+          <img src="images/calculatorPageTeachers.png" width="800" height="450" alt="calculator page for teachers">
+          <figcaption>Pagina calculator pentru profesori</figcaption>
+        </figure>
+      </section>
       <p>
         Conturile de tip student vor putea vedea notele si media lor aritmetica calculata automat in moduri multiple.
       </p>
+
+      <section typeof="sa:calculatorPageStudents" id="calculatorPageStudents">
+        <h3>Pagina calculator (students)</h3>
+        <figure typeof="sa:image">
+          <img src="images/calculatorPageStudents.png" width="800" height="450" alt="calculator page for students">
+          <figcaption>Pagina calculator pentru studenti</figcaption>
+        </figure>
+      </section>
     </section>
 
     <section typeof="sa:aboutPage">
@@ -190,15 +345,30 @@
         Prezinta motivatia noastra pe scurt, multumiri celor ce incearca aplicatia si link-ul catre aceasta
         documentatie.
       </p>
+      <figure typeof="sa:image">
+        <img src="images/aboutPage.png" width="800" height="450" alt="about page">
+        <figcaption>Pagina about</figcaption>
+      </figure>
     </section>
+  </section>
 
-    <section typeof="sa:adminPage">
-      <h3>Pagina admin</h3>
-      <p>
-        Aceasta pagina va fi valabila doar conturilor cu drept de admin.Aici adminul/secretara va putea face upload
-        fisierelor de tip XML ce vor popula diferite tabele din baza de date.
-      </p>
-    </section>
+  <section typeof="sa:adminPage">
+    <h3>Pagina admin</h3>
+    <p>
+      Aceasta pagina va fi valabila doar conturilor cu drept de admin.Aici adminul/secretara va putea face upload
+      fisierelor de tip XML ce vor popula diferite tabele din baza de date si sa faca search unor informatii utile ale
+      studentilor/profesorilor/cursurilor.
+    </p>
+    <figure typeof="sa:image">
+      <img src="images/adminPage.png" width="800" height="450" alt="admin page">
+      <figcaption>Pagina admin de import XML</figcaption>
+    </figure>
+
+    <figure typeof="sa:image">
+      <img src="images/adminPageSearch.png" width="800" height="450" alt="admin page">
+      <figcaption>Pagina admin de interogare baza de date</figcaption>
+    </figure>
+  </section>
   </section>
 
   <section typeof="sa:developmentEnvironment" id="development-environment">
@@ -265,138 +435,24 @@
 
   </section>
 
-  <section typeof="sa:prototypes" id="prototype-images">
-    <h2>Imagini ale prototipului (imagini comprimate din cauza rezolutiei):</h2>
-
-    <section typeof="sa:loginPrototype" id="login">
-      <h3>Pagina principala de log-in</h3>
-      <figure typeof="sa:image">
-        <img src="images/login.png" width="800" height="450" alt="log-in">
-        <figcaption>Pagina autentificare comuna</figcaption>
-      </figure>
-    </section>
-
-    <section typeof="sa:recoverPrototype" id="recover">
-      <h3>Pagina de recuperare a parolei</h3>
-      <figure typeof="sa:image">
-        <img src="images/recover.png" width="800" height="450" alt="recover password">
-        <figcaption>Recuperare parola pe baza trimiterii unui email</figcaption>
-      </figure>
-    </section>
-
-    <section typeof="sa:registerPrototype" id="register">
-      <h3>Pagina de inregistrare</h3>
-      <figure typeof="sa:image">
-        <img src="images/register.png" width="800" height="450" alt="recover password">
-        <figcaption>Pagina de inregistrare a unui cont de profesor/student, alternativa pe langa inregistrarea lor cu
-          ajutorul
-          fisierelor XML</figcaption>
-      </figure>
-    </section>
-
-    <section typeof="sa:teachersModule" id="teachers">
-      <h3>Cont tip Profesor</h3>
-      <section typeof="sa:homepagePrototypeTeacher" id="homepage">
-        <h3>Home page</h3>
-        <figure typeof="sa:image">
-          <img src="images/home-page-teachers.jpeg" width="800" height="450" alt="home page for teachers">
-          <figcaption>Pagina principala pentru contul de profesori</figcaption>
-        </figure>
-      </section>
-
-      <section typeof="sa:selectionPrototypeTeacher" id="subject-selection">
-        <h3>Pagina de selectare a materiei</h3>
-        <figure typeof="sa:image">
-          <img src="images/subject-selection-teachers.jpeg" width="800" height="450" alt="selection page for teachers">
-          <figcaption>Pagina de selectare a materiei, pagina care te redirectioneaza pe diverse pagini, pentru
-            administrarea lor</figcaption>
-        </figure>
-      </section>
-
-      <section typeof="sa:classPrototypeTeacher" id="class">
-        <h3>Class page</h3>
-        <figure typeof="sa:image">
-          <img src="images/thecatalog-teachers.jpeg" width="800" height="450" alt="catalog page for teachers">
-          <figcaption>Catalogul profesorilor, in functie de materie (fotografie extinsa, nu este site-ul original).
-          </figcaption>
-        </figure>
-      </section>
-
-      <section typeof="sa:assesmentPrototypeTeacher" id="assesment">
-        <h3>Assesment page</h3>
-        <figure typeof="sa:image">
-          <img src="images/grade-assesments-teachers.jpeg" width="800" height="450" alt="assesment page for teachers">
-          <figcaption>Pagina unde profesorii pot corecta temele/lucrarile studentilor.</figcaption>
-        </figure>
-      </section>
-
-      <section typeof="sa:calculatorPrototypeTeacher" id="calculator">
-        <h3>Calculator</h3>
-        <figure typeof="sa:image">
-          <img src="images/the-calculator-teachers.jpeg" width="800" height="450" alt="calculator page for teachers">
-          <figcaption>Pagina de calculator care permite calcularea mediei fiecarui student. Calculatorul afisat in
-            partea de jos a paginii permite calcularea mediilor cu usurinta.</figcaption>
-        </figure>
-      </section>
-    </section>
-
-    <section id="students">
-      <h3>Cont tip Student</h3>
-      <section typeof="sa:homePageStudent" id="homepage">
-        <h3>Home page</h3>
-        <figure typeof="sa:image">
-          <img src="images/home-page-student.png" width="800" height="450" alt="home page for students">
-          <figcaption>Pagina principala pentru studenti. Informatiile afisate sunt diferite fata de cele afisate
-            profesorilor.</figcaption>
-        </figure>
-      </section>
-
-      <section id="class">
-        <h3>Class page</h3>
-        <figure typeof="sa:classPageStudent" typeof="sa:image">
-          <img src="images/class-page-student.png" width="800" height="450" alt="catalog page for students">
-          <figcaption>Pagina ce permite introducerea codului de prezenta si vizualizarea informatiilor pentru fiecare
-            materie.</figcaption>
-        </figure>
-      </section>
-
-      <section typeof="sa:assesmentPageStudent" id="assesment">
-        <h3>Assesment page</h3>
-        <figure typeof="sa:image">
-          <img src="images/assesments-page-student.png" width="800" height="450" alt="assesment page for students">
-          <figcaption>Pagina unde studentii isi pot incarca lucrarile si notele primite, respectiv comentarii din partea
-            profesorului.</figcaption>
-        </figure>
-      </section>
-
-      <section typeof="sa:calculatorPageStudent" id="calculator">
-        <h3>Calculator</h3>
-        <figure typeof="sa:image">
-          <img src="images/calculator-page-student.png" width="800" height="450" alt="calculator page for students">
-          <figcaption>Locul unde fiecare student isi poate calcula singur media.</figcaption>
-        </figure>
-      </section>
-    </section>
-
-    <section typeof="sa:navigationMenu" id="navbar">
-      <h3>The Nav Bar</h3>
-      <figure typeof="sa:image">
-        <img src="images/navbar.png" width="800" height="450" alt="navbar">
-        <figcaption>Meniul de unde poti naviga pe intregul site.</figcaption>
-      </figure>
-    </section>
-
-    <section typeof="sa:aboutPage" id="about">
-      <h3>About Page</h3>
-      <figure typeof="sa:image">
-        <img src="images/about-page1.png" width="800" height="450" alt="about page">
-        <img src="images/about-page2.png" width="800" height="450" alt="about page">
-        <figcaption>Pagina de about cu informatii despre site, dezvoltatorii, informatii de contact.</figcaption>
-      </figure>
-    </section>
-
+  <section typeof="sa:developmentEnvironment" id="development-environment">
+    <h2>Sistemul de management al codului-sursă</h2>
+    <p>
+      Orice functionalitate/element de design este despartita in mai multe componente (functii, api-uri, views,
+      componente mai mici).
+      Astfel, pentru fiecare tabel din baza de date s-a creat cate un Controller care ofera diverse servicii, pe baza
+      anumitor date.
+      Legatura dintre views si controllers este facuta de API-uri, care preia datele de pe front-end si le trimite catre
+      controller, asteptand un raspuns.
+      Organizarea fisierelor s-a facut cat mai simplista, oferind transparenta, logica. Astfel, in fisierul app sunt
+      facute operatiile back-end (Controllers, API), iar in folderul public
+      se afla toate fisierele publice, deschise catre useri (views), cu legatura in fisierul components, unde se afla
+      componente mai mici, dinamice (am incercat pe cat posibil sa oferim dinamica,
+      sa eliminam datele hardcoded si o componenta sa poata fi folosita in mai multe locuri, cu date diferite).
+      Pentru platforma s-au creat si mici functii, localizate in includes->functions, cu rolul de a oferi dinamica si
+      citire usoara a codului.
+    </p>
   </section>
-
 </body>
 
 </html>
