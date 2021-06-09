@@ -31,7 +31,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php";?>
                 $execute = $new_account->registerAccount($username, $first_name, $last_name, $email, $password, $account_type);
 
             if($execute!=0)
-                header( "Location: https://localhost/class/login.php" );
+                header( "Location: https://localhost/class/index.php" );
         } else {
             echo 'The passwords don not match!';
         }

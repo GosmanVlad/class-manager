@@ -1,14 +1,171 @@
 <courses>
   <course>
-    <name>Name 1</name>
+    <name>Structuri de date</name>
     <year>1</year>
-    <credits>2</credits>
-	<max_grades>2</max_grades>
+    <credits>6</credits>
+	<max_grades>0</max_grades>
   </course>
   <course>
-    <name>Name 2</name>
+    <name>Arhitectura calculatoarelor</name>
     <year>1</year>
-    <credits>2</credits>
-	<max_grades>3</max_grades>
+    <credits>5</credits>
+	<max_grades>0</max_grades>
   </course>
+  <course>
+    <name>Logica pentru informatica</name>
+    <year>1</year>
+    <credits>6</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Matematica</name>
+    <year>1</year>
+    <credits>5</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Limba engleza 1</name>
+    <year>1</year>
+    <credits>4</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Programare orientata-obiect</name>
+    <year>1</year>
+    <credits>6</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Sisteme de operare</name>
+    <year>1</year>
+    <credits>6</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Fundamente algebrice</name>
+    <year>1</year>
+    <credits>5</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Probabilitati si statistica</name>
+    <year>1</year>
+    <credits>5</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Proiectarea algoritmilor</name>
+    <year>1</year>
+    <credits>5</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Retele de calculatoare</name>
+    <year>2</year>
+    <credits>6</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Baze de date</name>
+    <year>2</year>
+    <credits>6</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Limbaje formale, automate</name>
+    <year>2</year>
+    <credits>5</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Algoritmica grafurilor</name>
+    <year>2</year>
+    <credits>5</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Limba engleza II</name>
+    <year>2</year>
+    <credits>6</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Tehnologii WEB</name>
+    <year>2</year>
+    <credits>6</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Programare avansata</name>
+    <year>2</year>
+    <credits>5</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Ingineria Programarii</name>
+    <year>2</year>
+    <credits>6</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Practica SGBD</name>
+    <year>2</year>
+    <credits>4</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Invatare automata</name>
+    <year>3</year>
+    <credits>6</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Securitatea informatiei</name>
+    <year>3</year>
+    <credits>5</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Inteligenta artificiala</name>
+    <year>3</year>
+    <credits>6</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Python</name>
+    <year>3</year>
+    <credits>4</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Introducere in .NET</name>
+    <year>3</year>
+    <credits>4</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>DSFUM</name>
+    <year>3</year>
+    <credits>4</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Retele neuronale</name>
+    <year>3</year>
+    <credits>6</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Calcul numeric</name>
+    <year>3</year>
+    <credits>4</credits>
+	<max_grades>0</max_grades>
+  </course>
+  <course>
+    <name>Grafica pe calculator</name>
+    <year>3</year>
+    <credits>4</credits>
+	<max_grades>0</max_grades>
+  </course>
+
 </courses>

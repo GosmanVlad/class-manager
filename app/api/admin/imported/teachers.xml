@@ -1,31 +1,28 @@
 <teachers>
   <teacher>
-    <id>p01</id>
-    <username>Name 1</username>
-    <first_name>100</first_name>
-    <last_name>2</last_name>
+    <username>vcosmin</username>
+    <first_name>Varlan</first_name>
+    <last_name>Cosmin</last_name>
 	<password>21232f297a57a5a743894a0e4a801fc3</password>
-	<email>te</email>
+	<email>vcosmin</email>
 	<admin>0</admin>
 	<approved>1</approved>
   </teacher>
   <teacher>
-    <id>p01</id>
-    <username>Name 2</username>
-    <first_name>100</first_name>
-    <last_name>2</last_name>
+    <username>an2</username>
+    <first_name>Materii</first_name>
+    <last_name>An2</last_name>
 	<password>21232f297a57a5a743894a0e4a801fc3</password>
-	<email>te</email>
+	<email>an2</email>
 	<admin>0</admin>
 	<approved>1</approved>
   </teacher>
   <teacher>
-    <id>p01</id>
-    <username>Name 2</username>
-    <first_name>100</first_name>
-    <last_name>2</last_name>
+    <username>an3</username>
+    <first_name>Materii</first_name>
+    <last_name>An3</last_name>
 	<password>21232f297a57a5a743894a0e4a801fc3</password>
-	<email>te</email>
+	<email>an3</email>
 	<admin>0</admin>
 	<approved>1</approved>
   </teacher>

@@ -13,7 +13,7 @@
   <header>
     <h1>Class Manager</h1>
   </header>
-  
+
   <div role="contentinfo">
     <dt>Authors</dt>
     <ul>
@@ -48,7 +48,7 @@
     </p>
   </section>
 
-  <section typeof="sa:Implementation" id="implementation" role="doc-example"> 
+  <section typeof="sa:Implementation" id="implementation" role="doc-example">
     <h2>Sisteme implementate</h2>
     <section typeof="sa:registerImplementation">
       <h3>Sistemul de inregistrare</h3>
@@ -105,6 +105,99 @@
           principală, în cazul autentificării cu un cont de profesor).
         </p>
       </section>
+
+      <section typeof="sa:adminMainpage">
+        <h4>Cont de admin</h4>
+        <p>
+          Adminul va avea drepturi totale asupra cataloagelor, studentilor si profesorilor.
+          Va avea posibilitatea de a popula baza de date utilizand fisiere de tip XML si va putea oferi drepturi de
+          admin unor profesori
+        </p>
+      </section>
+    </section>
+  </section>
+
+  <section typeof="sa:Pages implemented" id="pages" role="doc-pages">
+    <h2>Pagini implementate si modul de utilizare</h2>
+    <section typeof="sa:firstPage">
+      <h3>Pagina principala</h3>
+      <p>
+        In urma autentificarii cu succes, utilizatorul va fi primit de o pagina principala unde va gasi pe 3 carduri
+        cele mai importante informatii
+        despre cursurile ce le preda si despre grupele pe care le are in grija.
+        Sub aceste carduri regasim tabelul 'Registration applications' locul unde profesorul va putea vedea cererile de
+        inregistrare si va avea posibilitatea
+        de a vedea informatii importante despre aceasta si de a accepta sau refuza cererea.
+      </p>
+      <p>
+        Studentii vor descoperi pe pagina principala informatii utile despre grupa in care se afla, despre temele
+        predate si notele primite.
+        Acestia vor putea trimite o cerere de primire in grupa altui profesor utilizand tabelul disponibil sub
+        card-urile cu informatii utile
+        simultan, isi pot vizualiza notele primite la fiecare materie intr-un mod rapid si eficient
+      </p>
+    </section>
+
+    <section typeof="sa:classPage">
+      <h3>Pagina class</h3>
+      <p>
+        In cazul conturilor de tip profesor, in aceasta pagina vezi putea alege catalogul corespunzator anului si grupei
+        pe care o aveti.
+        Dupa ce ati ales anul si grupa corespunzatoare vezi putea vizualiza atat notele cat si prezentele fiecarui
+        student si totodata posibilitatea de a-l revoca din aceasta tabela
+        De asemenea, aveti posibilitatea de a exporta catalogul in format CSV si de a genera un cod unic de prezenta pe
+        care mai apoi sa il puteti trimite studentilor pentru a-si inregistra prezenta.
+      </p>
+      <p>
+        In cazul studentilor, trebuie putem vizualiza din nou notele la materiile inscrise si gasim un field special
+        unde trebuie introdus codul de prezenta primit de la profesor, numarul de prezente va fi incerementat in mod
+        automat la materia profesorului.
+      </p>
+    </section>
+
+    <section typeof="sa:assesmentsPage">
+      <h3>Pagina assesments</h3>
+      <p>
+        In aceasta pagina, profesorii vor avea posibilitatea de a descarca fisierele trimise de catre studenti iar
+        ulterior de a le da o nota si un mesaj aditional + data la care a fost trimisa tema.
+
+      </p>
+      <p>
+        Studentii vor putea selecta materia la care trebuie sa trimita materia si vor putea trimite un fisier de pe
+        masina locala.
+      </p>
+    </section>
+
+    <section typeof="sa:calculatorPage">
+      <h3>Pagina calculator</h3>
+      <p>
+        Profesorii vor putea sa puna note noi studentilor dintr-o tabela ulterior aleasa, sa vada 4 tipuri de medie
+        calculate automat
+        (media aritmetica, rotunjita, rotunjita prin lipsa, rotunjita prin adaos) si de asemenea sa efectueze diferite
+        calcule pe widget-ul calculator
+        adaugat in aceasta sectiune.Simultan pot seta tot din aceasta pagina numarul maxim de note ce doreste sa le
+        atribuie studentilor.
+
+      </p>
+      <p>
+        Conturile de tip student vor putea vedea notele si media lor aritmetica calculata automat in moduri multiple.
+      </p>
+    </section>
+
+    <section typeof="sa:aboutPage">
+      <h3>Pagina about</h3>
+      <p>
+        Prezinta motivatia noastra pe scurt, multumiri celor ce incearca aplicatia si link-ul catre aceasta
+        documentatie.
+      </p>
+    </section>
+
+    <section typeof="sa:adminPage">
+      <h3>Pagina admin</h3>
+      <p>
+        Aceasta pagina va fi valabila doar conturilor cu drept de admin.Aici adminul/secretara va putea face upload
+        fisierelor de tip XML ce vor popula diferite tabele din baza de date.
+      </p>
     </section>
   </section>
 
@@ -195,7 +288,8 @@
       <h3>Pagina de inregistrare</h3>
       <figure typeof="sa:image">
         <img src="images/register.png" width="800" height="450" alt="recover password">
-        <figcaption>Pagina de inregistrare a unui cont de profesor/student, alternativa pe langa inregistrarea lor cu ajutorul
+        <figcaption>Pagina de inregistrare a unui cont de profesor/student, alternativa pe langa inregistrarea lor cu
+          ajutorul
           fisierelor XML</figcaption>
       </figure>
     </section>
@@ -214,7 +308,8 @@
         <h3>Pagina de selectare a materiei</h3>
         <figure typeof="sa:image">
           <img src="images/subject-selection-teachers.jpeg" width="800" height="450" alt="selection page for teachers">
-          <figcaption>Pagina de selectare a materiei, pagina care te redirectioneaza pe diverse pagini, pentru administrarea lor</figcaption>
+          <figcaption>Pagina de selectare a materiei, pagina care te redirectioneaza pe diverse pagini, pentru
+            administrarea lor</figcaption>
         </figure>
       </section>
 
@@ -222,7 +317,8 @@
         <h3>Class page</h3>
         <figure typeof="sa:image">
           <img src="images/thecatalog-teachers.jpeg" width="800" height="450" alt="catalog page for teachers">
-          <figcaption>Catalogul profesorilor, in functie de materie (fotografie extinsa, nu este site-ul original).</figcaption>
+          <figcaption>Catalogul profesorilor, in functie de materie (fotografie extinsa, nu este site-ul original).
+          </figcaption>
         </figure>
       </section>
 
@@ -238,7 +334,8 @@
         <h3>Calculator</h3>
         <figure typeof="sa:image">
           <img src="images/the-calculator-teachers.jpeg" width="800" height="450" alt="calculator page for teachers">
-          <figcaption>Pagina de calculator care permite calcularea mediei fiecarui student. Calculatorul afisat in partea de jos a paginii permite calcularea mediilor cu usurinta.</figcaption>
+          <figcaption>Pagina de calculator care permite calcularea mediei fiecarui student. Calculatorul afisat in
+            partea de jos a paginii permite calcularea mediilor cu usurinta.</figcaption>
         </figure>
       </section>
     </section>
@@ -249,7 +346,8 @@
         <h3>Home page</h3>
         <figure typeof="sa:image">
           <img src="images/home-page-student.png" width="800" height="450" alt="home page for students">
-          <figcaption>Pagina principala pentru studenti. Informatiile afisate sunt diferite fata de cele afisate profesorilor.</figcaption>
+          <figcaption>Pagina principala pentru studenti. Informatiile afisate sunt diferite fata de cele afisate
+            profesorilor.</figcaption>
         </figure>
       </section>
 
@@ -257,7 +355,8 @@
         <h3>Class page</h3>
         <figure typeof="sa:classPageStudent" typeof="sa:image">
           <img src="images/class-page-student.png" width="800" height="450" alt="catalog page for students">
-          <figcaption>Pagina ce permite introducerea codului de prezenta si vizualizarea informatiilor pentru fiecare materie.</figcaption>
+          <figcaption>Pagina ce permite introducerea codului de prezenta si vizualizarea informatiilor pentru fiecare
+            materie.</figcaption>
         </figure>
       </section>
 
@@ -265,7 +364,8 @@
         <h3>Assesment page</h3>
         <figure typeof="sa:image">
           <img src="images/assesments-page-student.png" width="800" height="450" alt="assesment page for students">
-          <figcaption>Pagina unde studentii isi pot incarca lucrarile si notele primite, respectiv comentarii din partea profesorului.</figcaption>
+          <figcaption>Pagina unde studentii isi pot incarca lucrarile si notele primite, respectiv comentarii din partea
+            profesorului.</figcaption>
         </figure>
       </section>
 
@@ -277,7 +377,7 @@
         </figure>
       </section>
     </section>
-    
+
     <section typeof="sa:navigationMenu" id="navbar">
       <h3>The Nav Bar</h3>
       <figure typeof="sa:image">

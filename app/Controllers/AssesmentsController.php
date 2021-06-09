@@ -112,6 +112,6 @@ class Assesments
                 $sum = $sum + $row['grade'];
             }
         }
-        return $sum/$index;
+        return $index == 0 ? 0 : $sum/$index;
     }
 }
