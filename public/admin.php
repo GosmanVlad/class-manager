@@ -3,6 +3,8 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/AdminController.php";
+if(!isAdmin()) 
+    header("Location: index.php");
 ?>
 <script src="<?= URL ?>assets/js/presence-code.js"></script>
 <script src="<?= URL ?>assets/js/course-list.js"></script>
@@ -44,6 +46,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/AdminController
                         <option value="teachers">teachers</option>
                         <option value="students">students</option>
                         <option value="courses">courses</option>
+                        <option value="holders">holders</option>
+                        <option value="allocations">allocations</option>
                     </select> <br>
                     <input type="file" name="xmlFile">
                     <button type="submit" class="button-style btn-small btn-cyan">Import</button>
@@ -52,10 +56,5 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/AdminController
         </main>
     </div>
 </body>
-<script>
-    function selectGroup(value, teacher, course) {
-        showStudents(this.document.getElementById('year').value, this.document.getElementById('group').value, teacher, course);
-    }
-</script>
 
 </html>
