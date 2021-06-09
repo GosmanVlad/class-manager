@@ -67,10 +67,105 @@ class Admin
                     $result->execute();
                 }
             }
+            else if($table == "holders") {
+                foreach($data as $row){
+                    $result = Database::dbQuery("INSERT INTO holders(teacher_id, course_id) 
+                                        VALUES ('$row->teacher', '$row->course')", (new Database()));
+                    $result->execute();
+                }
+            }
+            else if($table == "allocations") {
+                foreach($data as $row){
+                    $result = Database::dbQuery("INSERT INTO allocations(student_id, course_id, teacher_id) 
+                                        VALUES ('$row->student', '$row->course', '$row->teacher')", (new Database()));
+                    $result->execute();
+                }
+            }
         }catch(Exception $exception) {
             echo $exception;
             return 0;
         }
         return 1;
+    }
+
+    public function searchStudents($name) 
+    {
+        $result = Database::dbQuery("SELECT * FROM students WHERE 
+                                    username LIKE '%$name%' OR 
+                                    first_name LIKE '%$name%' OR 
+                                    last_name LIKE '%$name%'", (new Database()));
+        $result->execute();
+
+        $sendResult = [];
+
+        if($result->rowCount()) {
+            $fetch = $result->fetchAll();
+
+            foreach($fetch as $row) {
+                array_push($sendResult, [
+                    'id' => $row['id'],
+                    'username' => $row['username'],
+                    'first_name' => $row['first_name'], 
+                    'last_name' => $row['last_name'],
+                    'email' => $row['email'],
+                    'year' => $row['year'],
+                    'group' => $row['group_letter'],
+                    'scholarship' => $row['scholarship']
+                ]);
+            }
+            return $sendResult;
+        }
+        return 0;
+    }
+
+    public function searchCourses($name) 
+    {
+        $result = Database::dbQuery("SELECT * FROM courses WHERE name LIKE '%$name%'", (new Database()));
+        $result->execute();
+
+        $sendResult = [];
+
+        if($result->rowCount()) {
+            $fetch = $result->fetchAll();
+
+            foreach($fetch as $row) {
+                array_push($sendResult, [
+                    'id' => $row['id'],
+                    'name' => $row['name'],
+                    'year' => $row['year'], 
+                    'credits' => $row['credits']
+                ]);
+            }
+            return $sendResult;
+        }
+        return 0;
+    }
+
+    public function searchTeachers($name) 
+    {
+        $result = Database::dbQuery("SELECT * FROM teachers WHERE 
+                                    username LIKE '%$name%' OR 
+                                    first_name LIKE '%$name%' OR 
+                                    last_name LIKE '%$name%'", (new Database()));
+        $result->execute();
+
+        $sendResult = [];
+
+        if($result->rowCount()) {
+            $fetch = $result->fetchAll();
+
+            foreach($fetch as $row) {
+                array_push($sendResult, [
+                    'id' => $row['id'],
+                    'username' => $row['username'],
+                    'first_name' => $row['first_name'], 
+                    'last_name' => $row['last_name'],
+                    'email' => $row['email'],
+                    'register_date' => $row['registration_date']
+                ]);
+            }
+            return $sendResult;
+        }
+        return 0;
     }
 }

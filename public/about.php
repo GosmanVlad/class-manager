@@ -79,6 +79,7 @@
         </main>
         <footer>
             <img class="logo-footer" src="<?=URL?>assets/images/android-chrome-512x512.png" alt="Logo ClaMa" width="50" height="50">
+            <p><a href="<?=URL?>Documentation" class="color-white">Link to scholarly documentation</a></p>
             <p class="color-white">Developers: Gosman Vladut Andrei & Luca Andrei Iulian</p>
             <p class="color-white">Do you have any suggestions and/or feedback?</p>
             <p class="color-white">Don't hesitate to contact us at:</p>
