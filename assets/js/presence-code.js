@@ -50,7 +50,7 @@ function copyCode() {
 
 function insertCode() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", "http://localhost/class/app/api/students/insert_code.php?code="+document.getElementById("code").value+"&student="+document.getElementById("student-id").value+"&course="+document.getElementById("course-id").value, true);
+    xmlHttp.open("GET", "http://localhost/class/app/api/students/insert_code.php?code="+document.getElementById("code").value+"&student="+document.getElementById("student-id").value, true);
     xmlHttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
            var response = this.responseText; 
@@ -70,6 +70,9 @@ function reload(errorType)  {
     }
     else if(errorType == 0) {
         alert("Acest cod nu exista!");
+    }
+    else if(errorType == 3) {
+        alert("Acest cod a fost deja introdus!");
     }
     location.reload();
 }

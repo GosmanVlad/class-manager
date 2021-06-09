@@ -68,11 +68,32 @@ class Student extends Account
                     'course_id' => $courseID,
                     'course' => (new Course())->getCourseByID($courseID)['name'],
                     'credits' => (new Course())->getCourseCredits($courseID),
-
                 ]);
             }
         }
         return $notAssigned;
+    }
+
+    public function getCountCoursesNotAssigned($studentID)
+    {
+        $studentYear = $this->getYear($studentID);
+        $getAssignedCourse = Database::dbQuery("SELECT * FROM courses WHERE year = $studentYear", (new Database()));
+        $getAssignedCourse->execute();
+        $fetchCourses = $getAssignedCourse->fetchAll();
+
+        $count = 0;
+        foreach ($fetchCourses as $rowCourse) {
+            $courseID = $rowCourse['id'];
+
+            $getAllocations = Database::dbQuery("SELECT * FROM allocations WHERE student_id = $studentID AND course_id = $courseID", (new Database()));
+            $getAllocations->execute();
+            $fetch = $getAllocations->fetch();
+
+            if ($getAllocations->rowCount() == 0) {
+                $count++;
+            }
+        }
+        return $count;
     }
 
     public function getAssignedCourses($studentID)
@@ -106,6 +127,22 @@ class Student extends Account
         return $result;
     }
 
+    public function getCountAssignedCourses($studentID)
+    {
+        $getAssignedCourse = Database::dbQuery("SELECT * FROM allocations WHERE student_id = $studentID", (new Database()));
+        $getAssignedCourse->execute();
+
+        $count = 0;
+        if ($getAssignedCourse->rowCount()) {
+            $fetch = $getAssignedCourse->fetchAll();
+
+            foreach ($fetch as $row) {
+                $count++;
+            }
+        }
+        return $count;
+    }
+
     public function sendApplication($studentID, $teacherID, $courseID, $groupLetter)
     {
         try {
@@ -120,14 +157,21 @@ class Student extends Account
         return 1;
     }
 
-    public function insertCode($code, $studentID, $courseID) 
+    public function insertCode($code, $studentID) 
     {
         $checkPresenceCode = Database::dbQuery("SELECT * FROM presence_codes WHERE code = '$code'", (new Database()));
         $checkPresenceCode->execute();
 
         if($checkPresenceCode->rowCount()) {
+            $check = Database::dbQuery("SELECT * FROM presences WHERE presence_code_id = '$code' AND student_id = $studentID", (new Database()));
+            $check->execute();
+
+            if($check->rowCount()) 
+                return 3; 
+            
             $fetch = $checkPresenceCode->fetch();
             $code = $fetch['code'];
+            $course = $fetch['course_id'];
 
             $now = date("Y/m/d G:i");
             $time = new DateTime($now);
@@ -136,7 +180,7 @@ class Student extends Account
             $minutes=$interval->format("%i");
 
             if($minutes <= 5 && $minutes > 0 && $expirationDate > $time) {
-                $insertCode = Database::dbQuery("INSERT INTO presences(presence_code_id, student_id, course_id) VALUES('$code', '$studentID', '$courseID')", (new Database()));
+                $insertCode = Database::dbQuery("INSERT INTO presences(presence_code_id, student_id, course_id) VALUES('$code', '$studentID', '$course')", (new Database()));
                 $insertCode->execute();
                 return 1;
             }
@@ -145,5 +189,23 @@ class Student extends Account
             }
         }
         return 0;
+    }
+
+    public function gradesAverage($studentID)
+    {
+        $grades = Database::dbQuery("SELECT * FROM grades WHERE student_id = '$studentID'", (new Database()));
+        $grades->execute();
+
+        $sum = 0;
+        $counter = 0;
+        if($grades->rowCount()) {
+            $fetch = $grades->fetchAll();
+
+            foreach($fetch as  $row) {
+                $sum = $sum + $row['grade'];
+                $counter++;
+            }
+        }
+        return $counter == 0 ? 0 : $sum/$counter;
     }
 }

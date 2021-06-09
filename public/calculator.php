@@ -13,7 +13,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentControll
                 $maxGrades = (new Grade())->getCourseInfo($_GET['course'])['max_grades'];
             ?>
                 <h3>Please choose the year:
-                    <select id="year" onchange="showStudents(this.value, 'A', <?= getAuthID() ?>, <?= $_GET['course'] ?>)">
+                    <select id="year" onchange="showStudents(this.value, 'X', <?= getAuthID() ?>, <?= $_GET['course'] ?>)">
                         <option selected="true" disabled>Select</option>
                         <option>1</option>
                         <option>2</option>

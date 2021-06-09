@@ -18,7 +18,7 @@ class Account
                 } else if ($account_type == 'teacher') {
                     $registrationDate = date("Y/m/d");
                     $insert = Database::dbInsert("INSERT INTO teachers (id, username, first_name, last_name, password, email, registration_date) VALUES 
-                                                 (NULL, '$username', '$first_name', '$last_name', '$password', '$email', '$registrationDate'", $dbHandle);
+                                                 (NULL, '$username', '$first_name', '$last_name', '$password', '$email', '$registrationDate')", $dbHandle);
                 }
             } catch (\Exception $exception) {
                 echo $exception;

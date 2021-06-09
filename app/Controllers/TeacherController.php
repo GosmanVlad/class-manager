@@ -94,6 +94,36 @@ class Teacher extends Account
         return $resultToSend;
     }
 
+    public function getShortNameOfCourses($teacherID)
+    {
+        $finalCourses = '';
+        $index = 0;
+
+        $result = Database::dbQuery("SELECT * FROM holders WHERE teacher_id = $teacherID;", (new Database()));
+        $result->execute();
+
+        if($result->rowCount()) {
+            $fetch = $result->fetchAll();
+
+            foreach($fetch as $row) {
+                $courseName = explode(" ", (new Course())->getCourseByID($row['course_id'])['name']);
+                $firstLetter = "";
+
+                foreach ($courseName as $word) {
+                    if($word != "de")
+                        $firstLetter .= $word[0];
+                }
+
+                if($index == 0) 
+                    $finalCourses = $firstLetter;
+                else 
+                    $finalCourses = $finalCourses . ', ' . $firstLetter;
+                $index++;
+            }
+        }
+        return strtoupper($finalCourses);
+    }
+
     public function getUncorrectedHomeworks($teacherID) 
     {
         $result = Database::dbQuery("SELECT * FROM assesments WHERE teacher_id = $teacherID AND corrected = 0;", (new Database()));

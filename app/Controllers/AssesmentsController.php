@@ -38,6 +38,39 @@ class Assesments
         return $result;
     }
 
+    public function getCountAssesments($studentID)
+    {
+        $sendApplication = Database::dbQuery("SELECT * FROM assesments WHERE student_id = $studentID", (new Database()));
+        $sendApplication->execute();
+        return $sendApplication->rowCount();
+    }
+
+    public function getCountUncorrectedAssesments($studentID)
+    {
+        $sendApplication = Database::dbQuery("SELECT * FROM assesments WHERE student_id = $studentID AND corrected = 0", (new Database()));
+        $sendApplication->execute();
+        return $sendApplication->rowCount();
+    }
+
+    public function getAverageAssesments($studentID)
+    {
+        $grades = Database::dbQuery("SELECT * FROM assesments WHERE student_id = $studentID AND corrected = 1", (new Database()));
+        $grades->execute();
+
+        $sum = 0;
+        $counter = 0;
+
+        if($grades->rowCount()) {
+            $fetch = $grades->fetchAll();
+
+            foreach($fetch as $row) {
+                $sum = $sum + $row['grade'];
+                $counter++;
+            }
+        }
+        return $counter == 0 ? 0 : $sum/$counter;
+    }
+
     public function addAssesment($studentID, $courseID, $path, $fileName)
     {
         try {

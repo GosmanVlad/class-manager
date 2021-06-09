@@ -13,7 +13,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentController.ph
             <h2 style="text-align: left;">The Catalog</h2>
             <?php if (isTeacher()) { ?>
                 <h3>Please choose the year:
-                    <select id="year" onchange="showStudents(this.value, 'A', <?= getAuthID() ?>, <?= $_GET['course'] ?>)">
+                    <select id="year" onchange="showStudents(this.value, 'X', <?= getAuthID() ?>, <?= $_GET['course'] ?>)">
                         <option selected="true" disabled>Select</option>
                         <option>1</option>
                         <option>2</option>
@@ -90,7 +90,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentController.ph
                     <h2 class="input-box-h2">Please input your presence code:</h2>
                     <!-- Hidden area -->
                     <input type="text" name="code" placeholder="" id="student-id" value="<?= getAuthID() ?>" hidden>
-                    <input type="text" name="code" placeholder="" id="course-id" value="2" hidden>
 
                     <input type="text" name="code" placeholder="" id="code">
                     <div class="generate-btn" onclick="insertCode();">Submit</div>
