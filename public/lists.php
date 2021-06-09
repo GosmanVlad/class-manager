@@ -7,7 +7,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/AdminController
 if(!isAdmin()) 
     header("Location: index.php");
 ?>
-<script src="<?= URL ?>assets/js/admin-search.js"></script>
 
 <body>
     <div class="background-color">

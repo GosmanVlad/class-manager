@@ -29,10 +29,6 @@ button {
     border-radius: 8px;
 }
 
-form {
-    display: inline-block;
-}
-
 .form-container {
     border: 5px inset #834702;
     right: 0;

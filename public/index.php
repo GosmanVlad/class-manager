@@ -115,8 +115,3 @@ if (!isLogged())
 </body>
 
 </html>
-
-<!-- Particular style only for this page  -->
-<style>
-
-</style>

@@ -13,3 +13,8 @@ function showStudents(year, group = 'A', teacher, course) {
       xmlhttp.send();
     }
   }
+
+  function selectGroup(value, teacher, course) {
+    showStudents(this.document.getElementById('year').value, this.document.getElementById('group').value, teacher, course);
+  }
+  

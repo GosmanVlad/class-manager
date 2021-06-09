@@ -52,28 +52,31 @@ if (!isset($_GET['course']) && isTeacher()) {
                     <input type="file" name="file" size="50" />
                     <input type="submit" class="button-style btn-small btn-cyan">
                 </form>
-            <?php } else if (isTeacher()) { 
-                    $getAssesments = (new Assesments())->getAssesmentsByTeacherID(getAuthID(), $_GET['course']);
-                ?>
+            <?php } else if (isTeacher()) {
+                $getAssesments = (new Assesments())->getAssesmentsByTeacherID(getAuthID(), $_GET['course']);
+            ?>
                 <h2 style="text-align: left;">Files you haven't graded yet</h2>
-                <table class="table-style" style="text-align: left;">
-                    <tr>
-                        <th>Name of the student</th>
-                        <th>Name of the file</th>
-                        <th>Grade given</th>
-                        <th>Additional message from you</th>
-                        <th>Submit</th>
-                        <th>Download</th>
-                        <th>Sent at</th>
-                    </tr>
-                    <?php foreach($getAssesments as $row) { ?>
+                <form method="POST" action="<?= URL ?>app/api/teacher/correct_assesment.php">
+                    <table class="table-style" style="text-align: left;">
                         <tr>
-                            <td><?=$row['student']?></td>
-                            <td><?=$row['file_name']?></td>
-                            <form method="POST" action="<?= URL ?>app/api/teacher/correct_assesment.php">
+                            <th>Name of the student</th>
+                            <th>Name of the file</th>
+                            <th>Grade given</th>
+                            <th>Additional message from you</th>
+                            <th>Submit</th>
+                            <th>Download</th>
+                            <th>Sent at</th>
+                        </tr>
+
+                        <?php foreach ($getAssesments as $row) { ?>
+
+                            <tr>
+                                <td><?= $row['student'] ?></td>
+                                <td><?= $row['file_name'] ?></td>
+
                                 <td>
-                                    <?php if($row['corrected']) {?>
-                                        <strong><?=$row['grade']?></strong>
+                                    <?php if ($row['corrected']) { ?>
+                                        <strong><?= $row['grade'] ?></strong>
                                     <?php } else { ?>
                                         <select name="grade">
                                             <option value="1">1</option>
@@ -90,31 +93,32 @@ if (!isset($_GET['course']) && isTeacher()) {
                                     <?php } ?>
                                 </td>
                                 <td>
-                                    <?php if($row['corrected']) {?>
-                                        <strong><?=$row['observations']?></strong>
+                                    <?php if ($row['corrected']) { ?>
+                                        <strong><?= $row['observations'] ?></strong>
                                     <?php } else { ?>
                                         <input type="text" name="observations" class="message">
-                                        <input type="text" name="assesment-id" value="<?=$row['id']?>" hidden>
-                                        <input type="text" name="course-id" value="<?=$row['course_id']?>" hidden>
+                                        <input type="text" name="assesment-id" value="<?= $row['id'] ?>" hidden>
+                                        <input type="text" name="course-id" value="<?= $row['course_id'] ?>" hidden>
                                     <?php } ?>
                                 <td>
-                                    <?php if($row['corrected']) {?>
+                                    <?php if ($row['corrected']) { ?>
                                         <strong> Tema corectata</strong>
                                     <?php } else { ?>
                                         <button type="submit" class="button-style btn-small btn-cyan">Send</button>
                                     <?php } ?>
                                 </td>
-                            </form>
-                            <td>
-                                <a href="<?=URL . $row['file']?>" class="button-style btn-small btn-red">Download</button>
-                            </td>
-                            <td>
-                                <?=$row['sent_at']?>
-                            </td>
-                        </tr>
-                    <?php } ?>
-                    
-                </table>
+
+                                <td>
+                                    <a href="<?= URL . $row['file'] ?>" class="button-style btn-small btn-red">Download</a>
+                                </td>
+                                <td>
+                                    <?= $row['sent_at'] ?>
+                                </td>
+                            </tr>
+                        <?php } ?>
+
+                    </table>
+                </form>
 
             <?php } ?>
         </main>

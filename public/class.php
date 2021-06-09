@@ -2,9 +2,6 @@
 <html lang="en">
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentController.php"; ?>
-<script src="<?= URL ?>assets/js/presence-code.js"></script>
-<script src="<?= URL ?>assets/js/course-list.js"></script>
-<script src="<?= URL ?>assets/js/download-csv.js"></script>
 
 <body>
     <div class="background-color">
@@ -98,10 +95,5 @@ include $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentController.ph
         </main>
     </div>
 </body>
-<script>
-    function selectGroup(value, teacher, course) {
-        showStudents(this.document.getElementById('year').value, this.document.getElementById('group').value, teacher, course);
-    }
-</script>
 
 </html>

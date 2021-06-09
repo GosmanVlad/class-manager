@@ -2,7 +2,6 @@
 <html lang="en">
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentController.php"; ?>
-<script src="<?= URL ?>assets/js/table-list.js"></script>
 
 <body>
     <div class="background-color">
@@ -13,7 +12,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentControll
                 $maxGrades = (new Grade())->getCourseInfo($_GET['course'])['max_grades'];
             ?>
                 <h3>Please choose the year:
-                    <select id="year" onchange="showStudents(this.value, 'X', <?= getAuthID() ?>, <?= $_GET['course'] ?>)">
+                    <select id="year" onchange="showStudentsTable(this.value, 'X', <?= getAuthID() ?>, <?= $_GET['course'] ?>)">
                         <option selected="true" disabled>Select</option>
                         <option>1</option>
                         <option>2</option>
@@ -21,7 +20,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentControll
                     </select>
                 </h3>
                 <h3>Please choose the group:
-                    <select id="group" onchange="selectGroup(this.value, <?= getAuthID() ?>, <?= $_GET['course'] ?>)">
+                    <select id="group" onchange="selectGroupTable(this.value, <?= getAuthID() ?>, <?= $_GET['course'] ?>)">
                         <option selected="true" disabled>Select</option>
                         <option>A</option>
                         <option>B</option>
@@ -114,10 +113,4 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/StudentControll
         </main>
     </div>
 </body>
-<script>
-    function selectGroup(value, teacher, course) {
-        showStudents(this.document.getElementById('year').value, this.document.getElementById('group').value, teacher, course);
-    }
-</script>
-
 </html>

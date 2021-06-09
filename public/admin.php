@@ -3,12 +3,9 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/class/components/header.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/class/app/Controllers/AdminController.php";
-if(!isAdmin()) 
+if (!isAdmin())
     header("Location: index.php");
 ?>
-<script src="<?= URL ?>assets/js/presence-code.js"></script>
-<script src="<?= URL ?>assets/js/course-list.js"></script>
-<script src="<?= URL ?>assets/js/download-csv.js"></script>
 
 <body>
     <div class="background-color">
@@ -37,7 +34,6 @@ if(!isAdmin())
                             </td>
                         </tr>
                     <?php } ?>
-                    </tr>
                 </table> <br />
                 <h3>Import XML:</h3>
                 <form action="<?= URL ?>app/api/admin/import_xml.php" method="post" enctype="multipart/form-data">
